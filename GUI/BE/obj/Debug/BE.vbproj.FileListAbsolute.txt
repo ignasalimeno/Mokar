@@ -1,0 +1,28 @@
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\bin\Debug\BE.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\bin\Debug\BE.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\bin\Debug\BE.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.Resources.resources
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.vbproj.GenerateResource.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.vbproj.CoreCompileInputs.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.vbproj.CopyComplete
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\bin\Debug\BE.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\bin\Debug\BE.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\bin\Debug\BE.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.Resources.resources
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.vbproj.GenerateResource.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.vbproj.CoreCompileInputs.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.vbproj.CopyComplete
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache

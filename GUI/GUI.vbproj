@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{99C194B7-3A1F-43C5-B3E6-AD465237B5C5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>GUI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>GUI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contactform\contactform.js" />
+    <Content Include="contactform\Readme.txt" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\classy-nav.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\scss-files.txt" />
+    <Content Include="css\simple-sidebar.css" />
+    <Content Include="css\style.css" />
+    <Content Include="GestionarServicios.aspx" />
+    <Content Include="img\about-img.jpg" />
+    <Content Include="img\apple-touch-icon.png" />
+    <Content Include="img\bg-img\1.jpg" />
+    <Content Include="img\bg-img\10.jpg" />
+    <Content Include="img\bg-img\11.jpg" />
+    <Content Include="img\bg-img\12.jpg" />
+    <Content Include="img\bg-img\13.jpg" />
+    <Content Include="img\bg-img\14.jpg" />
+    <Content Include="img\bg-img\15.jpg" />
+    <Content Include="img\bg-img\16.jpg" />
+    <Content Include="img\bg-img\17.jpg" />
+    <Content Include="img\bg-img\18.jpg" />
+    <Content Include="img\bg-img\19.jpg" />
+    <Content Include="img\bg-img\2.jpg" />
+    <Content Include="img\bg-img\20.jpg" />
+    <Content Include="img\bg-img\21.jpg" />
+    <Content Include="img\bg-img\22.jpg" />
+    <Content Include="img\bg-img\23.jpg" />
+    <Content Include="img\bg-img\24.jpg" />
+    <Content Include="img\bg-img\25.jpg" />
+    <Content Include="img\bg-img\26.jpg" />
+    <Content Include="img\bg-img\27.jpg" />
+    <Content Include="img\bg-img\28.jpg" />
+    <Content Include="img\bg-img\29.jpg" />
+    <Content Include="img\bg-img\3.jpg" />
+    <Content Include="img\bg-img\30.jpg" />
+    <Content Include="img\bg-img\31.jpg" />
+    <Content Include="img\bg-img\32.jpg" />
+    <Content Include="img\bg-img\33.jpg" />
+    <Content Include="img\bg-img\34.jpg" />
+    <Content Include="img\bg-img\35.jpg" />
+    <Content Include="img\bg-img\4.jpg" />
+    <Content Include="img\bg-img\5.jpg" />
+    <Content Include="img\bg-img\6.jpg" />
+    <Content Include="img\bg-img\7.jpg" />
+    <Content Include="img\bg-img\8.jpg" />
+    <Content Include="img\bg-img\9.jpg" />
+    <Content Include="img\bg-img\add.png" />
+    <Content Include="img\bg-img\add2.png" />
+    <Content Include="img\bg-img\add3.png" />
+    <Content Include="img\bg-img\add4.png" />
+    <Content Include="img\carro2.png" />
+    <Content Include="img\clients\client-1.png" />
+    <Content Include="img\clients\client-2.png" />
+    <Content Include="img\clients\client-3.png" />
+    <Content Include="img\clients\client-4.png" />
+    <Content Include="img\clients\client-5.png" />
+    <Content Include="img\clients\client-6.png" />
+    <Content Include="img\clients\client-7.png" />
+    <Content Include="img\clients\client-8.png" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\features-1.svg" />
+    <Content Include="img\features-2.svg" />
+    <Content Include="img\flechaArriba.png" />
+    <Content Include="img\flechaAbajo.png" />
+    <Content Include="img\flechader.png" />
+    <Content Include="img\Flechaizq.png" />
+    <Content Include="img\genti.jpg" />
+    <Content Include="img\intro-bg.jpg" />
+    <Content Include="img\intro-img.svg" />
+    <Content Include="img\lucha.jpg" />
+    <Content Include="img\mocca.jpg" />
+    <Content Include="img\mokar1.png" />
+    <Content Include="img\portfolio\app1.jpg" />
+    <Content Include="img\portfolio\app2.jpg" />
+    <Content Include="img\portfolio\app3.jpg" />
+    <Content Include="img\portfolio\card1.jpg" />
+    <Content Include="img\portfolio\card2.jpg" />
+    <Content Include="img\portfolio\card3.jpg" />
+    <Content Include="img\portfolio\web1.jpg" />
+    <Content Include="img\portfolio\web2.jpg" />
+    <Content Include="img\portfolio\web3.jpg" />
+    <Content Include="img\team-1.jpg" />
+    <Content Include="img\team-2.jpg" />
+    <Content Include="img\team-3.jpg" />
+    <Content Include="img\team-4.jpg" />
+    <Content Include="img\testimonial-1.jpg" />
+    <Content Include="img\testimonial-2.jpg" />
+    <Content Include="img\testimonial-3.jpg" />
+    <Content Include="img\testimonial-4.jpg" />
+    <Content Include="img\equipo.jpg" />
+    <Content Include="img\equipo1.jpg" />
+    <Content Include="img\why-us.jpg" />
+    <Content Include="img\yo.jpg" />
+    <Content Include="Index.aspx" />
+    <Content Include="js\main.js" />
+    <Content Include="lib\animate\animate.css" />
+    <Content Include="lib\animate\animate.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\counterup\counterup.min.js" />
+    <Content Include="lib\easing\easing.js" />
+    <Content Include="lib\easing\easing.min.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\ionicons\css\ionicons.css" />
+    <Content Include="lib\ionicons\css\ionicons.min.css" />
+    <Content Include="lib\ionicons\fonts\ionicons.svg" />
+    <Content Include="lib\isotope\isotope.pkgd.js" />
+    <Content Include="lib\isotope\isotope.pkgd.min.js" />
+    <Content Include="lib\jquery\jquery-migrate.min.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\lightbox\css\lightbox.css" />
+    <Content Include="lib\lightbox\css\lightbox.min.css" />
+    <Content Include="lib\lightbox\images\close.png" />
+    <Content Include="lib\lightbox\images\loading.gif" />
+    <Content Include="lib\lightbox\images\next.png" />
+    <Content Include="lib\lightbox\images\prev.png" />
+    <Content Include="lib\lightbox\js\lightbox.js" />
+    <Content Include="lib\lightbox\js\lightbox.min.js" />
+    <Content Include="lib\mobile-nav\mobile-nav.js" />
+    <Content Include="lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="lib\owlcarousel\owl.carousel.js" />
+    <Content Include="lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="lib\waypoints\waypoints.min.js" />
+    <Content Include="lib\wow\wow.js" />
+    <Content Include="lib\wow\wow.min.js" />
+    <Content Include="Log.aspx" />
+    <Content Include="MaterialEstudio.aspx" />
+    <Content Include="materialEstudio\plan_blue.jpg" />
+    <Content Include="MaterialEstudio_Descargar.aspx" />
+    <Content Include="Mensajes%28Modal%29.ascx" />
+    <Content Include="NewPass.aspx" />
+    <Content Include="Newsletter.aspx" />
+    <Content Include="Newsletter_Gestionar.aspx" />
+    <Content Include="Politicas.aspx" />
+    <Content Include="Readme.txt" />
+    <Content Include="Rol.aspx" />
+    <Content Include="Rol_AsignarPermisos.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="img\header-bg.psd" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\ionicons\fonts\ionicons.eot" />
+    <Content Include="lib\ionicons\fonts\ionicons.ttf" />
+    <Content Include="lib\ionicons\fonts\ionicons.woff" />
+    <Content Include="lib\owlcarousel\LICENSE" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="materialEstudio\26-Bootstrap.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\bg-img\desktop.ini" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Servicios.aspx" />
+    <Content Include="Servicios_Comparacion.aspx" />
+    <Content Include="Terminos_y_Condiciones.aspx" />
+    <Content Include="Usuarios_AsignarRoles.aspx" />
+    <Content Include="Usuarios_Registrar.aspx" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Template_Mokar.html" />
+    <Content Include="Usuarios.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GestionarServicios.aspx.designer.vb">
+      <DependentUpon>GestionarServicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarServicios.aspx.vb">
+      <DependentUpon>GestionarServicios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Log.aspx.designer.vb">
+      <DependentUpon>Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Log.aspx.vb">
+      <DependentUpon>Log.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MaterialEstudio.aspx.designer.vb">
+      <DependentUpon>MaterialEstudio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialEstudio.aspx.vb">
+      <DependentUpon>MaterialEstudio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MaterialEstudio_Descargar.aspx.designer.vb">
+      <DependentUpon>MaterialEstudio_Descargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialEstudio_Descargar.aspx.vb">
+      <DependentUpon>MaterialEstudio_Descargar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mensajes%28Modal%29.ascx.designer.vb">
+      <DependentUpon>Mensajes%28Modal%29.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes%28Modal%29.ascx.vb">
+      <DependentUpon>Mensajes%28Modal%29.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NewPass.aspx.designer.vb">
+      <DependentUpon>NewPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewPass.aspx.vb">
+      <DependentUpon>NewPass.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Newsletter.aspx.designer.vb">
+      <DependentUpon>Newsletter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Newsletter.aspx.vb">
+      <DependentUpon>Newsletter.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Newsletter_Gestionar.aspx.designer.vb">
+      <DependentUpon>Newsletter_Gestionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Newsletter_Gestionar.aspx.vb">
+      <DependentUpon>Newsletter_Gestionar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Politicas.aspx.designer.vb">
+      <DependentUpon>Politicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Politicas.aspx.vb">
+      <DependentUpon>Politicas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Rol.aspx.designer.vb">
+      <DependentUpon>Rol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rol.aspx.vb">
+      <DependentUpon>Rol.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Rol_AsignarPermisos.aspx.designer.vb">
+      <DependentUpon>Rol_AsignarPermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rol_AsignarPermisos.aspx.vb">
+      <DependentUpon>Rol_AsignarPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Servicios.aspx.designer.vb">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios.aspx.vb">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Servicios_Comparacion.aspx.designer.vb">
+      <DependentUpon>Servicios_Comparacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios_Comparacion.aspx.vb">
+      <DependentUpon>Servicios_Comparacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terminos_y_Condiciones.aspx.designer.vb">
+      <DependentUpon>Terminos_y_Condiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Terminos_y_Condiciones.aspx.vb">
+      <DependentUpon>Terminos_y_Condiciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios.aspx.designer.vb">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.aspx.vb">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios_AsignarRoles.aspx.designer.vb">
+      <DependentUpon>Usuarios_AsignarRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios_AsignarRoles.aspx.vb">
+      <DependentUpon>Usuarios_AsignarRoles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Registrar.aspx.designer.vb">
+      <DependentUpon>Usuarios_Registrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios_Registrar.aspx.vb">
+      <DependentUpon>Usuarios_Registrar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.vbproj">
+      <Project>{e7657bef-8085-47f3-bb27-abb45dead082}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.vbproj">
+      <Project>{27304b51-91f8-4a7b-9f20-5ba8174822c1}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56813</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56813/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

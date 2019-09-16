@@ -1,0 +1,30 @@
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\DAL.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\DAL.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\DAL.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.Resources.resources
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.vbproj.GenerateResource.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.vbproj.CoreCompileInputs.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\obj\Debug\DAL.vbproj.CopyComplete
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\DAL.dll.CodeAnalysisLog.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\DAL\bin\Debug\DAL.dll.lastcodeanalysissucceeded
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\bin\Debug\DAL.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\bin\Debug\DAL.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\bin\Debug\DAL.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.Resources.resources
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.vbproj.GenerateResource.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.vbproj.CoreCompileInputs.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.vbproj.CopyComplete
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\DAL\obj\Debug\DAL.pdb

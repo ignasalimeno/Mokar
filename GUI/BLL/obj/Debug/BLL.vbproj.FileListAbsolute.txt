@@ -1,0 +1,46 @@
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\bin\Debug\BLL.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\bin\Debug\BLL.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\bin\Debug\BLL.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.Resources.resources
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.vbproj.GenerateResource.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.vbproj.CoreCompileInputs.cache
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\obj\Debug\BLL.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\BE.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\MPP.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\DAL.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\BE.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\BE.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\MPP.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\MPP.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\DAL.pdb
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\bin\Debug\DAL.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\mokar\BLL\obj\Debug\BLL.vbproj.CopyComplete
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Documents\Drive\UAI\5to\TFI\Mokar\BLL\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\BLL.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\BLL.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\BLL.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\BE.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\MPP.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\DAL.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\BE.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\BE.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\MPP.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\MPP.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\DAL.pdb
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\DAL.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.Resources.resources
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.vbproj.GenerateResource.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.vbproj.CoreCompileInputs.cache
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.vbproj.CopyComplete
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.dll
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.xml
+C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BLL\obj\Debug\BLL.pdb
