@@ -26,3 +26,15 @@ C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.dll
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.xml
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.pdb
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\BE.dll
+C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\BE.pdb
+C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\BE.xml
+C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.Resources.resources
+C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.vbproj.GenerateResource.cache
+C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.dll
+C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.xml
+C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.pdb

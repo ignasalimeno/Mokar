@@ -100,3 +100,29 @@ C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\obj\Debug\GUI.xml
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\obj\Debug\GUI.pdb
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\bin\AjaxControlToolkit.dll
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\bin\materialEstudio\26-Bootstrap.pdf
+C:\Users\ignas\Desktop\Mokar\GUI\bin\materialEstudio\26-Bootstrap.pdf
+C:\Users\ignas\Desktop\Mokar\GUI\bin\GUI.dll.config
+C:\Users\ignas\Desktop\Mokar\GUI\bin\GUI.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\GUI.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\GUI.xml
+C:\Users\ignas\Desktop\Mokar\GUI\bin\AjaxControlToolkit.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\BE.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\BLL.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\Newtonsoft.Json.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\MPP.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\DAL.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\BE.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\BE.xml
+C:\Users\ignas\Desktop\Mokar\GUI\bin\BLL.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\BLL.xml
+C:\Users\ignas\Desktop\Mokar\GUI\bin\Newtonsoft.Json.xml
+C:\Users\ignas\Desktop\Mokar\GUI\bin\MPP.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\MPP.xml
+C:\Users\ignas\Desktop\Mokar\GUI\bin\DAL.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\DAL.xml
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.Resources.resources
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbproj.GenerateResource.cache
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.dll
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.xml
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.pdb

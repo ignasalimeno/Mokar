@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -248,6 +247,165 @@
     <Content Include="NewPass.aspx" />
     <Content Include="Newsletter.aspx" />
     <Content Include="Newsletter_Gestionar.aspx" />
+    <Content Include="packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll" />
+    <Content Include="packages\AjaxControlToolkit.19.1.0\readme.txt" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\LICENSE.txt" />
+    <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
+    <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
+    <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
+    <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="packages\jQuery.3.4.1\Tools\jquery-3.4.1.intellisense.js" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\csc.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\csi.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\cs\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\cs\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\cs\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\cs\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\cs\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\de\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\de\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\de\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\de\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\de\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\es\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\es\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\es\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\es\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\es\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\fr\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\fr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\fr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\fr\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\it\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\it\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\it\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\it\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\it\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ja\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ja\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ja\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ja\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ja\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ko\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ko\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ko\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ko\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ko\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pl\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pl\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pl\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pl\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pl\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pt-BR\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pt-BR\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pt-BR\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ru\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ru\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ru\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ru\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ru\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Buffers.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Collections.Immutable.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Memory.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Numerics.Vectors.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Reflection.Metadata.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Text.Encoding.CodePages.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\tr\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\tr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\tr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\tr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\tr\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\vbc.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\VBCSCompiler.exe" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hans\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hans\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hans\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hant\Microsoft.Build.Tasks.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hant\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\netstandard1.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\netstandard1.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\netstandard1.3\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\netstandard1.3\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper-utils.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper-utils.min.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper.min.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper-utils.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper-utils.min.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper.min.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper-utils.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper-utils.min.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.js" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.min.js" />
     <Content Include="Politicas.aspx" />
     <Content Include="Readme.txt" />
     <Content Include="Rol.aspx" />
@@ -274,6 +432,79 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\bg-img\desktop.ini" />
+    <Content Include="packages\AjaxControlToolkit.19.1.0\.signature.p7s" />
+    <Content Include="packages\AjaxControlToolkit.19.1.0\AjaxControlToolkit.19.1.0.nupkg" />
+    <Content Include="packages\AjaxControlToolkit.19.1.0\Content\Web.config.transform" />
+    <Content Include="packages\bootstrap.4.3.1\.signature.p7s" />
+    <Content Include="packages\bootstrap.4.3.1\bootstrap.4.3.1.nupkg" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.min.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.min.js.map" />
+    <Content Include="packages\jQuery.3.4.1\.signature.p7s" />
+    <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.map" />
+    <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="packages\jQuery.3.4.1\jQuery.3.4.1.nupkg" />
+    <Content Include="packages\jQuery.3.4.1\Tools\common.ps1" />
+    <Content Include="packages\jQuery.3.4.1\Tools\install.ps1" />
+    <Content Include="packages\jQuery.3.4.1\Tools\uninstall.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net45\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net45\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net46\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\content\net46\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8.nupkg" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\tools\net45\install.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\tools\net45\uninstall.ps1" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\.signature.p7s" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\Microsoft.Net.Compilers.3.2.1.nupkg" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\ThirdPartyNotices.rtf" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\csc.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\csc.rsp" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\csi.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\csi.rsp" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.CSharp.Core.targets" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.Managed.Core.targets" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.Managed.EditorConfig.targets" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\vbc.exe.config" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\vbc.rsp" />
+    <Content Include="packages\Microsoft.Net.Compilers.3.2.1\tools\VBCSCompiler.exe.config" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\.signature.p7s" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\LICENSE.md" />
+    <Content Include="packages\Newtonsoft.Json.12.0.2\Newtonsoft.Json.12.0.2.nupkg" />
+    <Content Include="packages\popper.js.1.14.3\.signature.p7s" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper-utils.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\esm\popper.min.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper-utils.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper-utils.min.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\popper.min.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\README.md" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper-utils.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.js.map" />
+    <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.min.js.map" />
+    <Content Include="packages\popper.js.1.14.3\popper.js.1.14.3.nupkg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -518,6 +749,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="packages\popper.js.1.14.3\content\Scripts\index.d.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
@@ -558,12 +790,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.2.1\build\Microsoft.Net.Compilers.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -7,7 +7,7 @@
             <br />
             <br />
             <br />
-            <h3>Servicios</h3>
+            <h3>Gestionar Servicios</h3>
 
             <asp:GridView ID="GvObjetos" runat="server" CellPadding="4" ForeColor="#333333"
                     GridLines="None" Height="106px" Width="100%" AutoGenerateColumns="False">

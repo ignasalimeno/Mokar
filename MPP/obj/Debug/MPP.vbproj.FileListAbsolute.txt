@@ -38,3 +38,21 @@ C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\MPP\obj\Debug\MPP.vbpro
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\MPP\obj\Debug\MPP.dll
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\MPP\obj\Debug\MPP.xml
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\MPP\obj\Debug\MPP.pdb
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\MPP.dll
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\MPP.pdb
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\MPP.xml
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\BE.dll
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\DAL.dll
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\System.Net.Http.dll
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\BE.pdb
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\BE.xml
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\DAL.pdb
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\DAL.xml
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\System.Net.Http.xml
+C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.Resources.resources
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.vbproj.GenerateResource.cache
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.dll
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.xml
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.pdb
