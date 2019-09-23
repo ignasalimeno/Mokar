@@ -8,4 +8,6 @@
     Property nombreRespuesta As String
     Property detalleRespuesta As String
     Property fechaHoraRespuesta As DateTime
+
+    Property permiteRespuestas As Boolean
 End Class

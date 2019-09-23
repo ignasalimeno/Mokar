@@ -30,4 +30,14 @@
         End Try
     End Sub
 
+    Private Sub RP_Noticias_ItemCommand(source As Object, e As RepeaterCommandEventArgs) Handles RP_Noticias.ItemCommand
+        Try
+            If e.CommandName = "VerNoticia" Then
+                Session("idNoticia") = e.CommandArgument
+                Response.Redirect("Newsletter_Noticia.aspx", False)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

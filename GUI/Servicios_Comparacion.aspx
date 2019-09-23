@@ -135,7 +135,7 @@
             <br />
             <br />
             
-            <asp:Panel ID="Panel1" runat="server" Visible="false">
+            <asp:Panel ID="panelComentarios" runat="server" Visible="false">
                 <h4>Comentarios de usuarios:</h4>
                 <asp:Repeater ID="RP_Comentarios" runat="server">
                     <ItemTemplate>
@@ -153,7 +153,7 @@
                                         <div class="clearfix"></div>
                                         <p><%# Eval("detalle") %></p>
                                         <p>
-                                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddRta" id="btnAgregarRta" runat="server" value='<%# Eval("idComentario") %>' onclick="AddIdComentario(this.value)">Responder</button>
+                                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAddRta" id="btnAgregarRta" runat="server" value='<%# Eval("idComentario") %>' visible = '<%# (Convert.ToBoolean(Eval("permiteRespuestas"))) %>' onclick="AddIdComentario(this.value)">Responder</button>
                                             <%--<a class="float-right btn btn-outline-primary ml-2"><i class="fa fa-reply"></i>Reply</a>--%>
                                         </p>
                                     </div>

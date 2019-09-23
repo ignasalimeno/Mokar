@@ -51,4 +51,13 @@ Public Class NewsletterBLL
             Return Nothing
         End Try
     End Function
+
+    Public Function Suscribirse(usuario As UsuarioBE, listCat As List(Of CategoriaBE)) As Boolean
+        Try
+            Return NewsletterMPP.ObtenerInstancia.Suscribirse(usuario, listCat)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class

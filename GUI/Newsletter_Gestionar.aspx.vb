@@ -17,8 +17,17 @@ Public Class Newsletter_Gestionar
     End Sub
 
     Private Sub CargarGrilla()
-        Session("ListaNewsletter") = oObjBLL.ListarObjetos()
-        Me.GvObjetos.DataSource = Session("ListaNewsletter")
+        Dim lista As List(Of NewsletterBE) = oObjBLL.ListarObjetos()
+        Session("ListaNewsletter") = lista
+
+
+        For Each a As NewsletterBE In lista
+            If a.descripcion.Length > 30 Then
+                a.descripcion = a.descripcion.Substring(0, 30) & "..."
+            End If
+        Next
+
+        Me.GvObjetos.DataSource = lista
         Me.GvObjetos.DataBind()
     End Sub
 
@@ -34,6 +43,7 @@ Public Class Newsletter_Gestionar
         Try
             oObjBE.idNewsletter = 1
             oObjBE.titulo = txtTitulo.Text
+
             oObjBE.descripcion = txtDescr.Text
             oObjBE.autor = txtAutor.Text
             oObjBE.fechaCreacion = txtFecha.Text
@@ -68,7 +78,7 @@ Public Class Newsletter_Gestionar
         Try
 
 
-            oObjBE.idNewsletter = Me.GvObjetos.SelectedRow.Cells(1).Text
+            oObjBE.idNewsletter = Session("idNew")
 
             If Me.txtDescr.Text <> "" Then
                 oObjBE.titulo = txtTitulo.Text
@@ -108,7 +118,7 @@ Public Class Newsletter_Gestionar
     Protected Sub BtnBaja_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBaja.Click
         Try
 
-            oObjBE.idNewsletter = Me.GvObjetos.SelectedRow.Cells(1).Text
+            oObjBE.idNewsletter = Session("idNew")
             oObjBLL.Baja(oObjBE)
             Limpiar()
             CargarGrilla()
@@ -142,10 +152,12 @@ Public Class Newsletter_Gestionar
 
     Private Sub GvObjetos_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GvObjetos.RowCommand
         Try
+
             If e.CommandName = "Select" Then
                 descargarArchivo(e.CommandArgument)
             ElseIf e.CommandName = "idme" Then
                 cargarDatosObjeto(e.CommandArgument)
+                Session("idNew") = e.CommandArgument
             End If
         Catch ex As Exception
 
@@ -153,16 +165,14 @@ Public Class Newsletter_Gestionar
     End Sub
 
     Sub cargarDatosObjeto(idNewsletter As Integer)
-        Dim miLista As List(Of NewsletterBE) = Session("ListaNewsletter")
 
-        For Each a As NewsletterBE In miLista
-            If a.idNewsletter = idNewsletter Then
-                txtAutor.Text = a.autor
+        Dim a As NewsletterBE = NewsletterBLL.ObtenerInstancia.ListarObjeto(New NewsletterBE With {.idNewsletter = idNewsletter})
+
+        txtAutor.Text = a.autor
                 txtDescr.Text = a.descripcion
                 txtTitulo.Text = a.titulo
                 txtFecha.Text = a.fechaCreacion
-            End If
-        Next
+
     End Sub
 
     Sub cargarCategorias()

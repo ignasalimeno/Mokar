@@ -148,6 +148,7 @@
                             </ul>
                             <li><a href="/Index.aspx#services">Servicios</a></li>
                         <li><a href="/Index.aspx#team">Equipo</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#Modal_Newsletter">Noticias</a></li>
                         <li><a href="/Index.aspx#faq">FAQs</a></li>
                     </ul>
                 </nav>
@@ -358,7 +359,45 @@
             <%-- Fin Modal Login --%>
 
 
+            <!-- Modal suscribirse al newsletter -->
+            <div class="modal fade" id="Modal_Newsletter" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPass" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalNewsletter">Suscribirse a las noticias</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
 
+                            <%--Contenido del Modal--%>
+                            <div class="Form-group">
+                                <label>Ingresar el email</label>
+                                <asp:TextBox CssClass="form-control" ID="txtMailNL" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtMailNL"
+                                    ForeColor="Red" Font-Bold="true" ValidationGroup="validarNL"></asp:RequiredFieldValidator>
+                            </div>
+                            <br />
+                            <div class="Form-group">
+                                <label>Ingresar nuevamente el mail</label>
+                                <asp:TextBox CssClass="form-control" ID="txtMailNLValidar" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtMailNLValidar"
+                                    ForeColor="Red" Font-Bold="true" ValidationGroup="validarNL"></asp:RequiredFieldValidator>
+                            </div>
+                            <br />
+                            <label>Seleccione las categorias</label>
+                            <asp:CheckBoxList ID="checkCategorias" runat="server"></asp:CheckBoxList>
+                            <br />
+                            <br />
+                            <div class="Form-group">
+                                <asp:Button CssClass="btn btn-primary mb-2" ID="btnSuscribirse" runat="server" Text="Suscribirse" ValidationGroup="validarNL" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%-- Fin Modal olvido contraseña --%>
 
 
 

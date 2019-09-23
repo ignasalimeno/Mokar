@@ -20,6 +20,7 @@ Public Class Site1
             Panel1.Visible = False
             Me.RefrescarRol()
             Me.RefrescarPlanes()
+            RefrescarCategorias()
 
             If Session("UsuarioLog") IsNot Nothing Then
                 UsuarioLoguedo = Session("UsuarioLog")
@@ -101,7 +102,7 @@ Public Class Site1
 
 
                             'Envio el mail
-                            Dim ActiveURL = Request.Url.AbsoluteUri.Replace("Index.aspx", "Usuarios_Registrar.aspx?ID_Usuario=" + Server.UrlEncode(Criptografia.Encriptar(UsuarioCreado.idUsuario)))
+                            Dim ActiveURL = "http://" & Request.Url.Host & ":" & Request.Url.Port & "/" & "Usuarios_Registrar.aspx?ID_Usuario=" + Server.UrlEncode(Criptografia.Encriptar(UsuarioCreado.idUsuario))
                             EnviarCorreo.ObtenerInstancia.EnviarNotificacion(UsuarioNuevo.mail, "Bienvenido a Mokar.", "Hola " + UsuarioCreado.nombreRazonSocial + ", ya sos usuario. <br /><br />" + vbCrLf + "Ingresá al siguiente link para activarlo: " + "<a href=" + ActiveURL + ">link</a>" + "<br /><br /> Si no te funciona el link, copia y pega esta dirección: " + ActiveURL, Server.MapPath("Template_Mokar.html"))
 
                             MensajesModal.Mostrar("Se envió un correo para finalizar el alta")
@@ -208,6 +209,8 @@ Public Class Site1
                                                 .criticidad = "1"}
             LogBLL.ObtenerInstancia.Alta(bitacora)
 
+            GestorSesion.ObtenerSesionActual.CerrarSesion()
+
             Session.Clear()
             Response.Redirect("Index.aspx")
         Else
@@ -231,7 +234,7 @@ Public Class Site1
                     ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
 
                     Dim ID_Encriptado = Server.UrlEncode(Criptografia.Encriptar(UsuarioEncontrado.idUsuario))
-                    Dim OlvidoURL = Request.Url.AbsoluteUri.Replace("Index.aspx", "NewPass.aspx?ID_Usuario=" + ID_Encriptado)
+                    Dim OlvidoURL = "http://" & Request.Url.Host & ":" & Request.Url.Port & "/" & "NewPass.aspx?ID_Usuario=" & ID_Encriptado
                     EnviarCorreo.ObtenerInstancia.EnviarNotificacion(UsuarioNuevo.mail, "Recupero de Contraseña Mokar", "Hola " + UsuarioEncontrado.nombreRazonSocial + ", se solicitó un reingreso de contraseña. <br /><br />" + vbCrLf + "Ingresá al siguiente link para activarlo: " + "<a href=" + OlvidoURL + ">link</a>" + "<br /><br /> Si no te funciona el link, copia y pega esta dirección: " + OlvidoURL, Server.MapPath("Template_Mokar.html"))
                 Else
 
@@ -285,5 +288,52 @@ Public Class Site1
         DDL_Planes.DataBind()
 
     End Sub
+
+    Private Sub RefrescarCategorias()
+        Try
+            checkCategorias.DataSource = Nothing
+            checkCategorias.DataSource = BLL.CategoriaBLL.ObtenerInstancia.ListarObjetos
+            checkCategorias.DataTextField = "descripcion"
+            checkCategorias.DataValueField = "idCategoria"
+
+            checkCategorias.DataBind()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnSuscribirse_Click(sender As Object, e As EventArgs) Handles btnSuscribirse.Click
+        Try
+            If txtMailNL.Text = txtMailNLValidar.Text Then
+
+                Dim miUser As New UsuarioBE With {.mail = txtMailNL.Text}
+                Dim listCat As New List(Of CategoriaBE)
+
+                For Each a As ListItem In checkCategorias.Items
+                    If a.Selected Then
+                        listCat.Add(New CategoriaBE With {.idCategoria = a.Value})
+                    End If
+                Next
+
+                If listCat.Count > 0 Then
+                    If NewsletterBLL.ObtenerInstancia.Suscribirse(miUser, listCat) Then
+                        MensajesModal.Mostrar("Gracias por suscribirse a nuestro portal de noticias!")
+                    Else
+                        MensajesModal.Mostrar("El usuario y la categoría ya estan dados de alta en nuestro sistema")
+                    End If
+                Else
+                    MensajesModal.Mostrar("Debe seleccionar al menos una categoría de noticias")
+                End If
+            Else
+                MensajesModal.Mostrar("Los correos ingresados no son iguales")
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
 
 End Class

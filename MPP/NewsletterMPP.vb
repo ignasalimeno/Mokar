@@ -156,4 +156,31 @@ Public Class NewsletterMPP
             Return Nothing
         End If
     End Function
+
+    Public Function Suscribirse(usuario As UsuarioBE, listCat As List(Of CategoriaBE)) As Boolean
+        Try
+            Dim oDatos As New DAL.Datos
+
+            Dim resultado As Boolean = True
+
+            For Each objeto As CategoriaBE In listCat
+                Dim hdatos As New Hashtable
+                hdatos.Add("@tipoConsulta", 1)
+                hdatos.Add("@UsuarioMail", usuario.mail)
+                hdatos.Add("@idCategoria", objeto.idCategoria)
+
+                If oDatos.Escribir("n_Newsletter_Usuarios_ABMC", hdatos) = False Then
+                    resultado = False
+                End If
+            Next
+
+            Return resultado
+
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+
+
 End Class

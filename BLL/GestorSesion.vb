@@ -52,11 +52,7 @@ Public Class GestorSesion
 
 
     Public Sub CerrarSesion()
-
-        Dim bitacora As New LogBE With {.idTipo = "2",
-                                                .usuarioMail = Me.UsuarioActivo.mail,
-                                                 .criticidad = "1"}
-        LogBLL.ObtenerInstancia.Alta(bitacora)
+        UsuarioActivo = Nothing
     End Sub
 
 

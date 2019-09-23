@@ -8,6 +8,7 @@ Public Class Servicios_Comparacion
         If Not Me.IsPostBack Then
             cargarGrilla()
             cargarComentarios()
+
         End If
     End Sub
 
@@ -22,11 +23,13 @@ Public Class Servicios_Comparacion
             miLista = Session("Lista")
 
             If miLista.Count = 1 Then
-                Panel1.Visible = True
+                If GestorSesion.ObtenerSesionActual.UsuarioActivo IsNot Nothing Then
+                    panelComentarios.Visible = True
+                End If
             End If
 
 
-            Dim dt As New DataTable
+                Dim dt As New DataTable
             dt.Columns.Add("ColComparacion")
             dt.Columns.Add("servicio1")
             dt.Columns.Add("servicio2")
@@ -108,8 +111,6 @@ Public Class Servicios_Comparacion
                 RP_Comentarios.DataSource = ServiciosBLL.ObtenerInstancia.ListarComentarios(miLista(0))
                 RP_Comentarios.DataBind()
             End If
-
-
         Catch ex As Exception
 
         End Try

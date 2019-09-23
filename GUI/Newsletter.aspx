@@ -38,8 +38,7 @@
                                 <div class="portfolio-info">
 
                                     <div>
-                                        <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-
+                                        <asp:Button ID="btnLink" CssClass="link-preview" runat="server" Text="Ver" CommandName="VerNoticia" CommandArgument='<%# Eval("idNewsletter")%>'  />
                                     </div>
                                 </div>
                             </div>

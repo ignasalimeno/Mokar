@@ -126,3 +126,7 @@ C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbproj.GenerateResource.cache
 C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.dll
 C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.xml
 C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\AjaxControlToolkit.HtmlEditor.Sanitizer.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\HtmlAgilityPack.dll
+C:\Users\ignas\Desktop\Mokar\GUI\bin\HtmlAgilityPack.pdb
+C:\Users\ignas\Desktop\Mokar\GUI\bin\HtmlAgilityPack.xml

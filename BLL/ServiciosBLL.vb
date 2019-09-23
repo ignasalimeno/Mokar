@@ -63,7 +63,20 @@ Public Class ServiciosBLL
 
     Public Function ListarComentarios(objeto As ServiciosBE) As IEnumerable(Of ServiciosComentariosBE)
         Try
-            Return ServiciosMPP.ObtenerInstancia.ListarComentarios(objeto)
+            Dim lista As IEnumerable(Of ServiciosComentariosBE) = ServiciosMPP.ObtenerInstancia.ListarComentarios(objeto)
+
+            If GestorSesion.ObtenerSesionActual.UsuarioActivo IsNot Nothing Then
+
+                For Each a As ServiciosComentariosBE In lista
+                    If (a.tieneRespuesta Or GestorSesion.ObtenerSesionActual.UsuarioActivo.tipoUsuario = 2) Then
+                        a.permiteRespuestas = False
+                    Else
+                        a.permiteRespuestas = True
+                    End If
+                Next
+            End If
+
+            Return lista
         Catch ex As Exception
             Return Nothing
         End Try

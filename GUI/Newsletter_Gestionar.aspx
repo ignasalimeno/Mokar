@@ -16,7 +16,7 @@
                         <ItemTemplate>
                             <asp:Button CssClass="btn btn-link" Text="--&gt;" runat="server" CommandName="idme" CommandArgument='<%# Eval("idNewsletter") %>' />
                         </ItemTemplate>
-                    </asp:TemplateField>
+                    </asp:TemplateField> 
                     <asp:BoundField DataField="idNewsletter" HeaderText="Cod" />
                     <asp:BoundField DataField="titulo" HeaderText="Titulo" />
                     <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
@@ -45,13 +45,10 @@
             <br />
             Descripcion
                     
-                    <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="480px" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtDescr" runat="server" Columns="70" Rows="25" TextMode="MultiLine"></asp:TextBox>
+            <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender1" runat="server" TargetControlID="txtDescr"></ajaxToolkit:HtmlEditorExtender>
             <br />
-          <%--  <script type="text/javascript" src="https://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-            <script type="text/javascript">
-                tinymce.init({ selector: 'textarea', width: 300 });
-            </script>--%>
-
+   
             Autor
                     <asp:TextBox class="form-control" ID="txtAutor" runat="server" Height="29px" Width="480px"></asp:TextBox>
             <br />
