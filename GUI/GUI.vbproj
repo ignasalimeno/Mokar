@@ -103,6 +103,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Categorias.aspx" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\Readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -253,6 +254,7 @@
     <Content Include="materialEstudio\plan_blue.jpg" />
     <Content Include="MaterialEstudio_Descargar.aspx" />
     <Content Include="Mensajes%28Modal%29.ascx" />
+    <Content Include="Newsletter_Des.aspx" />
     <Content Include="Newsletter_Noticia.aspx" />
     <Content Include="NewPass.aspx" />
     <Content Include="Newsletter.aspx" />
@@ -555,6 +557,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categorias.aspx.designer.vb">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias.aspx.vb">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="GestionarServicios.aspx.designer.vb">
       <DependentUpon>GestionarServicios.aspx</DependentUpon>
     </Compile>
@@ -615,6 +624,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Newsletter_Des.aspx.designer.vb">
+      <DependentUpon>Newsletter_Des.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Newsletter_Des.aspx.vb">
+      <DependentUpon>Newsletter_Des.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Newsletter_Noticia.aspx.designer.vb">
       <DependentUpon>Newsletter_Noticia.aspx</DependentUpon>

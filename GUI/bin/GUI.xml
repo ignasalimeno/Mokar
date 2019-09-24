@@ -53,6 +53,60 @@ GUI
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="F:GUI.Categorias._GvObjetos">
+<summary>
+GvObjetos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Categorias._txtDescr">
+<summary>
+txtDescr control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Categorias._BtnAlta">
+<summary>
+BtnAlta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Categorias._BtnModificar">
+<summary>
+BtnModificar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Categorias._BtnBaja">
+<summary>
+BtnBaja control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Categorias._BtnLimpiar">
+<summary>
+BtnLimpiar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarServicios._GvObjetos">
 <summary>
 GvObjetos control.
@@ -431,6 +485,42 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.Newsletter_Des._Lbl_Titulo2">
+<summary>
+Lbl_Titulo2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Newsletter_Des._TB_Mail">
+<summary>
+TB_Mail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Newsletter_Des._btn_Enviar">
+<summary>
+btn_Enviar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Newsletter_Des._Lbl_OK">
+<summary>
+Lbl_OK control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Neswletter_Noticia._lblCat">
 <summary>
 lblCat control.
@@ -470,15 +560,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Neswletter_Noticia._imgNews">
 <summary>
 imgNews control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Neswletter_Noticia._lblDescr">
-<summary>
-lblDescr control.
 </summary>
 <remarks>
 Auto-generated field.

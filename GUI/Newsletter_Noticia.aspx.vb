@@ -6,7 +6,15 @@ Public Class Neswletter_Noticia
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not (Page.IsPostBack) Then
-            cargarNoticia()
+            Try
+                Dim idNoticia As String = Criptografia.Desencriptar(Request.QueryString("idNoticia"))
+                Session("idNoticia") = idNoticia
+            Catch ex As Exception
+
+            Finally
+                cargarNoticia()
+            End Try
+
         End If
     End Sub
 
@@ -35,5 +43,6 @@ Public Class Neswletter_Noticia
 
         End Try
     End Sub
+
 
 End Class

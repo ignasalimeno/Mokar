@@ -45,7 +45,7 @@ Public Class EnviarCorreo
         Return True
     End Function
 
-    Public Function EnviarNewsletterCaribe(ByVal pDestino As String, pAsunto As String, pCuerpo As String, ByVal pDescripcion As String, ByVal pFecha As Date, ByVal pPath As String) As Boolean
+    Public Function EnviarNewsletter(ByVal pDestino As String, pAsunto As String, pCuerpo As String, ByVal pPath As String, linkNew As String, linkDes As String) As Boolean
         Try
             Dim Smtp_Server As New SmtpClient
             Dim e_mail As New MailMessage()
@@ -56,16 +56,17 @@ Public Class EnviarCorreo
             Smtp_Server.EnableSsl = True
             Smtp_Server.Host = "smtp.gmail.com"
             e_mail = New MailMessage()
-            e_mail.From = New MailAddress("mokar.argentina@gmail.com")
+            e_mail.From = New MailAddress("mokar.argentina@gmail.com", "Mokar Argentina")
             e_mail.To.Add(pDestino)
             e_mail.Subject = pAsunto
             e_mail.IsBodyHtml = True
 
-            Dim sr = New StreamReader(pPath)
+            Dim sr = New StreamReader(AppDomain.CurrentDomain.BaseDirectory & "/" & pPath)
             Dim Plantilla As String = sr.ReadToEnd
             sr.Dispose()
 
-            e_mail.Body = Plantilla.Replace("Cuerpo", pCuerpo).Replace("Descripcion", pDescripcion).Replace("Fecha", pFecha)
+            e_mail.Body = Plantilla.Replace("Cuerpodelmail", pCuerpo).Replace("linkDes", linkDes).Replace("linkNew", linkNew)
+
             Smtp_Server.Send(e_mail)
 
         Catch ex As Exception

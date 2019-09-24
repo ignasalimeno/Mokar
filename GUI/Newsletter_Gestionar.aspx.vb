@@ -65,6 +65,8 @@ Public Class Newsletter_Gestionar
             oObjBE.idCategoria = DDL_Categoria.SelectedValue
             oObjBE.activo = 1
 
+
+
             oObjBLL.Alta(oObjBE)
             Limpiar()
             CargarGrilla()
@@ -158,6 +160,9 @@ Public Class Newsletter_Gestionar
             ElseIf e.CommandName = "idme" Then
                 cargarDatosObjeto(e.CommandArgument)
                 Session("idNew") = e.CommandArgument
+            ElseIf e.CommandName = "mail" Then
+                Dim link As String = "http://" & Request.Url.Host & ":" & Request.Url.Port
+                NewsletterBLL.ObtenerInstancia.enviarNoticia(New NewsletterBE With {.idNewsletter = e.CommandArgument}, link)
             End If
         Catch ex As Exception
 

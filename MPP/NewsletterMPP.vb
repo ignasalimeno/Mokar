@@ -180,7 +180,57 @@ Public Class NewsletterMPP
             Return False
         End Try
     End Function
+    Public Function Desuscribirse(usuario As UsuarioBE) As Boolean
+        Try
+            Dim oDatos As New DAL.Datos
+
+            Dim resultado As Boolean = True
 
 
+            Dim hdatos As New Hashtable
+                hdatos.Add("@tipoConsulta", 2)
+                hdatos.Add("@UsuarioMail", usuario.mail)
+                hdatos.Add("@idCategoria", DBNull.Value)
+
+                If oDatos.Escribir("n_Newsletter_Usuarios_ABMC", hdatos) = False Then
+                    resultado = False
+                End If
+
+            Return resultado
+
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function ListarUsuarioCategoria(noticia As NewsletterBE) As IEnumerable(Of UsuarioBE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.UsuarioBE)
+        Dim dt As New DataTable
+        Dim newObj As BE.UsuarioBE
+
+        Dim hdatos As New Hashtable
+        hdatos.Add("@tipoConsulta", 5)
+        hdatos.Add("@UsuarioMail", DBNull.Value)
+        hdatos.Add("@idCategoria", noticia.idCategoria)
+
+        DS = oDatos.Leer("n_Newsletter_Usuarios_ABMC", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.UsuarioBE
+                newObj.mail = Item("UsuarioMail")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
 
 End Class

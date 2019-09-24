@@ -29,6 +29,11 @@
                             </ItemTemplate>
                         </asp:TemplateField>--%>
                     <asp:BoundField DataField="activo" HeaderText="Activo" Visible="False" />
+                    <asp:TemplateField HeaderText="Enviar Mail">
+                        <ItemTemplate>
+                            <asp:Button CssClass="btn btn-primary" Text="Mail" runat="server" CommandName="mail" CommandArgument='<%# Eval("idNewsletter") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField> 
 
                 </Columns>
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
