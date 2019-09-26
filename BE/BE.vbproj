@@ -69,6 +69,9 @@
   <ItemGroup>
     <Compile Include="CategoriaBE.vb" />
     <Compile Include="ClienteBE.vb" />
+    <Compile Include="EncuestaBE.vb" />
+    <Compile Include="EncuestaPreguntaBE.vb" />
+    <Compile Include="EncuestaRespuestasBE.vb" />
     <Compile Include="LogBE.vb" />
     <Compile Include="LogTipoBE.vb" />
     <Compile Include="MaterialEstudioBE.vb" />

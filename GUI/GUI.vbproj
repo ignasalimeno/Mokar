@@ -67,6 +67,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -121,6 +122,8 @@
     <Content Include="css\scss-files.txt" />
     <Content Include="css\simple-sidebar.css" />
     <Content Include="css\style.css" />
+    <Content Include="Encuesta.aspx" />
+    <Content Include="GestionarEncuestas.aspx" />
     <Content Include="GestionarServicios.aspx" />
     <Content Include="img\about-img.jpg" />
     <Content Include="img\apple-touch-icon.png" />
@@ -172,6 +175,8 @@
     <Content Include="img\clients\client-6.png" />
     <Content Include="img\clients\client-7.png" />
     <Content Include="img\clients\client-8.png" />
+    <Content Include="img\delete.png" />
+    <Content Include="img\edit.png" />
     <Content Include="img\favicon.png" />
     <Content Include="img\features-1.svg" />
     <Content Include="img\features-2.svg" />
@@ -194,6 +199,7 @@
     <Content Include="img\portfolio\web1.jpg" />
     <Content Include="img\portfolio\web2.jpg" />
     <Content Include="img\portfolio\web3.jpg" />
+    <Content Include="img\select.png" />
     <Content Include="img\team-1.jpg" />
     <Content Include="img\team-2.jpg" />
     <Content Include="img\team-3.jpg" />
@@ -562,6 +568,20 @@
     </Compile>
     <Compile Include="Categorias.aspx.vb">
       <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Encuesta.aspx.designer.vb">
+      <DependentUpon>Encuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Encuesta.aspx.vb">
+      <DependentUpon>Encuesta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GestionarEncuestas.aspx.designer.vb">
+      <DependentUpon>GestionarEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarEncuestas.aspx.vb">
+      <DependentUpon>GestionarEncuestas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="GestionarServicios.aspx.designer.vb">

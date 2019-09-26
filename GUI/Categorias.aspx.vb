@@ -13,6 +13,7 @@ Public Class Categorias
     End Sub
 
     Private Sub CargarGrilla()
+        GvObjetos.DataSource = ""
         Me.GvObjetos.DataSource = oObjBLL.ListarObjetos()
         Me.GvObjetos.DataBind()
     End Sub

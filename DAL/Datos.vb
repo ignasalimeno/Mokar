@@ -2,11 +2,25 @@
 Imports System.Data.SqlClient
 
 Public Class Datos
+
+
     Private Cnn As New SqlConnection(ConfigurationManager.ConnectionStrings("myConnectionString").ConnectionString)
 
     Private Tranx As SqlTransaction
     Private Cmd As SqlCommand
 
+#Region "Singleton"
+    'Sub New()
+    'End Sub
+    'lo pongo private para que no se acceda desde otra clase y sirva el Singleton.
+    Private Shared instancia As Datos
+    Public Shared Function ObtenerInstancia() As Datos
+        If instancia Is Nothing Then
+            instancia = New Datos
+        End If
+        Return instancia
+    End Function
+#End Region
 
     Public Function Leer(ByVal consulta As String, ByVal hdatos As Hashtable) As DataSet
 

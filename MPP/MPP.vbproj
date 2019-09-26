@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="CategoriaMPP.vb" />
     <Compile Include="ClienteMPP.vb" />
+    <Compile Include="EncuestaMPP.vb" />
     <Compile Include="IABMC.vb" />
     <Compile Include="LogMPP.vb" />
     <Compile Include="LogTipoMPP.vb" />

@@ -69,6 +69,7 @@
     <Compile Include="ClienteBLL.vb" />
     <Compile Include="Criptografia.vb" />
     <Compile Include="EnviarCorreo.vb" />
+    <Compile Include="EncuestaBLL.vb" />
     <Compile Include="GestorSesion.vb" />
     <Compile Include="IABMC.vb" />
     <Compile Include="LogBLL.vb" />

@@ -107,6 +107,204 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Encuesta._lblPreguntaEncuesta">
+<summary>
+lblPreguntaEncuesta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Encuesta._Repeater1">
+<summary>
+Repeater1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Encuesta._btnVotar">
+<summary>
+btnVotar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._DG_Encuestas2">
+<summary>
+DG_Encuestas2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._DDL_Tipo">
+<summary>
+DDL_Tipo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._TB_Titulo">
+<summary>
+TB_Titulo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._TB_Fecha">
+<summary>
+TB_Fecha control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._GV_Preguntas">
+<summary>
+GV_Preguntas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._Respuestas">
+<summary>
+Respuestas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnNuevaEncuesta">
+<summary>
+btnNuevaEncuesta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnEditarEncuesta">
+<summary>
+btnEditarEncuesta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnEliminarEncuesta">
+<summary>
+btnEliminarEncuesta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._Panel1">
+<summary>
+Panel1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._txtPregunta">
+<summary>
+txtPregunta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnAddPregunta">
+<summary>
+btnAddPregunta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnGuardarPre">
+<summary>
+btnGuardarPre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnBorrarPre">
+<summary>
+btnBorrarPre control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._Panel2">
+<summary>
+Panel2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._txtRta">
+<summary>
+txtRta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnAddRta">
+<summary>
+btnAddRta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnEditRta">
+<summary>
+btnEditRta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnBorrarRta">
+<summary>
+btnBorrarRta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarServicios._GvObjetos">
 <summary>
 GvObjetos control.
