@@ -138,7 +138,7 @@ Public Class EncuestaMPP
         End Try
     End Function
 
-    Public Function Crear(ByRef Objeto As EncuestaBE) As Boolean
+    Public Function Crear(ByRef Objeto As EncuestaBE) As Integer
         Try
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
@@ -160,7 +160,24 @@ Public Class EncuestaMPP
                 Next
             End If
 
-            Return resultado
+            Return DS.Tables(0).Rows(0).Item(0)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Function Editar(objeto As EncuestaBE) As Boolean
+        Try
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+
+            hdatos.Add("@tipoConsulta", 3)
+            hdatos.Add("@idEncuesta", objeto.idEncuesta)
+            hdatos.Add("@Titulo", objeto.Titulo)
+            hdatos.Add("@FechaVencimiento", objeto.FechaVencimiento)
+            hdatos.Add("@idTipoEncuesta", objeto.idTipoEncuesta)
+
+            Return oDatos.Escribir("n_Encuesta_ABMC", hdatos)
         Catch ex As Exception
             Return False
         End Try

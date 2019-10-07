@@ -24,6 +24,7 @@ Public Class Rol
 
     Protected Sub GvObjetos_SelectedIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSelectEventArgs) Handles GvObjetos.SelectedIndexChanging
         Me.txtDescr.Text = Me.GvObjetos.Rows(e.NewSelectedIndex).Cells(2).Text
+        ck_RolUSuario.Checked = Boolean.Parse(GvObjetos.Rows(e.NewSelectedIndex).Cells(3).Text)
     End Sub
 
     Protected Sub BtnLimpiar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnLimpiar.Click
@@ -34,6 +35,7 @@ Public Class Rol
 
         oObjBE.idRol = 1
         oObjBE.descr = Me.txtDescr.Text
+        oObjBE.rolUsuario = ck_RolUSuario.Checked
         oObjBE.activo = 1
 
         oObjBLL.Alta(oObjBE)
@@ -47,7 +49,7 @@ Public Class Rol
 
         If Me.txtDescr.Text <> "" Then
             oObjBE.descr = Me.txtDescr.Text
-
+            oObjBE.rolUsuario = ck_RolUSuario.Checked
             oObjBLL.Modificacion(oObjBE)
             Limpiar()
             CargarGrilla()

@@ -148,7 +148,7 @@ Public Class EnviarCorreo
             Smtp_Server.EnableSsl = True
             Smtp_Server.Host = "smtp.gmail.com"
             e_mail = New MailMessage()
-            e_mail.From = New MailAddress("mokar.argentina@gmail.com")
+            e_mail.From = New MailAddress("mokar.argentina@gmail.com", "Mokar Argentina")
             e_mail.To.Add(pDestino)
             e_mail.Subject = pAsunto
             e_mail.IsBodyHtml = True
@@ -183,11 +183,12 @@ Public Class EnviarCorreo
             Smtp_Server.EnableSsl = True
             Smtp_Server.Host = "smtp.gmail.com"
             e_mail = New MailMessage()
-            e_mail.From = New MailAddress("mokar.argentina@gmail.com")
+            e_mail.From = New MailAddress("mokar.argentina@gmail.com", "Mokar Argentina")
+
             e_mail.To.Add(pDestino)
             e_mail.Subject = pAsunto
             e_mail.IsBodyHtml = True
-            e_mail.Attachments.Add(New Attachment(New MemoryStream(pBytes), "NotadeCreditoEasyTravel.pdf"))
+            e_mail.Attachments.Add(New Attachment(New MemoryStream(pBytes), "NotadeCredito.pdf"))
             e_mail.Body.Replace("Cuerpo", pCuerpo)
             Smtp_Server.Send(e_mail)
 

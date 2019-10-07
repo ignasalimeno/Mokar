@@ -58,7 +58,7 @@ Public Class GestionarEncuestas
             Session("idEncuesta") = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(1).Text
             Dim idEnc As Integer = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(1).Text
             TB_Titulo.Text = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(3).Text
-            TB_Fecha.Text = Date.Parse(DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(4).Text)
+            TB_Fecha.Text = Date.Parse(DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(4).Text).ToString("dd-MM-yyyy")
 
             cargarPreguntas()
 
@@ -148,6 +148,60 @@ Public Class GestionarEncuestas
             EncuestaBLL.ObtenerInstancia.EliminarRta(Session("idPre"), New EncuestaRespuestasBE With {.idRespuesta = Session("idRta"), .Respuesta = txtRta.Text})
             cargarRespuestas()
 
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnNuevaEncuesta_Click(sender As Object, e As EventArgs) Handles btnNuevaEncuesta.Click
+        Try
+            If Date.Parse(TB_Fecha.Text) > Now Then
+                Dim miEnc As New EncuestaBE
+                miEnc.idEncuesta = 1
+                miEnc.idTipoEncuesta = DDL_Tipo.SelectedValue
+                miEnc.Titulo = TB_Titulo.Text
+                miEnc.FechaVencimiento = TB_Fecha.Text
+
+                Session("idEncuesta") = EncuestaBLL.ObtenerInstancia.Crear(miEnc)
+
+                cargarEncuestas()
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnEditarEncuesta_Click(sender As Object, e As EventArgs) Handles btnEditarEncuesta.Click
+        Try
+            If Session("idEncuesta") IsNot Nothing Then
+                Dim miEnc As New EncuestaBE
+                miEnc.idEncuesta = Session("idEncuesta")
+                miEnc.idTipoEncuesta = DDL_Tipo.SelectedValue
+                miEnc.Titulo = TB_Titulo.Text
+                miEnc.FechaVencimiento = TB_Fecha.Text
+
+                If EncuestaBLL.ObtenerInstancia.Editar(miEnc) Then
+                    cargarEncuestas()
+                End If
+
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnEliminarEncuesta_Click(sender As Object, e As EventArgs) Handles btnEliminarEncuesta.Click
+        Try
+            If Session("idEncuesta") IsNot Nothing Then
+                Dim miEnc As New EncuestaBE
+                miEnc.idEncuesta = Session("idEncuesta")
+
+                If EncuestaBLL.ObtenerInstancia.Eliminar(miEnc) Then
+                    cargarEncuestas()
+                End If
+
+            End If
         Catch ex As Exception
 
         End Try

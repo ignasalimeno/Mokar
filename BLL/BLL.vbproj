@@ -44,6 +44,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Select.Pdf, Version=19.1.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.Pdf.19.1.0\lib\net40\Select.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
@@ -66,16 +70,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaBLL.vb" />
+    <Compile Include="ChatBLL.vb" />
     <Compile Include="ClienteBLL.vb" />
     <Compile Include="Criptografia.vb" />
+    <Compile Include="CuentaCorrienteBLL.vb" />
     <Compile Include="EnviarCorreo.vb" />
     <Compile Include="EncuestaBLL.vb" />
+    <Compile Include="EstadosTarjetasBLL.vb" />
+    <Compile Include="FacturaBLL.vb" />
+    <Compile Include="FacturaDetalleBLL.vb" />
+    <Compile Include="GestorMdePagoBLL.vb" />
+    <Compile Include="GestorPDF.vb" />
     <Compile Include="GestorSesion.vb" />
     <Compile Include="IABMC.vb" />
     <Compile Include="LogBLL.vb" />
     <Compile Include="LogTipoBLL.vb" />
     <Compile Include="MaterialEstudioBLL.vb" />
     <Compile Include="NewsletterBLL.vb" />
+    <Compile Include="NotaCreditoBLL.vb" />
+    <Compile Include="PedidoCanceladoBLL.vb" />
     <Compile Include="PermisosBLL.vb" />
     <Compile Include="RolBLL.vb" />
     <Compile Include="ServiciosBLL.vb" />
@@ -115,6 +128,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.vbproj">

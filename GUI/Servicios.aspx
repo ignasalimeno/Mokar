@@ -26,17 +26,21 @@
 
         var itemList2 = [];
         function AddToBuy(itemId) {
-            if (itemList2.length == 1) return;
-            var found = false;
+            
+             var found = false;
             for (var i = itemList2.length - 1; 0 < i + 1 && !found; --i) {
+
                 if (itemList2[i] == itemId) {
                     itemList2.splice(i, 1);
                     //found = true;
                 }
             }
+
             if (!found) {
                 itemList2.push(itemId);
             }
+
+            //Asigno al hidden input la variable para poder levantarla desde el code behind
             document.getElementById('<%= hiddenItemBuy.ClientID %>').value = itemList2;
 
         }
@@ -79,7 +83,8 @@
                     <ItemTemplate>
                         <div class="col-4 ml-0 mt-2 mb-2">
                             <div class="card hvr-bounce-in" data-wow-duration="1.4s">
-
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
                                 <asp:Image ImageUrl='<%#"data:Image/png;base64," + Convert.ToBase64String(Eval("ImagenData")) %>' runat="server" />
                                 <div class="card-body">
                                     <h2><asp:Label ID="lbl_Nombre" CssClass="card-title" Text='<%# Eval("nombre") %>' runat="server"></asp:Label></h2>
@@ -123,6 +128,8 @@
                                     </div>
 
                                 </div>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
                             </div>
                         </div>
                     </ItemTemplate>

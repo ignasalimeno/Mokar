@@ -50,6 +50,15 @@ Partial Public Class GestionarEncuestas
     Protected WithEvents TB_Fecha As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''CalendarExtender2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CalendarExtender2 As Global.AjaxControlToolkit.CalendarExtender
+    
+    '''<summary>
     '''GV_Preguntas control.
     '''</summary>
     '''<remarks>

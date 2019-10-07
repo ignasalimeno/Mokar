@@ -68,14 +68,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaBE.vb" />
+    <Compile Include="Chat2BE.vb" />
+    <Compile Include="ChatBE.vb" />
     <Compile Include="ClienteBE.vb" />
+    <Compile Include="CuentaCorrienteBE.vb" />
     <Compile Include="EncuestaBE.vb" />
     <Compile Include="EncuestaPreguntaBE.vb" />
     <Compile Include="EncuestaRespuestasBE.vb" />
+    <Compile Include="EstadoTarjetaBE.vb" />
+    <Compile Include="FacturaBE.vb" />
+    <Compile Include="FacturaCompletaBE.vb" />
+    <Compile Include="FacturaDetalleBE.vb" />
     <Compile Include="LogBE.vb" />
     <Compile Include="LogTipoBE.vb" />
     <Compile Include="MaterialEstudioBE.vb" />
+    <Compile Include="MediodePagoBE.vb" />
     <Compile Include="NewsletterBE.vb" />
+    <Compile Include="NotaCreditoBE.vb" />
+    <Compile Include="NotaCreditoCompletaBE.vb" />
+    <Compile Include="PedidoCanceladoBE.vb" />
     <Compile Include="PermisosBE.vb" />
     <Compile Include="RolBE.vb" />
     <Compile Include="ServiciosBE.vb" />

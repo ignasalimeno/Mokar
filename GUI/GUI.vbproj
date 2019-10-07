@@ -37,6 +37,19 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>GUI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -105,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Categorias.aspx" />
+    <Content Include="Chat.aspx" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\Readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -115,6 +129,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\chat.css" />
     <Content Include="css\classy-nav.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\magnific-popup.css" />
@@ -123,6 +138,8 @@
     <Content Include="css\simple-sidebar.css" />
     <Content Include="css\style.css" />
     <Content Include="Encuesta.aspx" />
+    <Content Include="Factura_Descargar.aspx" />
+    <Content Include="FichaOpinion.aspx" />
     <Content Include="GestionarEncuestas.aspx" />
     <Content Include="GestionarServicios.aspx" />
     <Content Include="img\about-img.jpg" />
@@ -200,6 +217,9 @@
     <Content Include="img\portfolio\web2.jpg" />
     <Content Include="img\portfolio\web3.jpg" />
     <Content Include="img\select.png" />
+    <Content Include="img\Tarjeta_American.jpg" />
+    <Content Include="img\Tarjeta_Master.png" />
+    <Content Include="img\Tarjeta_Visa.png" />
     <Content Include="img\team-1.jpg" />
     <Content Include="img\team-2.jpg" />
     <Content Include="img\team-3.jpg" />
@@ -260,6 +280,9 @@
     <Content Include="materialEstudio\plan_blue.jpg" />
     <Content Include="MaterialEstudio_Descargar.aspx" />
     <Content Include="Mensajes%28Modal%29.ascx" />
+    <Content Include="MisCompras.aspx" />
+    <Content Include="Facturas.aspx" />
+    <Content Include="MisFacturas.aspx" />
     <Content Include="Newsletter_Des.aspx" />
     <Content Include="Newsletter_Noticia.aspx" />
     <Content Include="NewPass.aspx" />
@@ -288,6 +311,12 @@
     <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.js" />
     <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.min.js" />
     <Content Include="packages\bootstrap.4.3.1\LICENSE.txt" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -428,10 +457,6 @@
     <Content Include="Readme.txt" />
     <Content Include="Rol.aspx" />
     <Content Include="Rol_AsignarPermisos.aspx" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="img\header-bg.psd" />
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
@@ -442,6 +467,10 @@
     <Content Include="lib\ionicons\fonts\ionicons.ttf" />
     <Content Include="lib\ionicons\fonts\ionicons.woff" />
     <Content Include="lib\owlcarousel\LICENSE" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -523,6 +552,10 @@
     <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.js.map" />
     <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.min.js.map" />
     <Content Include="packages\popper.js.1.14.3\popper.js.1.14.3.nupkg" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -538,20 +571,12 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Servicios.aspx" />
     <Content Include="Servicios_Comparacion.aspx" />
+    <Content Include="Template_Mokar_Factura2.html" />
+    <Content Include="Template_Mokar_NC.html" />
     <Content Include="Template_Noticia.html" />
     <Content Include="Terminos_y_Condiciones.aspx" />
     <Content Include="Usuarios_AsignarRoles.aspx" />
     <Content Include="Usuarios_Registrar.aspx" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
@@ -570,11 +595,32 @@
       <DependentUpon>Categorias.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Chat.aspx.designer.vb">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.aspx.vb">
+      <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Encuesta.aspx.designer.vb">
       <DependentUpon>Encuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Encuesta.aspx.vb">
       <DependentUpon>Encuesta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Factura_Descargar.aspx.designer.vb">
+      <DependentUpon>Factura_Descargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factura_Descargar.aspx.vb">
+      <DependentUpon>Factura_Descargar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FichaOpinion.aspx.designer.vb">
+      <DependentUpon>FichaOpinion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FichaOpinion.aspx.vb">
+      <DependentUpon>FichaOpinion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="GestionarEncuestas.aspx.designer.vb">
@@ -625,6 +671,27 @@
     <Compile Include="Mensajes%28Modal%29.ascx.vb">
       <DependentUpon>Mensajes%28Modal%29.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisCompras.aspx.designer.vb">
+      <DependentUpon>MisCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisCompras.aspx.vb">
+      <DependentUpon>MisCompras.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Facturas.aspx.designer.vb">
+      <DependentUpon>Facturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas.aspx.vb">
+      <DependentUpon>Facturas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MisFacturas.aspx.designer.vb">
+      <DependentUpon>MisFacturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisFacturas.aspx.vb">
+      <DependentUpon>MisFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -806,6 +873,7 @@
     <TypeScriptCompile Include="packages\popper.js.1.14.3\content\Scripts\index.d.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

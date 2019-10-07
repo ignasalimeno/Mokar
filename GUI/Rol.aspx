@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Rol.aspx.vb" Inherits="GUI.Rol" %>
+﻿ <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Rol.aspx.vb" Inherits="GUI.Rol" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section id="portfolio" class="section-bg">
@@ -15,6 +15,8 @@
                         <asp:CommandField SelectText="--&gt;" ShowSelectButton="True" />
                         <asp:BoundField DataField="idRol" HeaderText="Cod" />
                         <asp:BoundField DataField="descr" HeaderText="Descripcion" />
+                        <asp:BoundField DataField="rolUsuario" HeaderText="Rol Usuario" />
+
                         <asp:BoundField DataField="activo" HeaderText="Activo" Visible="False" />
                     </Columns>
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -27,13 +29,17 @@
                 <br />
                     Descripcion
                     <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="416px"></asp:TextBox>
+          <br />
+                    Rol Usuario
+                     <asp:CheckBox ID="ck_RolUSuario" runat="server" />
+                    
                     <br />
                            <asp:Button CssClass="myBtn" ID="BtnAlta" runat="server" Text="Alta" Width="206px" />
               <br /> <br />
                     <asp:Button CssClass="myBtn" ID="BtnModificar" runat="server" Text="Modificar" Width="206px"/>
                     <br />
               <br />
-                    <asp:Button CssClass="myBtn" ID="BtnBaja" runat="server" Text="Baja" Width="206px"  />
+                    <asp:Button CssClass="myBtn" ID="BtnBaja" runat="server" Text="Baja" Width="206px" OnClientClick="return confirm('¿Confirma la acción?')"  />
                     <br />
               <br />
                     <asp:Button CssClass="myBtn" ID="BtnLimpiar" runat="server" Text="Limpiar"  Width="206px" />

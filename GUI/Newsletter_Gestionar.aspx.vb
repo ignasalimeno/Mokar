@@ -33,67 +33,28 @@ Public Class Newsletter_Gestionar
 
     Private Sub Limpiar()
         Me.txtDescr.Text = ""
-    End Sub
-
-    Protected Sub BtnLimpiar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnLimpiar.Click
-        Limpiar()
+        txtAutor.Text = ""
+        txtFecha.Text = ""
+        txtTitulo.Text = ""
     End Sub
 
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
         Try
-            oObjBE.idNewsletter = 1
-            oObjBE.titulo = txtTitulo.Text
+            If BtnAlta.CommandName = "Alta" Then
+                contenido.Visible = True
 
-            oObjBE.descripcion = txtDescr.Text
-            oObjBE.autor = txtAutor.Text
-            oObjBE.fechaCreacion = txtFecha.Text
-
-            Try
-                Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
-                Dim filename As String = Path.GetFileName(postedFile.FileName)
-                Dim fileExtension As String = Path.GetExtension(filename)
-                'Dim fileSize As ULong = postedFile.ContentLength
-                Dim stream As Stream = postedFile.InputStream
-                Dim BinaryReader As New BinaryReader(stream)
-                Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
-
-                oObjBE.imagen = bytes
-            Catch ex As Exception
-                Throw New Exception("Error al querer cargar la imagen.")
-            End Try
-
-            oObjBE.idCategoria = DDL_Categoria.SelectedValue
-            oObjBE.activo = 1
-
-
-
-            oObjBLL.Alta(oObjBE)
-            Limpiar()
-            CargarGrilla()
-        Catch ex As Exception
-            mensaje = "Hubo un error. " & ex.Message
-            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
-        End Try
-    End Sub
-
-    Protected Sub BtnModificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
-        Try
-
-
-            oObjBE.idNewsletter = Session("idNew")
-
-            If Me.txtDescr.Text <> "" Then
+                oObjBE.idNewsletter = 1
                 oObjBE.titulo = txtTitulo.Text
+
                 oObjBE.descripcion = txtDescr.Text
                 oObjBE.autor = txtAutor.Text
                 oObjBE.fechaCreacion = txtFecha.Text
 
-                Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
-                Dim filename As String = Path.GetFileName(postedFile.FileName)
-                Dim fileExtension As String = Path.GetExtension(filename)
-                Dim fileSize As Int16 = postedFile.ContentLength
-
                 Try
+                    Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
+                    Dim filename As String = Path.GetFileName(postedFile.FileName)
+                    Dim fileExtension As String = Path.GetExtension(filename)
+                    'Dim fileSize As ULong = postedFile.ContentLength
                     Dim stream As Stream = postedFile.InputStream
                     Dim BinaryReader As New BinaryReader(stream)
                     Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
@@ -106,29 +67,62 @@ Public Class Newsletter_Gestionar
                 oObjBE.idCategoria = DDL_Categoria.SelectedValue
                 oObjBE.activo = 1
 
-                oObjBLL.Modificacion(oObjBE)
+                oObjBLL.Alta(oObjBE)
                 Limpiar()
                 CargarGrilla()
 
+
+            ElseIf BtnAlta.CommandName = "Modificar" Then
+
+                oObjBE.idNewsletter = Session("idNew")
+
+                If Me.txtDescr.Text <> "" Then
+                    oObjBE.titulo = txtTitulo.Text
+                    oObjBE.descripcion = txtDescr.Text
+                    oObjBE.autor = txtAutor.Text
+                    oObjBE.fechaCreacion = txtFecha.Text
+
+                    Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
+                    Dim filename As String = Path.GetFileName(postedFile.FileName)
+                    Dim fileExtension As String = Path.GetExtension(filename)
+                    'Dim fileSize As Int16 = postedFile.ContentLength
+
+                    Try
+                        Dim stream As Stream = postedFile.InputStream
+                        Dim BinaryReader As New BinaryReader(stream)
+                        Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
+
+                        oObjBE.imagen = bytes
+                    Catch ex As Exception
+                        Throw New Exception("Error al querer cargar la imagen.")
+                    End Try
+
+                    oObjBE.idCategoria = DDL_Categoria.SelectedValue
+                    oObjBE.activo = 1
+
+                    oObjBLL.Modificacion(oObjBE)
+                    Limpiar()
+                    CargarGrilla()
+                End If
+
+                contenido.Visible = False
             End If
+
         Catch ex As Exception
             mensaje = "Hubo un error. " & ex.Message
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
         End Try
     End Sub
 
-    Protected Sub BtnBaja_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBaja.Click
+    Protected Sub BtnModificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         Try
-
-            oObjBE.idNewsletter = Session("idNew")
-            oObjBLL.Baja(oObjBE)
             Limpiar()
-            CargarGrilla()
+            contenido.Visible = False
+
         Catch ex As Exception
             mensaje = "Hubo un error. " & ex.Message
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
         End Try
-
     End Sub
 
     Sub descargarArchivo(ruta As String)
@@ -158,6 +152,8 @@ Public Class Newsletter_Gestionar
             If e.CommandName = "Select" Then
                 descargarArchivo(e.CommandArgument)
             ElseIf e.CommandName = "idme" Then
+                contenido.Visible = True
+                BtnAlta.CommandName = "Modificar"
                 cargarDatosObjeto(e.CommandArgument)
                 Session("idNew") = e.CommandArgument
             ElseIf e.CommandName = "mail" Then
@@ -193,4 +189,25 @@ Public Class Newsletter_Gestionar
         End Try
     End Sub
 
+    Private Sub GvObjetos_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GvObjetos.RowDeleting
+        Try
+            oObjBE.idNewsletter = GvObjetos.DataKeys(e.RowIndex).Value
+            oObjBLL.Baja(oObjBE)
+            Limpiar()
+            CargarGrilla()
+        Catch ex As Exception
+            mensaje = "Hubo un error. " & ex.Message
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+        End Try
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            Limpiar()
+            contenido.Visible = True
+            BtnAlta.CommandName = "Alta"
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

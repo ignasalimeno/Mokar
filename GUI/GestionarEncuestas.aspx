@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="GestionarEncuestas.aspx.vb" Inherits="GUI.GestionarEncuestas" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="GestionarEncuestas.aspx.vb" Inherits="GUI.GestionarEncuestas" ValidateRequest="false" Debug="true"  %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="portfolio" class="section-bg">
@@ -47,7 +47,9 @@
 
                                 <div class="form-group col-md-4">
                                     <label>Ingresar Fecha de vencimiento:</label>
-                                    <asp:TextBox CssClass="form-control" ID="TB_Fecha" runat="server" type="date" required="required"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TB_Fecha" runat="server" required="required"></asp:TextBox>
+                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TB_Fecha" Format="dd/MM/yyyy" />
+
                                 </div>
 
                             </div>

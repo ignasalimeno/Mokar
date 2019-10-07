@@ -65,13 +65,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaMPP.vb" />
+    <Compile Include="ChatMPP.vb" />
     <Compile Include="ClienteMPP.vb" />
+    <Compile Include="CuentaCorrienteMPP.vb" />
     <Compile Include="EncuestaMPP.vb" />
+    <Compile Include="EstadoTarjetaMPP.vb" />
+    <Compile Include="FacturaDetalleMPP.vb" />
+    <Compile Include="FacturaMPP.vb" />
     <Compile Include="IABMC.vb" />
     <Compile Include="LogMPP.vb" />
     <Compile Include="LogTipoMPP.vb" />
     <Compile Include="MaterialEstudioMPP.vb" />
+    <Compile Include="MedioPagoMPP.vb" />
     <Compile Include="NewsletterMPP.vb" />
+    <Compile Include="NotaCreditoMPP.vb" />
+    <Compile Include="PedidoCanceladoMPP.vb" />
     <Compile Include="PermisoMPP.vb" />
     <Compile Include="RolMPP.vb" />
     <Compile Include="ServiciosMPP.vb" />

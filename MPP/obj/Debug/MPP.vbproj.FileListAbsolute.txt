@@ -52,7 +52,7 @@ C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\System.Net.Http.xml
 C:\Users\ignas\Desktop\Mokar\MPP\bin\Debug\es\System.Net.Http.resources.dll
 C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.vbprojResolveAssemblyReference.cache
 C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.Resources.resources
-C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.vbproj.GenerateResource.cache
+C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.vbproj.GenerateResource.Cache
 C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.dll
 C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.xml
 C:\Users\ignas\Desktop\Mokar\MPP\obj\Debug\MPP.pdb

@@ -24,7 +24,7 @@ Public Class EncuestaBLL
         End Try
     End Function
 
-    Function Crear(objeto As EncuestaBE) As Boolean
+    Function Crear(objeto As EncuestaBE) As Integer
         Try
             Return EncuestaMPP.ObtenerInstancia.Crear(objeto)
         Catch ex As Exception
@@ -43,6 +43,14 @@ Public Class EncuestaBLL
     Function Cargar(objeto As EncuestaBE) As EncuestaBE
         Try
             Return EncuestaMPP.ObtenerInstancia.Cargar(objeto)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Function Editar(objeto As EncuestaBE) As Boolean
+        Try
+            Return EncuestaMPP.ObtenerInstancia.Editar(objeto)
         Catch ex As Exception
             Return Nothing
         End Try
