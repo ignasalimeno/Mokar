@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="GestionarEncuestas.aspx.vb" Inherits="GUI.GestionarEncuestas" ValidateRequest="false" Debug="true"  %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="GestionarEncuestas.aspx.vb" Inherits="GUI.GestionarEncuestas" ValidateRequest="false" Debug="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="portfolio" class="section-bg">
@@ -8,9 +8,14 @@
             <br />
             <h3>Gestionar Ecuestas y Fichas de opinión</h3>
 
-            <div class="row">
-                <div class="card-body">
-                    <div class="card card-body">
+            <!-- Comienzo Grilla -->
+            <div class="card-body">
+                <div class="card card-body">
+                    <div class="row">
+                        <asp:Button ID="btnAgregar" CssClass="btn btn-primary" runat="server" Text="Agregar" />
+                    </div>
+                    <br />
+                    <div class="row">
                         <div class="mr-0">
                             <asp:GridView ID="DG_Encuestas2" CssClass="table table-bordered" DataKeyNames="idEncuesta" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                 <Columns>
@@ -20,14 +25,26 @@
                                     <asp:BoundField DataField="idTipoEncuesta" HeaderText="Tipo" />
                                     <asp:BoundField DataField="Titulo" HeaderText="Titulo" />
                                     <asp:BoundField DataField="FechaVencimiento" HeaderText="Fecha Vencimiento" />
+
+                                    <asp:TemplateField ShowHeader="False">
+                                        <ItemTemplate>
+                                            <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/img/delete.png" Text="Delete" OnClientClick="return confirm('Está seguro de realizar la acción?');" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
                                 </Columns>
+                                <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="Black" />
                             </asp:GridView>
                         </div>
                     </div>
                 </div>
             </div>
-            <br />
-            <div class="row">
+            <!-- Fin Grilla -->
+
+            
+            <!-- Comienzo detalle -->
+            <div class="row" id="contenido" runat="server" visible="false">
+
                 <div class="card-body">
                     <div class="card card-body">
                         <div class="mr-0">
@@ -61,40 +78,42 @@
                                     <h4>Preguntas</h4>
                                     <asp:GridView ID="GV_Preguntas" CssClass="table table-bordered" DataKeyNames="idPregunta" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                         <Columns>
-                                            <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Rtas" SelectText ="-->" />
-                                             <asp:BoundField DataField="idPregunta" HeaderText="Número" />
+                                            <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Rtas" SelectText="-->" />
+                                            <asp:BoundField DataField="idPregunta" HeaderText="Número" />
                                             <asp:BoundField DataField="Pregunta" HeaderText="Pregunta" />
                                         </Columns>
+                                        <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="Black" />
                                     </asp:GridView>
-                                   
+
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                   <h4>Respuestas</h4>
+                                    <h4>Respuestas</h4>
                                     <asp:GridView ID="Respuestas" CssClass="table table-bordered" DataKeyNames="idRespuesta" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                         <Columns>
-                                            <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Rtas" SelectText ="-->" />
-                                           <asp:BoundField DataField="idRespuesta" HeaderText="Número" />
+                                            <asp:CommandField ShowSelectButton="True" ButtonType="Link" HeaderText="Rtas" SelectText="-->" />
+                                            <asp:BoundField DataField="idRespuesta" HeaderText="Número" />
                                             <asp:BoundField DataField="Respuesta" HeaderText="Respuesta" />
                                         </Columns>
+                                        <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="Black" />
                                     </asp:GridView>
-                                
+
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                   <h4>Editar Encuesta</h4>
+                                    <h4>Editar Encuesta</h4>
                                     <asp:Button ID="btnNuevaEncuesta" runat="server" Text="Nueva" />
                                     <asp:Button ID="btnEditarEncuesta" runat="server" Text="Modificar" />
                                     <asp:Button ID="btnEliminarEncuesta" runat="server" Text="Eliminar" />
-                                
+
                                 </div>
                             </div>
 
-                            
+
                             <%--Cuarta fila--%>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    
+
                                     <asp:Panel ID="Panel1" runat="server" Visible="false">
                                         <asp:TextBox ID="txtPregunta" runat="server"></asp:TextBox>
                                         <asp:ImageButton ID="btnAddPregunta" runat="server" ImageUrl="~/img/select.png" />
@@ -107,7 +126,7 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    
+
                                     <asp:Panel ID="Panel2" runat="server" Visible="false">
                                         <asp:TextBox ID="txtRta" runat="server"></asp:TextBox>
                                         <asp:ImageButton ID="btnAddRta" runat="server" ImageUrl="~/img/select.png" />

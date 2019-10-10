@@ -8,7 +8,7 @@
             <br />
             <h3 class="section-title">Gestionar Material de Estudio</h3>
 
-            
+                    <!-- Comienzo Grilla -->
                     <div class="card-body">
                         <div class="card card-body">
                             <div class="row">
@@ -44,12 +44,16 @@
                                             </asp:TemplateField>
 
                                         </Columns>
+                                        <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="Black" />
                                     </asp:GridView>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Fin Grilla -->
                     <br />
+
+                    <!-- Comienzo detalle -->
                     <div class="row" id="contenido" runat="server" visible="false">
 
                         <div class="card-body">
@@ -98,6 +102,7 @@
                             </div>
                         </div>
                     </div>
+            <!-- Fin detalle -->
                 
         </div>
     </section>

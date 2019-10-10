@@ -55,6 +55,9 @@ Public Class GestionarEncuestas
 
     Private Sub DG_Encuestas2_SelectedIndexChanging(sender As Object, e As GridViewSelectEventArgs) Handles DG_Encuestas2.SelectedIndexChanging
         Try
+
+            contenido.Visible = True
+
             Session("idEncuesta") = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(1).Text
             Dim idEnc As Integer = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(1).Text
             TB_Titulo.Text = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(3).Text

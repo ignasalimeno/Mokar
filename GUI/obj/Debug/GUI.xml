@@ -233,9 +233,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.GestionarEncuestas._btnAgregar">
+<summary>
+btnAgregar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarEncuestas._DG_Encuestas2">
 <summary>
 DG_Encuestas2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._contenido">
+<summary>
+contenido control.
 </summary>
 <remarks>
 Auto-generated field.

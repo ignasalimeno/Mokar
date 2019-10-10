@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class GestionarEncuestas
     
     '''<summary>
+    '''btnAgregar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''DG_Encuestas2 control.
     '''</summary>
     '''<remarks>
@@ -21,6 +30,15 @@ Partial Public Class GestionarEncuestas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DG_Encuestas2 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''contenido control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents contenido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''DDL_Tipo control.
