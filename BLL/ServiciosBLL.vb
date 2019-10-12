@@ -104,4 +104,12 @@ Public Class ServiciosBLL
 
     End Function
 
+    Public Function AgregarVoto(idServicio As Integer, voto As Integer) As Boolean
+        Try
+            Return ServiciosMPP.ObtenerInstancia.AgregarVoto(idServicio, voto)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 End Class

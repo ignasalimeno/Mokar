@@ -319,4 +319,17 @@ Public Class ServiciosMPP
 
     End Function
 
+    Public Function AgregarVoto(idServicio As Integer, voto As Integer) As Boolean
+        Dim oDatos As New DAL.Datos
+        Dim hdatos As New Hashtable
+        Dim resultado As Boolean
+
+        hdatos.Add("@idServicio", idServicio)
+        hdatos.Add("@voto", voto)
+
+        resultado = oDatos.Escribir("n_Servicios_Votar", hdatos)
+
+        Return resultado
+    End Function
+
 End Class

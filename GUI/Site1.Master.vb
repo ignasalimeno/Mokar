@@ -9,6 +9,7 @@ Public Class Site1
 
     Private ValidarUsuario As Boolean = False
     Dim UsuarioLoguedo As New UsuarioBE
+    Dim ChatBE As New ChatBE
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -21,6 +22,8 @@ Public Class Site1
             Me.RefrescarRol()
             Me.RefrescarPlanes()
             RefrescarCategorias()
+            btnChat.Visible = False
+
 
             If Session("UsuarioLog") IsNot Nothing Then
                 UsuarioLoguedo = Session("UsuarioLog")
@@ -33,9 +36,77 @@ Public Class Site1
                 btn_Logout.Visible = True
                 btnRegistrarse.Visible = False
                 Panel1.Visible = True
+                btnChat.Visible = True
+                If ChatBLL.ObtenerInstancia.ListarRespuestasNoLeidas(UsuarioLoguedo) > 0 Then
+                    btnChat.ImageUrl = "~/img/email-not.png"
+                End If
+                cargarChat()
             End If
 
         End If
+    End Sub
+
+    Sub cargarChat()
+        Try
+            Dim User As New UsuarioBE
+            User = GestorSesion.ObtenerSesionActual.UsuarioActivo
+            Session("IDUser") = User.idUsuario
+
+
+            ''Validar si es interno o externo
+            If User.tipoUsuario = 1 Then
+                Session("UsuarioBackend") = User
+                btnChat.Visible = False
+            ElseIf User.tipoUsuario = 2 Then
+                Session("UsuarioFinal") = User
+            End If
+
+            Session("Fila") = Nothing
+            If Session("UsuarioFinal") IsNot Nothing Then
+                divChatChat.Visible = True
+                ChatBE.ID_Usuario = DirectCast(Session("UsuarioFinal"), UsuarioBE).idUsuario
+                ChatBE.Respuesta = True
+                ChatBLL.ObtenerInstancia.LeerMensaje(ChatBE)
+
+                Session("Chat") = ChatBLL.ObtenerInstancia.ObtenerMensajexUser(Session("IDUser"))
+
+                Dim Iterador As Integer = 0
+                Dim Chat As String = ""
+                ulChatVentana.InnerHtml = ""
+
+                For Each Mensaje In TryCast(Session("Chat"), List(Of ChatBE))
+                    If (Session("UsuarioFinal") Is Nothing And Mensaje.Respuesta = True) Or (Session("UsuarioFinal") IsNot Nothing And Mensaje.Respuesta = False) Then
+                        Chat += "<li class=""left clearfix"">" &
+                                    "<div class=""chat-body clearfix"">" &
+                                        "<div class=""header"">" &
+                                            "<small class=""pull-right text-muted"">" &
+                                                "<span class=""glyphicon glyphicon-time""></span>" & Mensaje.FechaHora & "</small>" &
+                                        "</div>" &
+                                        "</br><div class=""pull-right""><p>" & Mensaje.Mensaje & "</p></div>" &
+                                    "</div>" &
+                                "</li>"
+                    Else
+                        Chat += "<li class=""right clearfix"">" &
+                                    "<div class=""chat-body clearfix"">" &
+                                        "<div class=""header"">" &
+                                            "<small class=""pull-left text-muted"">" &
+                                                "<span class=""glyphicon glyphicon-time""></span>" & Mensaje.FechaHora & "</small>" &
+                                        "</div>" &
+                                        "</br><div class=""pull-left""><p>" & Mensaje.Mensaje & "</p></div>" &
+                                    "</div>" &
+                                "</li>"
+                    End If
+                Next
+                ulChatVentana.InnerHtml = Chat
+            Else
+
+
+                'CargarChat()
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btn_Ingresar_LOGIN_Click(sender As Object, e As EventArgs) Handles btn_Ingresar_LOGIN.Click
@@ -310,11 +381,20 @@ Public Class Site1
                 Dim miUser As New UsuarioBE With {.mail = txtMailNL.Text}
                 Dim listCat As New List(Of CategoriaBE)
 
-                For Each a As ListItem In checkCategorias.Items
-                    If a.Selected Then
+                If ckTodas.Checked Then
+                    For Each a As ListItem In checkCategorias.Items
+
                         listCat.Add(New CategoriaBE With {.idCategoria = a.Value})
-                    End If
-                Next
+
+                    Next
+                Else
+                    For Each a As ListItem In checkCategorias.Items
+                        If a.Selected Then
+                            listCat.Add(New CategoriaBE With {.idCategoria = a.Value})
+                        End If
+                    Next
+                End If
+
 
                 If listCat.Count > 0 Then
                     If NewsletterBLL.ObtenerInstancia.Suscribirse(miUser, listCat) Then
@@ -333,6 +413,68 @@ Public Class Site1
 
         End Try
 
+    End Sub
+
+    Protected Sub btnChat_Click(sender As Object, e As ImageClickEventArgs)
+        Try
+            Response.Redirect("Chat.aspx")
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnChatEnviar_ServerClick(sender As Object, e As EventArgs) Handles btnChatEnviar.Click
+
+        Try
+            If Session("UsuarioFinal") Is Nothing Then
+                ChatBE.ID_Usuario = Session("IDUsuarioSeleccionado")
+                ChatBE.Mensaje = txtChatMensaje.Value
+                ChatBE.FechaHora = Now
+                ChatBE.Respuesta = True
+                ChatBLL.ObtenerInstancia.NuevoMensaje(ChatBE)
+            Else
+                ChatBE.ID_Usuario = GestorSesion.ObtenerSesionActual.UsuarioActivo.idUsuario
+                ChatBE.Mensaje = txtChatMensaje.Value
+                ChatBE.FechaHora = DateTime.Now
+                ChatBE.Respuesta = False
+                ChatBLL.ObtenerInstancia.NuevoMensaje(ChatBE)
+            End If
+
+            Session("Chat") = ChatBLL.ObtenerInstancia.ObtenerMensajexUser(Session("IDUser"))
+
+            Dim Iterador As Integer = 0
+            Dim Chat As String = ""
+            ulChatVentana.InnerHtml = ""
+
+            For Each Mensaje In TryCast(Session("Chat"), List(Of ChatBE))
+                If (Session("UsuarioFinal") Is Nothing And Mensaje.Respuesta = True) Or (Session("UsuarioFinal") IsNot Nothing And Mensaje.Respuesta = False) Then
+                    Chat += "<li class=""left clearfix"">" &
+                                "<div class=""chat-body clearfix"">" &
+                                    "<div class=""header"">" &
+                                        "<small class=""pull-right text-muted"">" &
+                                            "<span class=""glyphicon glyphicon-time""></span>" & Mensaje.FechaHora & "</small>" &
+                                    "</div>" &
+                                    "</br><div class=""pull-right""><p>" & Mensaje.Mensaje & "</p></div>" &
+                                "</div>" &
+                            "</li>"
+                Else
+                    Chat += "<li class=""right clearfix"">" &
+                                "<div class=""chat-body clearfix"">" &
+                                    "<div class=""header"">" &
+                                        "<small class=""pull-left text-muted"">" &
+                                            "<span class=""glyphicon glyphicon-time""></span>" & Mensaje.FechaHora & "</small>" &
+                                    "</div>" &
+                                    "</br><div class=""pull-left""><p>" & Mensaje.Mensaje & "</p></div>" &
+                                "</div>" &
+                            "</li>"
+                End If
+            Next
+            ulChatVentana.InnerHtml = Chat
+
+            txtChatMensaje.Value = ""
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 

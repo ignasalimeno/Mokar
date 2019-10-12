@@ -809,6 +809,24 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:GUI.MiCuentaCorriente._Panel_NC">
+<summary>
+Panel_NC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MiCuentaCorriente._DG_CC">
+<summary>
+DG_CC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.MisOfertas._Image1">
 <summary>
 Image1 control.
@@ -899,6 +917,78 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.MisOfertas._MediosDePago">
+<summary>
+MediosDePago control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._Panel1">
+<summary>
+Panel1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._totPagar">
+<summary>
+totPagar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._totPendiente">
+<summary>
+totPendiente control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._btnAgregarTC">
+<summary>
+btnAgregarTC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._btnAgregarNC">
+<summary>
+btnAgregarNC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._btnConfirmarPago">
+<summary>
+btnConfirmarPago control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._DG_Pagos">
+<summary>
+DG_Pagos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.MisOfertas._DIV_MdePago">
 <summary>
 DIV_MdePago control.
@@ -953,9 +1043,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.MisOfertas._btn_Confirmar">
+<member name="F:GUI.MisOfertas._btn_CancelarNC">
 <summary>
-btn_Confirmar control.
+btn_CancelarNC control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1115,6 +1205,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.MisOfertas._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisOfertas._txtMontoTC">
+<summary>
+txtMontoTC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.MisOfertas._btn_EnviarPago">
 <summary>
 btn_EnviarPago control.
@@ -1124,9 +1232,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.MisOfertas._btn_Cancelar">
+<summary>
+btn_Cancelar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.MisFacturas._DG_Facturas">
 <summary>
 DG_Facturas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisFacturas._contenido">
+<summary>
+contenido control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1145,6 +1271,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.MisFacturas._RFV_Cancelacion">
 <summary>
 RFV_Cancelacion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisFacturas._btnConfirmar">
+<summary>
+btnConfirmar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisFacturas._btnCancelar">
+<summary>
+btnCancelar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1178,6 +1322,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.MisFacturas1._contenido">
+<summary>
+contenido control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisFacturas1._HiddenField1">
+<summary>
+HiddenField1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.MisFacturas1._TB_Ingresar_Motivo">
 <summary>
 TB_Ingresar_Motivo control.
@@ -1190,6 +1352,105 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.MisFacturas1._RFV_Cancelacion">
 <summary>
 RFV_Cancelacion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisFacturas1._btnConfirmar">
+<summary>
+btnConfirmar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisFacturas1._btnCancelar">
+<summary>
+btnCancelar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisPedidos._ModalEstrellas1">
+<summary>
+ModalEstrellas1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisPedidos._Panel_NC">
+<summary>
+Panel_NC control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MisPedidos._DG_Pedidos">
+<summary>
+DG_Pedidos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.ModalEstrellas._img1">
+<summary>
+img1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.ModalEstrellas._img2">
+<summary>
+img2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.ModalEstrellas._img3">
+<summary>
+img3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.ModalEstrellas._img4">
+<summary>
+img4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.ModalEstrellas._img5">
+<summary>
+img5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.ModalEstrellas._btnVotar">
+<summary>
+btnVotar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1817,6 +2078,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Site1._Lateral_menu">
+<summary>
+Lateral_menu control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Site1._Panel1">
 <summary>
 Panel1 control.
@@ -1838,6 +2108,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Site1._btn_Logout">
 <summary>
 btn_Logout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._btnChat">
+<summary>
+btnChat control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1871,6 +2150,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Site1._Button1">
+<summary>
+Button1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Site1._ScriptManagerEventos">
 <summary>
 ScriptManagerEventos control.
@@ -1883,6 +2171,69 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Site1._MensajesModal">
 <summary>
 MensajesModal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._ModalEstrellas">
+<summary>
+ModalEstrellas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._UpdatePanel3">
+<summary>
+UpdatePanel3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._divChatControles">
+<summary>
+divChatControles control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._divChatChat">
+<summary>
+divChatChat control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._ulChatVentana">
+<summary>
+ulChatVentana control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._txtChatMensaje">
+<summary>
+txtChatMensaje control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._btnChatEnviar">
+<summary>
+btnChatEnviar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2213,6 +2564,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Site1._UpdatePanel2">
+<summary>
+UpdatePanel2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Site1._txtMailNL">
 <summary>
 txtMailNL control.
@@ -2249,6 +2609,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Site1._ckTodas">
+<summary>
+ckTodas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Site1._checkCategorias">
 <summary>
 checkCategorias control.
@@ -2261,15 +2630,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Site1._btnSuscribirse">
 <summary>
 btnSuscribirse control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Site1._Lateral_menu">
-<summary>
-Lateral_menu control.
 </summary>
 <remarks>
 Auto-generated field.

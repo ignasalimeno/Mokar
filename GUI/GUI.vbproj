@@ -24,7 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-     <TargetFrameworkProfile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +34,6 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>GUI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-   
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,6 +114,7 @@
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\chat.css" />
+    <Content Include="css\Chat2.css" />
     <Content Include="css\classy-nav.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\magnific-popup.css" />
@@ -177,8 +177,11 @@
     <Content Include="img\clients\client-6.png" />
     <Content Include="img\clients\client-7.png" />
     <Content Include="img\clients\client-8.png" />
+    <Content Include="img\completa.png" />
     <Content Include="img\delete.png" />
     <Content Include="img\edit.png" />
+    <Content Include="img\email-icon.png" />
+    <Content Include="img\email-not.png" />
     <Content Include="img\favicon.png" />
     <Content Include="img\features-1.svg" />
     <Content Include="img\features-2.svg" />
@@ -215,6 +218,7 @@
     <Content Include="img\testimonial-4.jpg" />
     <Content Include="img\equipo.jpg" />
     <Content Include="img\equipo1.jpg" />
+    <Content Include="img\vacia.png" />
     <Content Include="img\why-us.jpg" />
     <Content Include="img\yo.jpg" />
     <Content Include="Index.aspx" />
@@ -265,9 +269,12 @@
     <Content Include="materialEstudio\plan_blue.jpg" />
     <Content Include="MaterialEstudio_Descargar.aspx" />
     <Content Include="Mensajes%28Modal%29.ascx" />
+    <Content Include="MiCuentaCorriente.aspx" />
     <Content Include="MisCompras.aspx" />
     <Content Include="Facturas.aspx" />
     <Content Include="MisFacturas.aspx" />
+    <Content Include="MisPedidos.aspx" />
+    <Content Include="ModalEstrellas.ascx" />
     <Content Include="Newsletter_Des.aspx" />
     <Content Include="Newsletter_Noticia.aspx" />
     <Content Include="NewPass.aspx" />
@@ -302,6 +309,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="css\chat3.less" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -657,6 +665,13 @@
       <DependentUpon>Mensajes%28Modal%29.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="MiCuentaCorriente.aspx.designer.vb">
+      <DependentUpon>MiCuentaCorriente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiCuentaCorriente.aspx.vb">
+      <DependentUpon>MiCuentaCorriente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="MisCompras.aspx.designer.vb">
       <DependentUpon>MisCompras.aspx</DependentUpon>
     </Compile>
@@ -677,6 +692,20 @@
     <Compile Include="MisFacturas.aspx.vb">
       <DependentUpon>MisFacturas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MisPedidos.aspx.designer.vb">
+      <DependentUpon>MisPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisPedidos.aspx.vb">
+      <DependentUpon>MisPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ModalEstrellas.ascx.designer.vb">
+      <DependentUpon>ModalEstrellas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ModalEstrellas.ascx.vb">
+      <DependentUpon>ModalEstrellas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -854,7 +883,6 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  
   <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -897,9 +925,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    
   </Target>
-  
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

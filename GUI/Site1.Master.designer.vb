@@ -23,6 +23,15 @@ Partial Public Class Site1
     Protected WithEvents Form2 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
+    '''Lateral_menu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Lateral_menu As Global.System.Web.UI.WebControls.Menu
+    
+    '''<summary>
     '''Panel1 control.
     '''</summary>
     '''<remarks>
@@ -48,6 +57,15 @@ Partial Public Class Site1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_Logout As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnChat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnChat As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
     '''btnRegistrarse control.
@@ -93,6 +111,69 @@ Partial Public Class Site1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents MensajesModal As Global.GUI.Mensajes_Modal_
+    
+    '''<summary>
+    '''ModalEstrellas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalEstrellas As Global.GUI.ModalEstrellas
+    
+    '''<summary>
+    '''UpdatePanel3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UpdatePanel3 As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
+    '''divChatControles control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divChatControles As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''divChatChat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divChatChat As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''ulChatVentana control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ulChatVentana As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''txtChatMensaje control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtChatMensaje As Global.System.Web.UI.HtmlControls.HtmlInputText
+    
+    '''<summary>
+    '''btnChatEnviar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnChatEnviar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''lblSeleccionarTipo control.
@@ -419,6 +500,15 @@ Partial Public Class Site1
     Protected WithEvents btn_Ingresar_LOGIN As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''UpdatePanel2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UpdatePanel2 As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
     '''txtMailNL control.
     '''</summary>
     '''<remarks>
@@ -455,6 +545,15 @@ Partial Public Class Site1
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''ckTodas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ckTodas As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
     '''checkCategorias control.
     '''</summary>
     '''<remarks>
@@ -471,15 +570,6 @@ Partial Public Class Site1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSuscribirse As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Lateral_menu control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Lateral_menu As Global.System.Web.UI.WebControls.Menu
     
     '''<summary>
     '''ContentPlaceHolder1 control.

@@ -134,4 +134,26 @@ Public Class ChatMPP
         Return ListaM
     End Function
 
+    Public Function ListarRespuestasNoLeidas(ByVal ID As UsuarioBE) As Integer
+        Try
+            Dim hdatos As New Hashtable
+            hdatos.Add("@tipoConsulta", 8)
+            hdatos.Add("@idUsuario", ID.idUsuario)
+            hdatos.Add("@Mensaje", DBNull.Value)
+            hdatos.Add("@FechaHora", DBNull.Value)
+            hdatos.Add("@Respuesta", DBNull.Value)
+
+            Dim dt As DataTable
+            dt = Datos.ObtenerInstancia.Leer("n_Chat_ABMC", hdatos).Tables(0)
+            If dt.Rows.Count > 0 Then
+                Return dt.Rows.Count
+            Else
+                Return 0
+            End If
+
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
+
 End Class

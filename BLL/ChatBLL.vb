@@ -52,4 +52,12 @@ Public Class ChatBLL
     Public Function ObtenerMensajexUser(ByVal ID As Integer) As List(Of ChatBE)
         Return ChatMPP.ObtenerInstancia.ObtenerMensajexUser(ID)
     End Function
+
+    Public Function ListarRespuestasNoLeidas(ID As UsuarioBE) As Integer
+        Try
+            Return ChatMPP.ObtenerInstancia.ListarRespuestasNoLeidas(ID)
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
 End Class

@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" runat="server" id="contenido" visible="false">
                 <div class="card-body">
                     <div class="card card-body">
                         <div class="mr-0">
@@ -46,12 +46,17 @@
                             </div>
                             <br />
                             <label>Ingresar el motivo de cancelacion</label>
-                            <asp:TextBox CssClass="form-control" ID="TB_Ingresar_Motivo" runat="server"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="TB_Ingresar_Motivo" runat="server" Width="412px"></asp:TextBox>
 
                             <asp:RequiredFieldValidator ID="RFV_Cancelacion" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Ingresar_Motivo"
                                 ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
                         </div>
+                        <div class="col-6">
+                        <asp:Button ID="btnConfirmar" CssClass="btn btn-primary" runat="server" OnClientClick="return confirm('Está seguro de realizar la acción?');" Text="Confirmar" Width="128px" />
+<br /><br />
+                        <asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" Width="128px" />
 
+                    </div>
                     </div>
                 </div>
             </div>

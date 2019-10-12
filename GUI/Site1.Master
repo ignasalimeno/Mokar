@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="GUI.Site1" %>
 
 <%@ Register Src="~/Mensajes(Modal).ascx" TagPrefix="uc1" TagName="MensajesModal" %>
+<%@ Register Src="~/ModalEstrellas.ascx" TagPrefix="uc2" TagName="ModalEstrellas" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +29,7 @@
     <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    
+
     <link href="css/chat.css" rel="stylesheet" />
 
     <!-- Main Stylesheet File -->
@@ -96,360 +98,416 @@
         <!--==========================
   Header
   ============================-->
+        <div class="d-flex toggled" id="wrapper">
 
 
-        <header id="header">
+            <!-- Sidebar -->
+            <div class="bg-light" id="sidebar-wrapper">
+                <div class="sidebar-heading">Menu de Usuario</div>
+                <div class="list-group list-group-flush">
+                    <asp:Menu ID="Lateral_menu" runat="server" Orientation="vertical" CssClass="navbar-nav mr-auto" StaticMenuStyle-CssClass="nav-item" StaticSelectedStyle-CssClass="nav-item" StaticSubMenuIndent="16px" DynamicMenuStyle-CssClass="nav-item dropdown-menu" RenderingMode="List" role="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-            <div id="topbar">
-                <div class="container">
-                    <div class="row">
-                        <asp:Panel ID="Panel1" runat="server">
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary" id="btnMenuToggle">Ver Menú</button>
-                            </div>
-                        </asp:Panel>
-                        <%--<p runat="server" id="L_Logueado"></p>--%>
-                        <div class="row">
+                        <LevelMenuItemStyles>
+                            <asp:MenuItemStyle CssClass="dropdown-item" HorizontalPadding="15px" Height="50px" VerticalPadding="15px" />
+                        </LevelMenuItemStyles>
+                        <LevelSelectedStyles>
+                            <asp:MenuItemStyle CssClass="nav-item active" Font-Underline="False" />
+                        </LevelSelectedStyles>
+                        <StaticHoverStyle Font-Underline="true" />
+                        <StaticSelectedStyle Font-Bold="true" />
+                        <DynamicMenuItemStyle CssClass="dropdown-item" />
+                    </asp:Menu>
 
-                            <div class="col">
-                                <asp:Label ID="L_Logueado" runat="server" Text="Label"></asp:Label>
-                            </div>
-                            <div class="col">
-                                <asp:Button ID="btn_Logout" runat="server" Text="Logout" CssClass="btn btn-info" />
-                            </div>
-                        </div>
-                        <div class="mr-4">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1" id="btnRegistrarse" runat="server">Registrarse</button>
-                        </div>
-                        <asp:Label ID="Label1" runat="server" Text="   "></asp:Label>
-                        <div >
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Login" id="btnLogin" runat="server">Login</button>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <!-- /#sidebar-wrapper -->
 
-            <div class="container">
 
-                <div class="logo float-left">
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <h1 class="text-light"><a href="#intro" class="scrollto"><span>MOKAR</span></a></h1>
-                    <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
-                </div>
+            <!-- Contenido -->
+            <div id="page-content-wrapper">
 
-                <nav class="main-nav float-right d-none d-lg-block">
-                    <ul>
-                        <li class="active"><a href="/Index.aspx">Home</a></li>
-                        <li class="drop-down"><a href="/Index.aspx#about">Sobre nosotros</a>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+                    <div id="topbar">
+                        <div class="container">
+                            <div class="row">
+                                <asp:Panel ID="Panel1" runat="server">
+                                    <div class="col-12">
+                                        <button type="button" class="btn btn-primary" id="btnMenuToggle">Ver Menú</button>
+                                    </div>
+                                </asp:Panel>
+
+                                <div class="row">
+
+                                    <div class="col">
+                                        <asp:Label ID="L_Logueado" runat="server" Text="Label"></asp:Label>
+                                    </div>
+                                    <div class="col">
+                                        <asp:Button ID="btn_Logout" runat="server" Text="Logout" CssClass="btn btn-info" />
+                                    </div>
+                                    <div class="col">
+                                        <asp:ImageButton ID="btnChat" runat="server" ImageUrl="~/img/email-icon.png" data-toggle="modal" data-target="#ModalChat" OnClientClick="return false;" />
+                                    </div>
+                                </div>
+                                <div class="mr-4">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1" id="btnRegistrarse" runat="server">Registrarse</button>
+                                </div>
+                                <asp:Label ID="Label1" runat="server" Text="   "></asp:Label>
+                                <div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Login" id="btnLogin" runat="server">Login</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+
+                        <div class="logo float-left">
+                            <!-- Uncomment below if you prefer to use an image logo -->
+                            <h1 class="text-light"><a href="#intro" class="scrollto"><span>MOKAR</span></a></h1>
+                            <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+                        </div>
+
+                        <nav class="main-nav float-right d-none d-lg-block">
                             <ul>
-                                <li><a href="/Index.aspx#about">¿Quienes somos?</a></li>
+                                <li class="active"><a href="/Index.aspx">Home</a></li>
+                                <li class="drop-down"><a href="/Index.aspx#about">Sobre nosotros</a>
+                                    <ul>
+                                        <li><a href="/Index.aspx#about">¿Quienes somos?</a></li>
 
-                                <li><a href="/Index.aspx#why-us">¿Por qué elegrinos?</a></li>
-                                <li><a href="/Index.aspx#testimonials">Testimonios</a></li>
+                                        <li><a href="/Index.aspx#why-us">¿Por qué elegrinos?</a></li>
+                                        <li><a href="/Index.aspx#testimonials">Testimonios</a></li>
+
+                                    </ul>
+                                    <li><a href="/Index.aspx#services">Servicios</a></li>
+                                <li><a href="/Index.aspx#team">Equipo</a></li>
+                                <li class="drop-down"><a>Noticias</a>
+                                    <ul>
+                                        <li><a href="Newsletter.aspx">Ver Noticias</a></li>
+                                        <li><a href="" data-toggle="modal" data-target="#Modal_Newsletter">Suscribase</a></li>
+
+                                    </ul>
+                                    <li><a href="/Index.aspx#services">Servicios</a></li>
+
+                                <li><a href="/Index.aspx#faq">FAQs</a></li>
+                                <li><a href="Encuesta.aspx">Encuesta</a></li>
 
                             </ul>
-                            <li><a href="/Index.aspx#services">Servicios</a></li>
-                        <li><a href="/Index.aspx#team">Equipo</a></li>
-                        <li class="drop-down"><a>Noticias</a>
-                            <ul>
-                                 <li><a href="Newsletter.aspx">Ver Noticias</a></li>
-                                <li><a data-toggle="modal" data-target="#Modal_Newsletter">Suscribase!</a></li>
-                               
-                            </ul>
-                            <li><a href="/Index.aspx#services">Servicios</a></li>
-                        
-                        <li><a href="/Index.aspx#faq">FAQs</a></li>
-                            <li><a href="Encuesta.aspx">Encuesta</a></li>
+                        </nav>
 
-                    </ul>
+                    </div>
                 </nav>
 
-            </div>
-        </header>
+                <section id="body" class="clearfix">
 
-        <!-- #header -->
-        <section id="body" class="clearfix">
+                    <asp:ScriptManager ID="ScriptManagerEventos" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+                    <uc1:MensajesModal runat="server" ID="MensajesModal" />
+                    <uc2:ModalEstrellas runat="server" id="ModalEstrellas" />
 
+                    <!-- MODALES -->
 
-            <asp:ScriptManager ID="ScriptManagerEventos" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
-            <uc1:MensajesModal runat="server" ID="MensajesModal" />
-            <%--<uc2:MensajeModal_2 runat="server" ID="MensajeModal_2" />
-        <uc1:MensajesModal runat="server" ID="MensajesModal" />--%>
+                    <!-- MODAL CHAT -->
+                    <div class="modal fade" id="ModalChat" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPass" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="">Chat</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
 
-
-            <!-- MODALES -->
-            <!-- Modal -->
-            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel1">Registrate</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 10px">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                                    <%--Contenido del Modal--%>
+                                    <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Always">
+                                        <ContentTemplate>
+                                            <div id="divChatControles" runat="server" class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div id="divChatChat" runat="server">
+                                                            <div class="panel panel-primary">
+                                                                <div class="panel-heading text-center" id="accordion">
+                                                                    <span class="glyphicon glyphicon-comment"></span>Chat
+								
+                                                                </div>
+                                                                <div class="panel-collapse" id="collapseOne">
+                                                                    <div class="panel-body">
+                                                                        <ul id="ulChatVentana" runat="server" class="chat">
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="panel-footer">
+                                                                        <div class="input-group">
+                                                                            <input id="txtChatMensaje" type="text" runat="server" class="form-control input-sm" />
+                                                                            <span class="input-group-btn">
+                                                                                <asp:Button class="btn btn-warning btn-sm" ID="btnChatEnviar" runat="server" Text="Enviar" />
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ContentTemplate>
+                                        <Triggers>
+                                            <asp:AsyncPostBackTrigger ControlID="btnChatEnviar" EventName="Click" />
+                                        </Triggers>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <%--Contenido del Modal--%>
+                    </div>
+                    <!-- FIN MODAL CHAT -->
 
-                            <%-- Comienza el Registro --%>
-                            <p>Si aún no estas registrado, hacelo!</p>
-                            <div class="Form-group2" runat="server">
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabel1">Registrate</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 10px">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <%--Contenido del Modal--%>
 
-                                <asp:Label ID="lblSeleccionarTipo" runat="server" Text="Seleccione el tipo de cliente"></asp:Label>
-                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                    <ContentTemplate>
-                                        <asp:DropDownList CssClass="form-control" ID="DDL_Roles" runat="server" AutoPostBack="true" OnSelectedIndexChanged="cambioTipoDeCliente"></asp:DropDownList>
+                                    <%-- Comienza el Registro --%>
+                                    <p>Si aún no estas registrado, hacelo!</p>
+                                    <div class="Form-group2" runat="server">
+
+                                        <asp:Label ID="lblSeleccionarTipo" runat="server" Text="Seleccione el tipo de cliente"></asp:Label>
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                            <ContentTemplate>
+                                                <asp:DropDownList CssClass="form-control" ID="DDL_Roles" runat="server" AutoPostBack="true" OnSelectedIndexChanged="cambioTipoDeCliente"></asp:DropDownList>
+                                                <br />
+                                                <div class="Form-group2" runat="server">
+                                                    <asp:Label ID="lblNombre" runat="server" Text="Ingresar Nombre y Apellido"></asp:Label>
+                                                    <asp:TextBox CssClass="form-control" ID="TB_Nombre" runat="server" MaxLength="50" Width="100%"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RFV_TBNombre" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Nombre"
+                                                        ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                                </div>
+
+                                                <div class="Form-group2">
+                                                    <asp:Label ID="lblDNI" runat="server" Text="Ingresar el DNI"></asp:Label>
+                                                    <asp:TextBox CssClass="form-control" ID="tb_Dni" runat="server" Maxlenght="50" Width="100%"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RFV_tbDni" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="tb_Dni"
+                                                        ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                                </div>
+
+                                            </ContentTemplate>
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="DDL_Roles" EventName="SelectedIndexChanged" />
+                                            </Triggers>
+
+                                        </asp:UpdatePanel>
+                                    </div>
+
+                                    <div class="Form-group2">
+                                        <label>Ingresar la dirección</label>
+                                        <asp:TextBox CssClass="form-control" ID="txtDireccion" runat="server" MaxLength="150" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_Direccion" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtDireccion"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="Form-group2">
+                                        <label>Ingresar el telefono</label>
+                                        <asp:TextBox CssClass="form-control" ID="txtTel" runat="server" MaxLength="50" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_Telefono" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtTel"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="Form-group2">
+                                        <label>Seleccione el tipo de Usuario</label>
+                                        <asp:DropDownList CssClass="form-control" ID="DDL_Planes" runat="server"
+                                            AutoPostBack="true">
+                                        </asp:DropDownList>
+                                    </div>
+                                    <br />
+
+                                    <div class="Form-group2">
+                                        <label>Ingresar el email</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_email" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_TBemail" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_email"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="Form-group2">
+                                        <label>Ingresar la Contraseña</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_Password" runat="server" TextMode="Password" MaxLength="50" Width="100%"> </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_TBPassword" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Password"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="Form-group2">
+                                        <label>Ingresar nuevamente la Contraseña</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_Password2" runat="server" TextMode="Password" MaxLength="50" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_TBPassword2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Password2"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="Form-group2">
                                         <br />
-                                        <div class="Form-group2" runat="server">
-                                            <asp:Label ID="lblNombre" runat="server" Text="Ingresar Nombre y Apellido"></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="TB_Nombre" runat="server" MaxLength="50" Width="100%"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RFV_TBNombre" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Nombre"
-                                                ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                                        </div>
+                                        <div class="g-recaptcha" data-sitekey="6LfFQLUUAAAAANh0hqzhgSBHplO4oy_jOx37LtuV"></div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <%--Contenido del Modal--%>
+                                </div>
 
-                                        <div class="Form-group2">
-                                            <asp:Label ID="lblDNI" runat="server" Text="Ingresar el DNI"></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="tb_Dni" runat="server" Maxlenght="50" Width="100%"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RFV_tbDni" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="tb_Dni"
-                                                ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                                        </div>
+                                <div class="modal-footer">
+                                    <asp:CheckBox ID="ck_Terminos" runat="server" />
+                                    <p>Al hacer clic en "Registrarse", acepto la <a href="Politicas.aspx">Política de privacidad</a> y <a href="Terminos_y_Condiciones.aspx">las Condiciones </a>Generales de Mokar.</p>
+                                    <asp:Button CssClass="btn btn-primary" ID="btn_Salir_LOGIN" runat="server" Text="Salir" />
+                                    <asp:Panel runat="server" ID="Panel_Boton_Registrarse">
+                                        <asp:Button CssClass="btn btn-primary" ID="btn_Ingresar_REG" runat="server" Text="Registrarse" ValidationGroup="Registrarse" />
 
-                                    </ContentTemplate>
-                                    <Triggers>
-                                        <asp:AsyncPostBackTrigger ControlID="DDL_Roles" EventName="SelectedIndexChanged" />
-                                    </Triggers>
-
-                                </asp:UpdatePanel>
+                                    </asp:Panel>
+                                </div>
                             </div>
-
-                            <div class="Form-group2">
-                                <label>Ingresar la dirección</label>
-                                <asp:TextBox CssClass="form-control" ID="txtDireccion" runat="server" MaxLength="150" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_Direccion" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtDireccion"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                            </div>
-
-                            <div class="Form-group2">
-                                <label>Ingresar el telefono</label>
-                                <asp:TextBox CssClass="form-control" ID="txtTel" runat="server" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_Telefono" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtTel"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                            </div>
-
-                            <div class="Form-group2">
-                                <label>Seleccione el tipo de Usuario</label>
-                                <asp:DropDownList CssClass="form-control" ID="DDL_Planes" runat="server"
-                                    AutoPostBack="true">
-                                </asp:DropDownList>
-                            </div>
-            <br />
-
-                            <div class="Form-group2">
-                                <label>Ingresar el email</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_email" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_TBemail" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_email"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                            </div>
-
-                            <div class="Form-group2">
-                                <label>Ingresar la Contraseña</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_Password" runat="server" TextMode="Password" MaxLength="50" Width="100%"> </asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_TBPassword" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Password"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                            </div>
-
-                            <div class="Form-group2">
-                                <label>Ingresar nuevamente la Contraseña</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_Password2" runat="server" TextMode="Password" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_TBPassword2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Password2"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
-                            </div>
-
-                            <div class="Form-group2">
-                                <br />
-                                <div class="g-recaptcha" data-sitekey="6LfFQLUUAAAAANh0hqzhgSBHplO4oy_jOx37LtuV"></div>
-                            </div>
-                            <div>
-                            </div>
-                            <%--Contenido del Modal--%>
-                        </div>
-
-                        <div class="modal-footer">
-                            <asp:CheckBox ID="ck_Terminos" runat="server" />
-                            <p>Al hacer clic en "Registrarse", acepto la <a href="Politicas.aspx">Política de privacidad</a> y <a href="Terminos_y_Condiciones.aspx">las Condiciones </a>Generales de Mokar.</p>
-                            <asp:Button CssClass="btn btn-primary" ID="btn_Salir_LOGIN" runat="server" Text="Salir" />
-                            <asp:Panel runat="server" ID="Panel_Boton_Registrarse">
-                                <asp:Button CssClass="btn btn-primary" ID="btn_Ingresar_REG" runat="server" Text="Registrarse" ValidationGroup="Registrarse" />
-
-                            </asp:Panel>
                         </div>
                     </div>
-                </div>
+                    <%-- Fin Modal Registrarse --%>
+
+                    <!-- Modal olvido contraseña -->
+                    <div class="modal fade" id="Modal_OlvidoPass" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPass" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabelPass">Recupero de contraseña</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <%--Contenido del Modal--%>
+                                    <div class="Form-group">
+                                        <label>Ingresar el email</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_email1" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_TBemail1" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_email1"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="OlvidoPass"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <br />
+                                    <div class="Form-group">
+                                        <label>Ingresar nuevamente el mail</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_email2" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_TBemail2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_email2"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="OlvidoPass"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <br />
+                                    <a runat="server" id="A1">Se enviará un correo para validar la identidad</a>
+                                    <br />
+                                    <br />
+                                    <div class="Form-group">
+                                        <asp:Button CssClass="btn btn-primary mb-2" ID="btn_Enviar" runat="server" Text="Enviar" ValidationGroup="OlvidoPass" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%-- Fin Modal olvido contraseña --%>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal_Login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" causesvalidation="false">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <%--Contenido del Modal--%>
+                                    <div class="Form-group">
+                                        <label>Ingresar el email</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_LOGIN_Ingresar_Mail" runat="server" MaxLength="50" Width="100%"> </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_email" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_LOGIN_Ingresar_Mail"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="login"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <br />
+                                    <div class="Form-group">
+                                        <label>Ingresar la Contraseña</label>
+                                        <asp:TextBox CssClass="form-control" ID="TB_LOGIN_Pass" runat="server" TextMode="Password" MaxLength="50" Width="100%"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RFV_password" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_LOGIN_Pass"
+                                            ForeColor="Red" Font-Bold="true" ValidationGroup="login"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <br />
+                                    <button type="button" class="btn btn-link" data-toggle="modal" data-dismiss="modal" data-target="#Modal_OlvidoPass" id="Link_Olvido" runat="server">
+                                        ¿Olvidaste la contraseña?
+                                    </button>
+                                    <br />
+                                    <br />
+                                    <div class="Form-group">
+                                        <asp:Button CssClass="btn btn-primary mb-2" ID="btn_Ingresar_LOGIN" runat="server" Text="Ingresar" ValidationGroup="login" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%-- Fin Modal Login --%>
+
+                    <!-- Modal suscribirse al newsletter -->
+                    <div class="modal fade" id="Modal_Newsletter" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPass" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalNewsletter">Suscribirse a las noticias</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>
+                                            <%--Contenido del Modal--%>
+                                            <div class="Form-group">
+                                                <label>Ingresar el email</label>
+                                                <asp:TextBox CssClass="form-control" ID="txtMailNL" runat="server" MaxLength="50" Width="100%"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtMailNL"
+                                                    ForeColor="Red" Font-Bold="true" ValidationGroup="validarNL"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <br />
+                                            <div class="Form-group">
+                                                <label>Ingresar nuevamente el mail</label>
+                                                <asp:TextBox CssClass="form-control" ID="txtMailNLValidar" runat="server" MaxLength="50" Width="100%"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtMailNLValidar"
+                                                    ForeColor="Red" Font-Bold="true" ValidationGroup="validarNL"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <br />
+                                            <label>Seleccione las categorias</label>
+                                            <asp:CheckBox ID="ckTodas" runat="server" />
+                                            <asp:CheckBoxList ID="checkCategorias" runat="server"></asp:CheckBoxList>
+                                            <br />
+                                            <br />
+                                        </ContentTemplate>
+
+                                    </asp:UpdatePanel>
+                                    <div class="Form-group">
+                                        <asp:Button CssClass="btn btn-primary mb-2" ID="btnSuscribirse" runat="server" Text="Suscribirse" ValidationGroup="validarNL" />
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%-- Fin Modal olvido contraseña --%>
+
+
+
+                    <!-- Side Bar -->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+
             </div>
-            <%-- Fin Modal Registrarse --%>
-
-            <!-- Modal olvido contraseña -->
-            <div class="modal fade" id="Modal_OlvidoPass" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPass" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabelPass">Recupero de contraseña</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-                            <%--Contenido del Modal--%>
-                            <div class="Form-group">
-                                <label>Ingresar el email</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_email1" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_TBemail1" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_email1"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="OlvidoPass"></asp:RequiredFieldValidator>
-                            </div>
-                            <br />
-                            <div class="Form-group">
-                                <label>Ingresar nuevamente el mail</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_email2" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_TBemail2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_email2"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="OlvidoPass"></asp:RequiredFieldValidator>
-                            </div>
-                            <br />
-                            <a runat="server" id="A1">Se enviará un correo para validar la identidad</a>
-                            <br />
-                            <br />
-                            <div class="Form-group">
-                                <asp:Button CssClass="btn btn-primary mb-2" ID="btn_Enviar" runat="server" Text="Enviar" ValidationGroup="OlvidoPass" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <%-- Fin Modal olvido contraseña --%>
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="Modal_Login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" causesvalidation="false">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-                            <%--Contenido del Modal--%>
-                            <div class="Form-group">
-                                <label>Ingresar el email</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_LOGIN_Ingresar_Mail" runat="server" MaxLength="50" Width="100%"> </asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_email" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_LOGIN_Ingresar_Mail"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="login"></asp:RequiredFieldValidator>
-                            </div>
-                            <br />
-                            <div class="Form-group">
-                                <label>Ingresar la Contraseña</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_LOGIN_Pass" runat="server" TextMode="Password" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RFV_password" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_LOGIN_Pass"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="login"></asp:RequiredFieldValidator>
-                            </div>
-                            <br />
-                            <button type="button" class="btn btn-link" data-toggle="modal" data-dismiss="modal" data-target="#Modal_OlvidoPass" id="Link_Olvido" runat="server">
-                                ¿Olvidaste la contraseña?
-                            </button>
-                            <br />
-                            <br />
-                            <div class="Form-group">
-                                <asp:Button CssClass="btn btn-primary mb-2" ID="btn_Ingresar_LOGIN" runat="server" Text="Ingresar" ValidationGroup="login" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <%-- Fin Modal Login --%>
-
-
-            <!-- Modal suscribirse al newsletter -->
-            <div class="modal fade" id="Modal_Newsletter" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPass" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalNewsletter">Suscribirse a las noticias</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-                            <%--Contenido del Modal--%>
-                            <div class="Form-group">
-                                <label>Ingresar el email</label>
-                                <asp:TextBox CssClass="form-control" ID="txtMailNL" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtMailNL"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="validarNL"></asp:RequiredFieldValidator>
-                            </div>
-                            <br />
-                            <div class="Form-group">
-                                <label>Ingresar nuevamente el mail</label>
-                                <asp:TextBox CssClass="form-control" ID="txtMailNLValidar" runat="server" TextMode="Email" MaxLength="50" Width="100%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtMailNLValidar"
-                                    ForeColor="Red" Font-Bold="true" ValidationGroup="validarNL"></asp:RequiredFieldValidator>
-                            </div>
-                            <br />
-                            <label>Seleccione las categorias</label>
-                            <asp:CheckBoxList ID="checkCategorias" runat="server"></asp:CheckBoxList>
-                            <br />
-                            <br />
-                            <div class="Form-group">
-                                <asp:Button CssClass="btn btn-primary mb-2" ID="btnSuscribirse" runat="server" Text="Suscribirse" ValidationGroup="validarNL" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <%-- Fin Modal olvido contraseña --%>
-
-
-
-
-            <!-- Side Bar anterior-->
-
-            <div class="d-flex toggled" id="wrapper">
-                <!-- Sidebar -->
-                <div class="bg-light" id="sidebar-wrapper">
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Menú de Usuario</a>
-                        <a class="list-group-item list-group-item-action bg-light"></a>
-                        <a class="list-group-item list-group-item-action bg-light"></a>
-
-                        <asp:Menu ID="Lateral_menu" runat="server" Orientation="vertical" CssClass="navbar-nav mr-auto" StaticMenuStyle-CssClass="nav-item" StaticSelectedStyle-CssClass="nav-item" StaticSubMenuIndent="16px" DynamicMenuStyle-CssClass="nav-item dropdown-menu" RenderingMode="List" role="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-
-                            <LevelMenuItemStyles>
-                                <asp:MenuItemStyle CssClass="dropdown-item" HorizontalPadding="15px" Height="50px" VerticalPadding="15px" />
-                            </LevelMenuItemStyles>
-                            <LevelSelectedStyles>
-                                <asp:MenuItemStyle CssClass="nav-item active" Font-Underline="False" />
-                            </LevelSelectedStyles>
-                            <StaticHoverStyle Font-Underline="true" />
-                            <StaticSelectedStyle Font-Bold="true" />
-                            <DynamicMenuItemStyle CssClass="dropdown-item" />
-                        </asp:Menu>
-
-                    </div>
-                </div>
-                <!-- /#sidebar-wrapper -->
-
-
-                <!-- Contenido -->
-                <div id="page-content-wrapper">
-                    <div class="container-fluid">
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
     </form>
 

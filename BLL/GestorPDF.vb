@@ -69,7 +69,7 @@ Public Class GestorPDF
                 EnviarCorreo.ObtenerInstancia.EnviarFactura(Usuario.mail, "Mokar: Envio de Factura", "Gracias por elegirnos, le adjuntamos su factura", bytes)
             Else
 
-                doc.Save(rsp, False, "FacturaEasyTravel.pdf")
+                doc.Save(rsp, False, "FacturaMokar.pdf")
                 'si lo pongo en true lo muestra, no lo descarga
 
                 doc.Close()

@@ -71,4 +71,12 @@ Public Class FacturaBLL
         FacturaMPP.ObtenerInstancia.CambiarEstado(Factura)
     End Sub
 
+
+    Public Function ListarPedidosActivos(objeto As UsuarioBE) As IEnumerable(Of PedidosActivosBE)
+        Try
+            Return FacturaMPP.ObtenerInstancia.ListarPedidosActivos(objeto)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 End Class

@@ -104,6 +104,78 @@ Partial Public Class MisOfertas
     Protected WithEvents btn_Continuar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''MediosDePago control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MediosDePago As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''totPagar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents totPagar As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''totPendiente control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents totPendiente As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''btnAgregarTC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregarTC As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnAgregarNC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregarNC As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnConfirmarPago control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConfirmarPago As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''DG_Pagos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DG_Pagos As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
     '''DIV_MdePago control.
     '''</summary>
     '''<remarks>
@@ -158,13 +230,13 @@ Partial Public Class MisOfertas
     Protected WithEvents DG_CC As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
-    '''btn_Confirmar control.
+    '''btn_CancelarNC control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Confirmar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_CancelarNC As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Panel_SeleccionDeTarjeta control.
@@ -320,6 +392,24 @@ Partial Public Class MisOfertas
     Protected WithEvents RE_TB_CodSeg As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''txtMontoTC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtMontoTC As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''btn_EnviarPago control.
     '''</summary>
     '''<remarks>
@@ -327,4 +417,13 @@ Partial Public Class MisOfertas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_EnviarPago As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btn_Cancelar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_Cancelar As Global.System.Web.UI.WebControls.Button
 End Class

@@ -79,6 +79,7 @@
     <Compile Include="FacturaBE.vb" />
     <Compile Include="FacturaCompletaBE.vb" />
     <Compile Include="FacturaDetalleBE.vb" />
+    <Compile Include="MedioPago.vb" />
     <Compile Include="LogBE.vb" />
     <Compile Include="LogTipoBE.vb" />
     <Compile Include="MaterialEstudioBE.vb" />
@@ -87,6 +88,7 @@
     <Compile Include="NotaCreditoBE.vb" />
     <Compile Include="NotaCreditoCompletaBE.vb" />
     <Compile Include="PedidoCanceladoBE.vb" />
+    <Compile Include="PedidosActivosBE.vb" />
     <Compile Include="PermisosBE.vb" />
     <Compile Include="RolBE.vb" />
     <Compile Include="ServiciosBE.vb" />

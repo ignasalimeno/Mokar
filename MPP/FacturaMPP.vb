@@ -162,5 +162,35 @@ Public Class FacturaMPP
         Throw New Exception("Mokar informa que ha ocurrido un error")
     End Function
 
+    Public Function ListarPedidosActivos(objeto As UsuarioBE) As IEnumerable(Of PedidosActivosBE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.PedidosActivosBE)
+        Dim dt As New DataTable
+        Dim newObj As BE.PedidosActivosBE
 
+        Dim hdatos As New Hashtable
+        hdatos.Add("@idUsuario", objeto.idUsuario)
+
+        DS = oDatos.Leer("Pedidos_Seguimiento", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.PedidosActivosBE
+                newObj.idServicio = Item("idServicio")
+                newObj.nombre = Item("nombre")
+                newObj.cantUsuarios = Item("Cantidad")
+                newObj.fechaAlta = Item("Fecha")
+                newObj.diasRestantes = Item("CantDias")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
 End Class

@@ -9,7 +9,7 @@ Public Class Factura_Descargar
 
             Dim ID_Factura As Integer = Session("FacturaID")
             Dim NewFactura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(ID_Factura)
-            GestorPDF.ObtenerInstancia.ArmarPDF(Response, Server.MapPath("Template_EasyTravel_Factura2.html"), NewFactura)
+            GestorPDF.ObtenerInstancia.ArmarPDF(Response, Server.MapPath("Template_Mokar_Factura2.html"), NewFactura)
 
         End If
     End Sub

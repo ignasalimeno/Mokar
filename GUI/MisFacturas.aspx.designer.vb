@@ -32,6 +32,24 @@ Partial Public Class MisFacturas1
     Protected WithEvents DG_Facturas As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
+    '''contenido control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents contenido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''HiddenField1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
     '''TB_Ingresar_Motivo control.
     '''</summary>
     '''<remarks>
@@ -48,4 +66,22 @@ Partial Public Class MisFacturas1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RFV_Cancelacion As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''btnConfirmar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConfirmar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnCancelar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
 End Class

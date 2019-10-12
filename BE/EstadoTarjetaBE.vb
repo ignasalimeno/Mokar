@@ -1,4 +1,6 @@
 ﻿Public Class EstadoTarjetaBE
+    Implements MedioPago
+
     Private pID As Integer
     Public Property ID() As Integer
         Get

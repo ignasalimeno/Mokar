@@ -14,6 +14,8 @@ Public Class MisOfertas
     Dim NotaCreditoObtenida As New List(Of NotaCreditoBE)
     Dim CCObtenidas As New List(Of CuentaCorrienteBE)
     Dim numero As Double
+    Dim dtPagos As New DataTable
+    Dim listPagos As New List(Of BE.MedioPago)
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -22,7 +24,7 @@ Public Class MisOfertas
             Cargar_Grilla()
             Cargar_MdePago()
             Cargar_NC()
-
+            Session("ListPagos") = Nothing
 
             DIV_MdePago.Visible = False
         End If
@@ -76,6 +78,7 @@ Public Class MisOfertas
     End Function
 
     Private Sub TB_Pasajeros_TextChanged(sender As Object, e As EventArgs) Handles TB_Pasajeros.TextChanged
+        totPagar.Text = "Total a pagar: $ " & Calculo((CInt(TB_Precio.Text)), (CInt(TB_Pasajeros.Text)))
         TB_Total.Text = Calculo((CInt(TB_Precio.Text)), (CInt(TB_Pasajeros.Text)))
     End Sub
 
@@ -127,7 +130,6 @@ Public Class MisOfertas
     End Sub
     Private Sub btn_EnviarPago_Click(sender As Object, e As EventArgs) Handles btn_EnviarPago.Click
         Try
-            LstCompras = Session("MisCompras")
             Dim Tarjetas As New EstadoTarjetaBE
             Tarjetas.Numero = Criptografia.ObtenerInstancia.EncriptarTarjeta(TB_NroTarjeta.Text)
 
@@ -139,13 +141,7 @@ Public Class MisOfertas
             Dim TarjetaAnalisis As New EstadoTarjetaBE
             TarjetaAnalisis = EstadosTarjetasBLL.ObtenerInstancia.ObtenerPorNumero(Tarjetas.Numero)
 
-            If TarjetaAnalisis.Cancelada = "0" Then
-
-                mensaje = "Su compra fue registrada con exito"
-                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
-
-            Else
-
+            If TarjetaAnalisis.Cancelada = "1" Then
                 mensaje = "La tarjeta que intenta untilizar se encuentra bloqueada, consulte a su banco o vuelva a intentarlo con otra tarjeta"
                 ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
 
@@ -154,20 +150,13 @@ Public Class MisOfertas
                 Panel_Tarjeta.Visible = False
 
                 Response.Redirect("MisCompras.aspx")
-
             End If
 
             Tarjetas.Nombre = TB_NombreTitular.Text
             Tarjetas.CodSeguridad = TB_CodSeg.Text
             Tarjetas.MesVencimiento = TB_MesVencimiento.Text
             Tarjetas.AñoVencimiento = TB_AñoVencimiento.Text
-
-            If Lbl_NewSaldo.Text = "" Then
-                Tarjetas.Monto = TB_Total.Text
-            Else
-                Tarjetas.Monto = Lbl_NewSaldo.Text
-
-            End If
+            Tarjetas.Monto = txtMontoTC.Text
 
             If Lbl_Tarjeta.Text = "VISA" Then
                 Tarjetas.ID_Tarjeta = "1"
@@ -177,72 +166,93 @@ Public Class MisOfertas
                 Tarjetas.ID_Tarjeta = "3"
             End If
 
-            EstadosTarjetasBLL.ObtenerInstancia.CrearTarjeta(Tarjetas)
+            listPagos = Session("ListPagos")
 
-            Usuario = Session("UsuarioActivo")
+            If listPagos Is Nothing Then
+                listPagos = New List(Of MedioPago)
+            End If
+            listPagos.Add(Tarjetas)
+            Session("ListPagos") = listPagos
 
-            Factura.ID_Usuario = Usuario.idUsuario
-            Factura.Nombre = Usuario.nombreRazonSocial
-            Factura.Apellido = ""
-            Factura.Usuario = Usuario.mail
-            Factura.Descripcion = LstCompras.Item(0).descripcion
-            Factura.Fecha = DateTime.Now
-            Factura.Total = TB_Total.Text
-            Factura.Cancelada = "0"
-            'No esta cancelada, si se cancela, cambia el estado a 1
-            Factura.Seguimiento = "En curso"
+            actualizarListaPagos()
 
-            FacturaBLL.ObtenerInstancia.CrearFactura(Factura)
+            Panel_Tarjeta.Visible = False
+            Panel_SeleccionDeTarjeta.Visible = False
+            MediosDePago.Visible = True
 
-            Detalle.ID_Factura = Factura.ID
-            Detalle.ID_Oferta = LstCompras.Item(0).idServicio
-            Detalle.Cantidad = TB_Pasajeros.Text
-            Detalle.PrecioUnitario = LstCompras.Item(0).precio
-
-            FacturaDetalleBLL.ObtenerInstancia.CrearFactura(Detalle)
-
-            CompraOK.ID_Cliente = Usuario.idUsuario
-            CompraOK.ID_Factura = Factura.ID
-            CompraOK.ID_NotaCredito = "0"
-            'No se genera una nota de credito hasta que no devuelva algo
-            CompraOK.Motivo = "Se realizo una compra"
-            CompraOK.Debito = TB_Total.Text
-            'No hay debito en la compra
-            CompraOK.Credito = "0"
-            CompraOK.Fecha = DateTime.Now
-
-            CuentaCorrienteBLL.ObtenerInstancia.CrearCC(CompraOK)
-
-            Dim ID_Factura As Integer = FacturaBLL.ObtenerInstancia.ObtenerIDFactura().ID
-
-            Dim NewFactura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(ID_Factura)
-            GestorPDF.ObtenerInstancia.ArmarPDF(Response, Server.MapPath("Template_Mokar_Factura2.html"), NewFactura, True)
-
-            Response.Redirect("FichaOpinion.aspx")
         Catch ex As Exception
-            mensaje = "Easy Travel informa: " & ex.Message
-            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+
         End Try
 
+
+    End Sub
+
+    Sub actualizarListaPagos()
+        Try
+            Dim montoPendiente As Integer = totPagar.Text.Split("$ ")(1)
+
+            listPagos = Session("ListPagos")
+
+            Dim dtPagos As New DataTable
+            dtPagos.Columns.Add(New DataColumn("medio"))
+            dtPagos.Columns.Add(New DataColumn("monto"))
+            For Each a As MedioPago In listPagos
+                Dim drow As DataRow = dtPagos.NewRow()
+
+                If a.GetType() Is GetType(BE.NotaCreditoBE) Then
+                    drow(0) = "Nota de Credito"
+                    drow(1) = CType(a, BE.NotaCreditoBE).Saldo
+                    montoPendiente = montoPendiente - CType(a, BE.NotaCreditoBE).Saldo
+                ElseIf a.GetType() Is GetType(BE.EstadoTarjetaBE) Then
+                    drow(0) = "Tarjeta de Credito"
+                    drow(1) = CType(a, BE.EstadoTarjetaBE).Monto
+                    montoPendiente = montoPendiente - CType(a, BE.EstadoTarjetaBE).Monto
+                End If
+                dtPagos.Rows.Add(drow)
+            Next
+
+            DG_Pagos.DataSource = Nothing
+            DG_Pagos.DataSource = dtPagos
+            DG_Pagos.DataBind()
+
+            totPendiente.Text = "Pendiente: $ " & montoPendiente
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub DG_CC_SelectedIndexChanging(sender As Object, e As GridViewSelectEventArgs) Handles DG_CC.SelectedIndexChanging
         Try
-            Dim Credito As Double
-            Dim resultado As Double
-            Dim Numero As Integer
             Dim IDNC As New NotaCreditoBE
 
-            Numero = DG_CC.Rows(e.NewSelectedIndex).Cells(1).Text
-            Session("ID_CC") = Numero
-            'Obtengo el numero de Cuenta Corriente
-
-            resultado = Calculo((CInt(TB_Precio.Text)), (CInt(TB_Pasajeros.Text)))
-            Credito = DG_CC.Rows(e.NewSelectedIndex).Cells(7).Text
-            Session("Saldo") = Credito
             IDNC.ID = DG_CC.Rows(e.NewSelectedIndex).Cells(5).Text
-            Session("IDNC") = IDNC.ID
-            Lbl_NewSaldo.Text = resultado - Credito
+            IDNC.Saldo = DG_CC.Rows(e.NewSelectedIndex).Cells(7).Text
+
+            listPagos = Session("ListPagos")
+
+            If listPagos Is Nothing Then
+                listPagos = New List(Of MedioPago)
+            Else
+                Dim seleccionada As Boolean = False
+                For Each a As MedioPago In listPagos
+                    If CType(a, NotaCreditoBE).ID = IDNC.ID Then
+                        seleccionada = True
+                    End If
+                Next
+                If seleccionada Then
+                    mensaje = "Ya selecciono la NC previamente"
+                    ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+                    Exit Sub
+                End If
+            End If
+
+            listPagos.Add(IDNC)
+            Session("ListPagos") = listPagos
+
+            actualizarListaPagos()
+
+            Panel_NC.Visible = False
+            MediosDePago.Visible = True
 
         Catch ex As Exception
             mensaje = "Easy Travel informa: " & ex.Message
@@ -251,7 +261,7 @@ Public Class MisOfertas
 
     End Sub
 
-    Private Sub btn_Confirmar_Click(sender As Object, e As EventArgs) Handles btn_Confirmar.Click
+    Private Sub btn_Confirmar_Click(sender As Object, e As EventArgs)
         Try
             Dim Saldo As New CuentaCorrienteBE
             'La Session ("Saldo") es el de mi NC
@@ -385,7 +395,7 @@ Public Class MisOfertas
             Dim ID_Factura As Integer = FacturaBLL.ObtenerInstancia.ObtenerIDFactura().ID
 
             Dim NewFactura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(ID_Factura)
-            GestorPDF.ObtenerInstancia.ArmarPDF(Response, Server.MapPath("Template_EasyTravel_Factura2.html"), NewFactura, True)
+            GestorPDF.ObtenerInstancia.ArmarPDF(Response, Server.MapPath("Template_Mokar_Factura2.html"), NewFactura, True)
 
             mensaje = "Su compra fue registrada con exito"
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
@@ -397,9 +407,124 @@ Public Class MisOfertas
     End Sub
 
     Private Sub btn_Continuar_Click(sender As Object, e As EventArgs) Handles btn_Continuar.Click
-        DIV_MdePago.Visible = True
+        MediosDePago.Visible = True
         TB_Pasajeros.Enabled = False
+        btn_Continuar.Enabled = False
+        totPendiente.Text = "Pendiente: $ " & totPagar.Text
     End Sub
 
+    Protected Sub btnAgregarTC_Click(sender As Object, e As EventArgs)
+        Try
+            Panel_SeleccionDeTarjeta.Visible = True
+            Panel_NC.Visible = False
+            Limpiar_TB()
+            MediosDePago.Visible = False
+        Catch ex As Exception
 
+        End Try
+    End Sub
+
+    Protected Sub btnAgregarNC_Click(sender As Object, e As EventArgs) Handles btnAgregarNC.Click
+        Try
+            Panel_SeleccionDeTarjeta.Visible = False
+            Panel_NC.Visible = True
+            MediosDePago.Visible = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Sub btn_Cancelar_Click(sender As Object, e As EventArgs) Handles btn_Cancelar.Click
+        Panel_Tarjeta.Visible = False
+        MediosDePago.Visible = True
+    End Sub
+
+    Protected Sub btn_CancelarNC_Click(sender As Object, e As EventArgs) Handles btn_CancelarNC.Click
+        Panel_NC.Visible = False
+        MediosDePago.Visible = True
+    End Sub
+
+    Protected Sub btnConfirmarPago_Click(sender As Object, e As EventArgs) Handles btnConfirmarPago.Click
+        Try
+            Dim montoPendiente As Integer = totPendiente.Text.Split("$ ")(1)
+
+            If montoPendiente > 0 Then
+                mensaje = "No cubre el total a pagar. Por favor, ingrese los medios de pago correspondientes"
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+
+            ElseIf montoPendiente = 0 Then
+
+                Facturar()
+
+                Response.Redirect("FichaOpinion.aspx")
+
+            ElseIf montoPendiente < 0 Then
+
+                Session("NewSaldo") = montoPendiente * (-1)
+
+                Facturar()
+
+                Dim NC As New NotaCreditoBE
+                NC.ID_Cliente = Usuario.idUsuario
+                NC.Fecha = DateTime.Now
+                NC.Saldo = Session("NewSaldo")
+                NC.Motivo = "Nota de credito adicional"
+                NC.Estado = "0"
+                'Como es nueva el estado es 0, si la cancelo pasa el estado a 1
+
+                NotaCreditoBLL.ObtenerInstancia.CrearNotaCredito(NC)
+
+                Dim RechazoCompraOK As New CuentaCorrienteBE
+
+                RechazoCompraOK.ID_Cliente = Usuario.idUsuario
+                RechazoCompraOK.ID_Factura = Session("IDNC")
+                'Se genera una NC
+                RechazoCompraOK.Motivo = "Nota de credito adicional por Saldo de una anterior, NC nro.:" & RechazoCompraOK.ID_Factura
+                RechazoCompraOK.Debito = "0"
+                'No hay debito en la compra
+                RechazoCompraOK.Credito = Session("NewSaldo")
+                RechazoCompraOK.Fecha = DateTime.Now
+                Dim ID_NC As Integer = NotaCreditoBLL.ObtenerInstancia.ObtenerIDNC().ID
+                RechazoCompraOK.ID_NotaCredito = ID_NC
+                RechazoCompraOK.Saldo = Session("NewSaldo")
+
+                CuentaCorrienteBLL.ObtenerInstancia.CrearCCxNC(RechazoCompraOK)
+
+                Dim NewNC As New NotaCreditoCompletaBE
+                NewNC.ID_Factura = Session("IDNC")
+                NewNC.ID_Usuario = Usuario.idUsuario
+                NewNC.NombrePais = TB_Nombre.Text & " - " & TB_Region.Text
+                NewNC.PrecioUnitario = TB_Precio.Text
+                NewNC.Total = Session("NewSaldo")
+                NewNC.Usuario = Usuario.mail
+                NewNC.Fecha = DateTime.Now
+                NewNC.Descripcion = "Nota de credito adicional por Saldo de una anterior, NC nro.:" & RechazoCompraOK.ID_Factura
+                NewNC.Cantidad = "1"
+                NewNC.Apellido = ""
+                NewNC.Nombre = Usuario.nombreRazonSocial
+                NewNC.ID = ID_NC
+
+
+                GestorPDF.ObtenerInstancia.ArmarPDF2(Response, Server.MapPath("Template_Mokar_NC.html"), NewNC, True)
+
+                Response.Redirect("FichaOpinion.aspx")
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub DG_Pagos_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles DG_Pagos.RowDeleting
+        Try
+            listPagos = Session("ListPagos")
+            For a As Integer = 0 To listPagos.Count - 1
+                If a = e.RowIndex Then
+                    listPagos.RemoveAt(a)
+                End If
+            Next
+            actualizarListaPagos()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
