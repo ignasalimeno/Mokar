@@ -77,6 +77,15 @@ Partial Public Class GestionarEncuestas
     Protected WithEvents CalendarExtender2 As Global.AjaxControlToolkit.CalendarExtender
     
     '''<summary>
+    '''preguntas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents preguntas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''GV_Preguntas control.
     '''</summary>
     '''<remarks>
@@ -84,6 +93,15 @@ Partial Public Class GestionarEncuestas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GV_Preguntas As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''PanelRespuestas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PanelRespuestas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Respuestas control.
@@ -95,31 +113,22 @@ Partial Public Class GestionarEncuestas
     Protected WithEvents Respuestas As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
-    '''btnNuevaEncuesta control.
+    '''btnConfirmar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnNuevaEncuesta As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnConfirmar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''btnEditarEncuesta control.
+    '''btnCancelar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnEditarEncuesta As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btnEliminarEncuesta control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnEliminarEncuesta As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Panel1 control.

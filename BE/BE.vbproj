@@ -67,6 +67,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscadorBE.vb" />
     <Compile Include="CategoriaBE.vb" />
     <Compile Include="Chat2BE.vb" />
     <Compile Include="ChatBE.vb" />

@@ -95,6 +95,24 @@ Partial Public Class Site1
     Protected WithEvents btnLogin As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
+    '''txtBuscar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtBuscar As Global.System.Web.UI.HtmlControls.HtmlInputText
+    
+    '''<summary>
+    '''btnBuscar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
     '''ScriptManagerEventos control.
     '''</summary>
     '''<remarks>

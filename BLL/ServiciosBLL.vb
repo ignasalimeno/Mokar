@@ -112,4 +112,20 @@ Public Class ServiciosBLL
         End Try
     End Function
 
+    Public Function ListarObjetosAvanzada(nombre As String, descripcion As String, precio As String, accesoPlataforma As String, materialEstudio As String, reportes As String, capacitaciones As String) As IEnumerable(Of ServiciosBE)
+        Try
+            Return ServiciosMPP.ObtenerInstancia.ListarObjetosAvanzada(nombre, descripcion, precio, accesoPlataforma, materialEstudio, reportes, capacitaciones)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ListarObjetosSimple(campo As String) As IEnumerable(Of ServiciosBE)
+        Try
+            Return ServiciosMPP.ObtenerInstancia.ListarObjetosSimple(campo)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class

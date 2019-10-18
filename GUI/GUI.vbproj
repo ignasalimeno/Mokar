@@ -101,6 +101,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Buscador.aspx" />
     <Content Include="Categorias.aspx" />
     <Content Include="Chat.aspx" />
     <Content Include="contactform\contactform.js" />
@@ -193,6 +194,7 @@
     <Content Include="img\intro-bg.jpg" />
     <Content Include="img\intro-img.svg" />
     <Content Include="img\lucha.jpg" />
+    <Content Include="img\lupa.jpg" />
     <Content Include="img\mocca.jpg" />
     <Content Include="img\mokar1.png" />
     <Content Include="img\portfolio\app1.jpg" />
@@ -310,6 +312,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="css\chat3.less" />
+    <Content Include="AdRotator.xml" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -581,6 +584,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buscador.aspx.designer.vb">
+      <DependentUpon>Buscador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buscador.aspx.vb">
+      <DependentUpon>Buscador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Categorias.aspx.designer.vb">
       <DependentUpon>Categorias.aspx</DependentUpon>
     </Compile>

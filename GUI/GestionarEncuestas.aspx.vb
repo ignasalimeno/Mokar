@@ -63,6 +63,7 @@ Public Class GestionarEncuestas
             TB_Titulo.Text = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(3).Text
             TB_Fecha.Text = Date.Parse(DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(4).Text).ToString("dd-MM-yyyy")
 
+            btnConfirmar.CommandName = "Modificar"
             cargarPreguntas()
 
         Catch ex As Exception
@@ -156,7 +157,20 @@ Public Class GestionarEncuestas
         End Try
     End Sub
 
-    Private Sub btnNuevaEncuesta_Click(sender As Object, e As EventArgs) Handles btnNuevaEncuesta.Click
+    Private Sub btnNuevaEncuesta_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
+        Try
+
+            If btnConfirmar.CommandName = "Alta" Then
+                confirmarNuevaEncuesta()
+            ElseIf btnConfirmar.CommandName = "Modificar" Then
+                confirmarModificarEncuesta()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Sub confirmarNuevaEncuesta()
         Try
             If Date.Parse(TB_Fecha.Text) > Now Then
                 Dim miEnc As New EncuestaBE
@@ -168,14 +182,18 @@ Public Class GestionarEncuestas
                 Session("idEncuesta") = EncuestaBLL.ObtenerInstancia.Crear(miEnc)
 
                 cargarEncuestas()
-            End If
 
+                PanelRespuestas.Visible = True
+                preguntas.Visible = True
+                Panel1.Visible = True
+                Panel2.Visible = True
+            End If
         Catch ex As Exception
 
         End Try
     End Sub
 
-    Private Sub btnEditarEncuesta_Click(sender As Object, e As EventArgs) Handles btnEditarEncuesta.Click
+    Sub confirmarModificarEncuesta()
         Try
             If Session("idEncuesta") IsNot Nothing Then
                 Dim miEnc As New EncuestaBE
@@ -194,17 +212,37 @@ Public Class GestionarEncuestas
         End Try
     End Sub
 
-    Private Sub btnEliminarEncuesta_Click(sender As Object, e As EventArgs) Handles btnEliminarEncuesta.Click
+    Private Sub btnEditarEncuesta_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Try
-            If Session("idEncuesta") IsNot Nothing Then
-                Dim miEnc As New EncuestaBE
-                miEnc.idEncuesta = Session("idEncuesta")
+            contenido.Visible = False
+        Catch ex As Exception
 
-                If EncuestaBLL.ObtenerInstancia.Eliminar(miEnc) Then
-                    cargarEncuestas()
-                End If
+        End Try
+    End Sub
 
+    Private Sub DG_Encuestas2_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles DG_Encuestas2.RowDeleting
+        Try
+
+            Dim miEnc As New EncuestaBE
+            miEnc.idEncuesta = DG_Encuestas2.DataKeys(e.RowIndex).Value
+
+            If EncuestaBLL.ObtenerInstancia.Eliminar(miEnc) Then
+                cargarEncuestas()
             End If
+
+            contenido.Visible = False
+
+        Catch ex As Exception
+            Dim mensaje As String = "Hubo un error. " & ex.Message
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+        End Try
+    End Sub
+
+    Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            btnConfirmar.CommandName = "Alta"
+
+            contenido.Visible = True
         Catch ex As Exception
 
         End Try

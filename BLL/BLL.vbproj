@@ -69,6 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscadorBLL.vb" />
     <Compile Include="CategoriaBLL.vb" />
     <Compile Include="ChatBLL.vb" />
     <Compile Include="ClienteBLL.vb" />

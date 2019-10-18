@@ -332,4 +332,93 @@ Public Class ServiciosMPP
         Return resultado
     End Function
 
+
+    Public Function ListarObjetosAvanzada(nombre As String, descripcion As String, precio As String, accesoPlataforma As String, materialEstudio As String, reportes As String, capacitaciones As String) As IEnumerable(Of ServiciosBE)
+        Try
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim list As New List(Of BE.ServiciosBE)
+            Dim dt As New DataTable
+            Dim newObj As BE.ServiciosBE
+
+            Dim hdatos As New Hashtable
+            hdatos.Add("@nombre", IIf(nombre = Nothing, DBNull.Value, nombre))
+            hdatos.Add("@descripcion", IIf(descripcion = Nothing, DBNull.Value, descripcion))
+            hdatos.Add("@precio", IIf(precio = Nothing, DBNull.Value, precio))
+            hdatos.Add("@accesoPlataforma", IIf(accesoPlataforma = "---", DBNull.Value, accesoPlataforma))
+            hdatos.Add("@materialEstudio", IIf(materialEstudio = "---", DBNull.Value, materialEstudio))
+            hdatos.Add("@reportes", IIf(reportes = "---", DBNull.Value, reportes))
+            hdatos.Add("@capacitaciones", IIf(capacitaciones = "---", DBNull.Value, capacitaciones))
+
+            DS = oDatos.Leer("n_Servicio_BuscarAvanzado", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    newObj = New BE.ServiciosBE
+                    newObj.idServicio = Item("idServicio")
+                    newObj.nombre = Item("nombre")
+                    newObj.descripcion = Item("descripcion")
+                    newObj.precio = Item("precio")
+                    newObj.accesoPlataforma = Item("accesoPlataforma")
+                    newObj.materialEstudio = Item("materialEstudio")
+                    newObj.reportes = Item("reportes")
+                    newObj.capacitaciones = Item("capacitaciones")
+                    newObj.imagenData = IIf(Item("imagenData") Is DBNull.Value, SqlDbType.VarBinary, Item("imagenData"))
+                    newObj.activo = Item("activo")
+
+                    list.Add(newObj)
+                Next
+
+                Return list
+
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ListarObjetosSimple(campo As String) As IEnumerable(Of ServiciosBE)
+        Try
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim list As New List(Of BE.ServiciosBE)
+            Dim dt As New DataTable
+            Dim newObj As BE.ServiciosBE
+
+            Dim hdatos As New Hashtable
+            hdatos.Add("@campoBusqueda", IIf(campo = Nothing, DBNull.Value, campo))
+
+            DS = oDatos.Leer("s_Servicios_BuscarSimple", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    newObj = New BE.ServiciosBE
+                    newObj.idServicio = Item("idServicio")
+                    newObj.nombre = Item("nombre")
+                    newObj.descripcion = Item("descripcion")
+                    newObj.precio = Item("precio")
+                    newObj.accesoPlataforma = Item("accesoPlataforma")
+                    newObj.materialEstudio = Item("materialEstudio")
+                    newObj.reportes = Item("reportes")
+                    newObj.capacitaciones = Item("capacitaciones")
+                    newObj.imagenData = IIf(Item("imagenData") Is DBNull.Value, SqlDbType.VarBinary, Item("imagenData"))
+                    newObj.activo = Item("activo")
+
+                    list.Add(newObj)
+                Next
+
+                Return list
+
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class

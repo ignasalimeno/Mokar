@@ -11,6 +11,8 @@ Public Class Servicios
 
             RefrescarRP_Ofertas()
 
+            cargarDDL()
+
             If GestorSesion.ObtenerSesionActual.UsuarioActivo IsNot Nothing Then
                 btn_FinCompra.Visible = True
             End If
@@ -23,6 +25,28 @@ Public Class Servicios
         RP_Ofertas.DataSource = ServiciosBLL.ObtenerInstancia.ListarObjetos
         RP_Ofertas.DataBind()
 
+    End Sub
+
+    Private Sub cargarDDL()
+        Try
+            ddl_Capacitaciones.Items.Add("---")
+            ddl_Capacitaciones.Items.Add("Si")
+            ddl_Capacitaciones.Items.Add("No")
+
+            ddl_Material.Items.Add("---")
+            ddl_Material.Items.Add("Si")
+            ddl_Material.Items.Add("No")
+
+            ddl_Pltaforma.Items.Add("---")
+            ddl_Pltaforma.Items.Add("Si")
+            ddl_Pltaforma.Items.Add("No")
+
+            ddl_Reportes.Items.Add("---")
+            ddl_Reportes.Items.Add("Si")
+            ddl_Reportes.Items.Add("No")
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub RP_Ofertas_ItemCommand(source As Object, e As RepeaterCommandEventArgs) Handles RP_Ofertas.ItemCommand
@@ -83,12 +107,32 @@ Public Class Servicios
             End If
 
         Catch ex As Exception
-            mensaje = "Easy Travel informa: " & ex.Message
+            mensaje = "Mokar informa: " & ex.Message
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
         End Try
     End Sub
 
+    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Try
+            If txtGeneral.Text = "" Then
+                RP_Ofertas.DataSource = Nothing
+                RP_Ofertas.DataSource = ServiciosBLL.ObtenerInstancia.ListarObjetosAvanzada(txtNombre.Text, txtDescr.Text, txtPrecio.Text, ddl_Pltaforma.Text, ddl_Material.Text, ddl_Reportes.Text, ddl_Capacitaciones.Text)
+                RP_Ofertas.DataBind()
+            Else
+                RP_Ofertas.DataSource = Nothing
+                RP_Ofertas.DataSource = ServiciosBLL.ObtenerInstancia.ListarObjetosSimple(txtGeneral.Text)
+                RP_Ofertas.DataBind()
+            End If
+        Catch ex As Exception
 
+        End Try
+    End Sub
 
+    Protected Sub btnVerTodos_Click(sender As Object, e As EventArgs) Handles btnVerTodos.Click
+        Try
+            RefrescarRP_Ofertas()
+        Catch ex As Exception
 
+        End Try
+    End Sub
 End Class

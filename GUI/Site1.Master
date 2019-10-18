@@ -12,7 +12,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
+    
     <!-- Favicons -->
     <link href="img/favicon.png" rel="icon">
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -157,6 +157,7 @@
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Login" id="btnLogin" runat="server">Login</button>
                                 </div>
 
+
                             </div>
                         </div>
                     </div>
@@ -188,11 +189,28 @@
                                         <li><a href="" data-toggle="modal" data-target="#Modal_Newsletter">Suscribase</a></li>
 
                                     </ul>
-                                    <li><a href="/Index.aspx#services">Servicios</a></li>
-
-                                <li><a href="/Index.aspx#faq">FAQs</a></li>
+                                    <li><a href="/Index.aspx#faq">FAQs</a></li>
                                 <li><a href="Encuesta.aspx">Encuesta</a></li>
-
+                                <%--<li>
+                                    <p onclick="resizeText(1)">
+                                        <label style="font-size: large;">A+</label>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p onclick="resizeText(-1)">
+                                        <label style="font-size: smaller;">A-</label>
+                                    </p>
+                                </li>--%>
+                                <li>
+                                    <div class="topnav">
+                                        <div class="search-container">
+                                            <input id="txtBuscar" runat="server" type="text" placeholder="Buscar.." name="search">
+                                           
+                                            <asp:ImageButton ID="btnBuscar" ImageUrl="~/img/lupa.jpg" runat="server" />
+                                            
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
 
@@ -203,7 +221,7 @@
 
                     <asp:ScriptManager ID="ScriptManagerEventos" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
                     <uc1:MensajesModal runat="server" ID="MensajesModal" />
-                    <uc2:ModalEstrellas runat="server" id="ModalEstrellas" />
+                    <uc2:ModalEstrellas runat="server" ID="ModalEstrellas" />
 
                     <!-- MODALES -->
 

@@ -74,7 +74,7 @@
 
                             <%--Segunda fila--%>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-4" id="preguntas" runat="server" visible="false"> 
                                     <h4>Preguntas</h4>
                                     <asp:GridView ID="GV_Preguntas" CssClass="table table-bordered" DataKeyNames="idPregunta" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                         <Columns>
@@ -87,7 +87,7 @@
 
                                 </div>
 
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-4" id="PanelRespuestas" runat="server" visible="false">
                                     <h4>Respuestas</h4>
                                     <asp:GridView ID="Respuestas" CssClass="table table-bordered" DataKeyNames="idRespuesta" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                         <Columns>
@@ -101,11 +101,9 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <h4>Editar Encuesta</h4>
-                                    <asp:Button ID="btnNuevaEncuesta" runat="server" Text="Nueva" />
-                                    <asp:Button ID="btnEditarEncuesta" runat="server" Text="Modificar" />
-                                    <asp:Button ID="btnEliminarEncuesta" runat="server" Text="Eliminar" />
-
+                                    <asp:Button ID="btnConfirmar" CssClass="btn btn-primary" runat="server" Text="Confirmar" />
+                                    <br />
+                                    <asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" />
                                 </div>
                             </div>
 

@@ -477,5 +477,18 @@ Public Class Site1
         End Try
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As ImageClickEventArgs) Handles btnBuscar.Click
+        Try
+            If txtBuscar.Value IsNot "" Then
+                Session("buscar") = txtBuscar.Value
+                Response.Redirect("Buscador.aspx")
+            Else
+                Dim mensaje As String
+                mensaje = "Complete el campo de búsqueda"
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "notificacion", "notificacion('" & mensaje & "')", True)
+            End If
+        Catch ex As Exception
 
+        End Try
+    End Sub
 End Class

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>https://i.ibb.co/Zc0jJLH/atiim.png</ImageUrl>
+    <height>391</height>
+    <width>73</width>
+    <NavigateUrl>https://www.atiim.com/</NavigateUrl>
+    <AlternateText>No se encontro la imagen 1</AlternateText>
+    <Keyword>Computers</Keyword>
+    <Impressions>2</Impressions>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>https://i.ibb.co/sPg9v7K/perdoo.png</ImageUrl>
+    <height>391</height>
+    <width>73</width>
+    <NavigateUrl>https://www.perdoo.com/</NavigateUrl>
+    <AlternateText>No se encontro la imagen 1</AlternateText>
+    <Keyword>Computers</Keyword>
+    <Impressions>2</Impressions>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>https://i.ibb.co/ZS0B34S/workpath.png</ImageUrl>
+    <height>391</height>
+    <width>73</width>
+    <NavigateUrl>https://www.workpath.co/</NavigateUrl>
+    <AlternateText>No se encontro la imagen 1</AlternateText>
+    <Keyword>Computers</Keyword>
+    <Impressions>2</Impressions>
+  </Ad>
+</Advertisements>
+
+
