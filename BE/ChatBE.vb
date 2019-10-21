@@ -58,4 +58,6 @@
             pRespuesta = value
         End Set
     End Property
+
+    Property TiempoRta As Integer
 End Class

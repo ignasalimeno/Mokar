@@ -451,6 +451,9 @@
     <Content Include="packages\popper.js.1.14.3\content\Scripts\umd\popper.min.js" />
     <Content Include="Politicas.aspx" />
     <Content Include="Readme.txt" />
+    <Content Include="Reportes_Encuestas.aspx" />
+    <Content Include="Reporte_Respuestas.aspx" />
+    <Content Include="Reporte_Servicios.aspx" />
     <Content Include="Rol.aspx" />
     <Content Include="Rol_AsignarPermisos.aspx" />
     <Content Include="img\header-bg.psd" />
@@ -776,6 +779,27 @@
     </Compile>
     <Compile Include="Politicas.aspx.vb">
       <DependentUpon>Politicas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Reportes_Encuestas.aspx.designer.vb">
+      <DependentUpon>Reportes_Encuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Encuestas.aspx.vb">
+      <DependentUpon>Reportes_Encuestas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Respuestas.aspx.designer.vb">
+      <DependentUpon>Reporte_Respuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Respuestas.aspx.vb">
+      <DependentUpon>Reporte_Respuestas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Servicios.aspx.designer.vb">
+      <DependentUpon>Reporte_Servicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Servicios.aspx.vb">
+      <DependentUpon>Reporte_Servicios.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Rol.aspx.designer.vb">

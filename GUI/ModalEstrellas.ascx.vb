@@ -60,6 +60,9 @@
     End Sub
 
     Private Sub btnVotar_Click(sender As Object, e As EventArgs) Handles btnVotar.Click
-        BLL.ServiciosBLL.ObtenerInstancia.AgregarVoto(Session("idServicioVoto"), Session("votacion"))
+
+        BLL.ServiciosBLL.ObtenerInstancia.AgregarVoto(Session("idServicioVoto"), Session("votacion"), BLL.GestorSesion.ObtenerSesionActual.UsuarioActivo)
+
+
     End Sub
 End Class

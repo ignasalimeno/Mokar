@@ -114,6 +114,8 @@ Public Class Chat
             ChatBE.ID_Usuario = Session("IDUsuarioSeleccionado")
             ChatBE.Respuesta = False
 
+            Session("horaPregunta") = ChatBLL.ObtenerInstancia.LeerHoraMensaje(DirectCast(Session("ChatsTotales"), List(Of Chat2BE))(DG_Chats.Rows(e.NewSelectedIndex).DataItemIndex).idChat)
+
             ChatBLL.ObtenerInstancia.LeerMensaje(ChatBE)
 
             divChatChat.Visible = True
@@ -133,12 +135,14 @@ Public Class Chat
                 ChatBE.Mensaje = txtChatMensaje.Value
                 ChatBE.FechaHora = Now
                 ChatBE.Respuesta = True
+                ChatBE.TiempoRta = DateDiff(DateInterval.Second, Session("horaPregunta"), Now)
                 ChatBLL.ObtenerInstancia.NuevoMensaje(ChatBE)
             Else
                 ChatBE.ID_Usuario = GestorSesion.ObtenerSesionActual.UsuarioActivo.idUsuario
                 ChatBE.Mensaje = txtChatMensaje.Value
                 ChatBE.FechaHora = DateTime.Now
                 ChatBE.Respuesta = False
+                ChatBE.TiempoRta = DateDiff(DateInterval.Second, Now, Session("horaPregunta"))
                 ChatBLL.ObtenerInstancia.NuevoMensaje(ChatBE)
             End If
             CargarLista()

@@ -82,6 +82,7 @@
     <Compile Include="NotaCreditoMPP.vb" />
     <Compile Include="PedidoCanceladoMPP.vb" />
     <Compile Include="PermisoMPP.vb" />
+    <Compile Include="ReportesMPP.vb" />
     <Compile Include="RolMPP.vb" />
     <Compile Include="ServiciosMPP.vb" />
     <Compile Include="UsuarioMPP.vb" />

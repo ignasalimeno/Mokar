@@ -91,6 +91,7 @@
     <Compile Include="NotaCreditoBLL.vb" />
     <Compile Include="PedidoCanceladoBLL.vb" />
     <Compile Include="PermisosBLL.vb" />
+    <Compile Include="ReportesBLL.vb" />
     <Compile Include="RolBLL.vb" />
     <Compile Include="ServiciosBLL.vb" />
     <Compile Include="UsuarioBLL.vb" />

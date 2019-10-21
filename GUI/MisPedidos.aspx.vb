@@ -34,7 +34,11 @@ Public Class MisPedidos
     Private Sub DG_Pedidos_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles DG_Pedidos.RowCommand
         Try
             If e.CommandName = "Calificar" Then
-                ModalEstrellas1.Mostrar(e.CommandArgument)
+                If BLL.ServiciosBLL.ObtenerInstancia.PermiteVoto(Session("idServicioVoto"), BLL.GestorSesion.ObtenerSesionActual.UsuarioActivo) Then
+                    ModalEstrellas1.Mostrar(e.CommandArgument)
+                Else
+                    ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & "Este servicio ya ha sido valorado!" & "')", True)
+                End If
             End If
         Catch ex As Exception
 

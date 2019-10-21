@@ -91,6 +91,8 @@
     <Compile Include="PedidoCanceladoBE.vb" />
     <Compile Include="PedidosActivosBE.vb" />
     <Compile Include="PermisosBE.vb" />
+    <Compile Include="ReporteEncuestaBE.vb" />
+    <Compile Include="ReporteServiciosBE.vb" />
     <Compile Include="RolBE.vb" />
     <Compile Include="ServiciosBE.vb" />
     <Compile Include="ServiciosComentariosBE.vb" />

@@ -28,4 +28,7 @@
             pNoLeido = value
         End Set
     End Property
+
+    Property idChat As Integer
+
 End Class

@@ -1736,6 +1736,150 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Reportes_Encuestas._Div_Encuestas">
+<summary>
+Div_Encuestas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._Reporte_Encuesta">
+<summary>
+Reporte_Encuesta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._btnVerEncuestas">
+<summary>
+btnVerEncuestas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._btnVerFichaOpinion">
+<summary>
+btnVerFichaOpinion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._DG_Encuestas2">
+<summary>
+DG_Encuestas2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._Repeater1">
+<summary>
+Repeater1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Respuestas._Div_ReporteTiempo">
+<summary>
+Div_ReporteTiempo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Respuestas._lbl_Preguntas">
+<summary>
+lbl_Preguntas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Respuestas._lbl_Respuestas">
+<summary>
+lbl_Respuestas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Respuestas._lbl_Porcentaje">
+<summary>
+lbl_Porcentaje control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Respuestas._lbl_TiempoPromedio">
+<summary>
+lbl_TiempoPromedio control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._DDL_Servicios">
+<summary>
+DDL_Servicios control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._btnFiltrar">
+<summary>
+btnFiltrar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._btnVerTodos">
+<summary>
+btnVerTodos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._grilla">
+<summary>
+grilla control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._DG_Servicios">
+<summary>
+DG_Servicios control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Rol._GvObjetos">
 <summary>
 GvObjetos control.

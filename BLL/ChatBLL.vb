@@ -60,4 +60,12 @@ Public Class ChatBLL
             Return 0
         End Try
     End Function
+
+    Public Function LeerHoraMensaje(idChat As Integer) As DateTime
+        Try
+            Return ChatMPP.ObtenerInstancia.LeerHoraMensaje(idChat)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 End Class

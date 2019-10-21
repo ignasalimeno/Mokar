@@ -104,9 +104,9 @@ Public Class ServiciosBLL
 
     End Function
 
-    Public Function AgregarVoto(idServicio As Integer, voto As Integer) As Boolean
+    Public Function AgregarVoto(idServicio As Integer, voto As Integer, usuario As UsuarioBE) As Boolean
         Try
-            Return ServiciosMPP.ObtenerInstancia.AgregarVoto(idServicio, voto)
+            Return ServiciosMPP.ObtenerInstancia.AgregarVoto(idServicio, voto, usuario)
         Catch ex As Exception
             Return False
         End Try
@@ -125,6 +125,14 @@ Public Class ServiciosBLL
             Return ServiciosMPP.ObtenerInstancia.ListarObjetosSimple(campo)
         Catch ex As Exception
             Return Nothing
+        End Try
+    End Function
+
+    Public Function PermiteVoto(idServicio As Integer, usuario As UsuarioBE) As Boolean
+        Try
+            Return ServiciosMPP.ObtenerInstancia.PermiteVoto(idServicio, usuario)
+        Catch ex As Exception
+            Return False
         End Try
     End Function
 
