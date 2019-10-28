@@ -326,7 +326,7 @@ Public Class ServiciosMPP
 
         hdatos.Add("@idServicio", idServicio)
         hdatos.Add("@voto", voto)
-        hdatos.Add("@usuario", usuario)
+        hdatos.Add("@usuario", usuario.mail)
 
         resultado = oDatos.Escribir("n_Servicios_Votar", hdatos)
 
@@ -430,7 +430,7 @@ Public Class ServiciosMPP
 
             Dim hdatos As New Hashtable
             hdatos.Add("@idServicio", idServicio)
-            hdatos.Add("@usuario", usuario)
+            hdatos.Add("@usuario", usuario.mail)
 
             DS = oDatos.Leer("n_Servicios_ValidarVotar", hdatos)
 
@@ -444,4 +444,36 @@ Public Class ServiciosMPP
         End Try
     End Function
 
+    Public Function ListarRanking() As IEnumerable(Of ServiciosBE)
+        Try
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim list As New List(Of BE.ServiciosBE)
+            Dim dt As New DataTable
+            Dim newObj As BE.ServiciosBE
+
+            Dim hdatos As New Hashtable
+
+            DS = oDatos.Leer("n_Servicios_Ranking", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    newObj = New BE.ServiciosBE
+                    newObj.idServicio = Item("idServicio")
+                    newObj.nombre = Item("nombre")
+                    newObj.precio = Item("Voto")
+
+                    list.Add(newObj)
+                Next
+
+                Return list
+
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 End Class

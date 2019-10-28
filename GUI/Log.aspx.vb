@@ -15,27 +15,33 @@ Public Class Log
     End Sub
 
     Private Sub CargarGrilla()
+        Try
 
-        Select Case tipoBusqueda
-            Case 0
-                Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarTodos
-                Me.GvBitacora.DataBind()
-            Case 1
-                Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarBusquedaSimple(txtBusquedaSimple.Text)
-                Me.GvBitacora.DataBind()
-            Case 2
-                Dim oLog As New LogBE
-                oLog.usuarioMail = IIf(txtUsuario.Text = "", Nothing, txtUsuario.Text)
-                oLog.idTipo = IIf(DDL_Tipo.SelectedValue = 0, Nothing, DDL_Tipo.SelectedValue)
-                oLog.criticidad = IIf(DDL_Criticidad.SelectedValue = "---", Nothing, DDL_Criticidad.SelectedValue)
 
-                Dim fechaDesde As Date = Date.Parse(TextBox2.Text)
-                Dim fechaHasta As Date = Date.Parse(TextBox1.Text)
+            Select Case tipoBusqueda
+                Case 0
+                    Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarTodos
+                    Me.GvBitacora.DataBind()
+                Case 1
+                    Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarBusquedaSimple(txtBusquedaSimple.Text)
+                    Me.GvBitacora.DataBind()
+                Case 2
+                    Dim oLog As New LogBE
+                    oLog.usuarioMail = IIf(txtUsuario.Text = "", Nothing, txtUsuario.Text)
+                    oLog.idTipo = IIf(DDL_Tipo.SelectedValue = 0, Nothing, DDL_Tipo.SelectedValue)
+                    oLog.criticidad = IIf(DDL_Criticidad.SelectedValue = "---", Nothing, DDL_Criticidad.SelectedValue)
 
-                Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarBusquedaAvanzada(oLog, fechaDesde, fechaHasta)
-                Me.GvBitacora.DataBind()
-        End Select
+                    Dim fechaDesde As Date = Date.Parse(TextBox2.Text)
+                    Dim fechaHasta As Date = Date.Parse(TextBox1.Text)
 
+                    Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarBusquedaAvanzada(oLog, fechaDesde, fechaHasta)
+                    Me.GvBitacora.DataBind()
+            End Select
+
+        Catch ex As Exception
+            Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarTodos
+            Me.GvBitacora.DataBind()
+        End Try
     End Sub
 
     Protected Sub GvBitacora_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles GvBitacora.PageIndexChanging
@@ -45,41 +51,13 @@ Public Class Log
         CargarGrilla()
     End Sub
 
-    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If txtBusquedaSimple.Text = "" Then
-            tipoBusqueda = 0
+            tipoBusqueda = 2
             CargarGrilla()
         Else
             tipoBusqueda = 1
             CargarGrilla()
-        End If
-
-    End Sub
-
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        tipoBusqueda = 2
-        CargarGrilla()
-    End Sub
-
-    Protected Sub ImageButton1_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton1.Click
-        If panelAvanzada.Visible Then
-            ImageButton1.ImageUrl = "~/img/flechaAbajo.png"
-            panelAvanzada.Visible = False
-        Else
-            ImageButton1.ImageUrl = "~/img/flechaArriba.png"
-            panelAvanzada.Visible = True
-        End If
-
-
-    End Sub
-
-    Protected Sub ImageButton2_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton2.Click
-        If panelSimple.Visible Then
-            ImageButton2.ImageUrl = "~/img/flechaAbajo.png"
-            panelSimple.Visible = False
-        Else
-            ImageButton2.ImageUrl = "~/img/flechaArriba.png"
-            panelSimple.Visible = True
         End If
     End Sub
 

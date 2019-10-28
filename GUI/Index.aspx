@@ -2,21 +2,55 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="intro" class="clearfix">
 
-    <div class="container d-flex h-100">
+        <div class="container d-flex h-100">
+            <div class="row">
+                <div class="col-8">
+                    <div class="row justify-content-center align-self-center">
 
-      <div class="row justify-content-center align-self-center">
+                        <div class="col-md-6 intro-info order-md-first order-last">
+                            <h2>Potenciando tus objetivos<br>
+                                y tus <span>Resultados!</span></h2>
+                        </div>
 
-        <div class="col-md-6 intro-info order-md-first order-last">
-            <h2>Potenciando tus objetivos<br>y tus <span>Resultados!</span></h2>
-         </div>
-  
-        <div class="col-md-6 intro-img order-md-last order-first">
-          <img src="img/intro-img.svg" alt="" class="img-fluid">
+                        <div class="col-md-6 intro-img order-md-last order-first">
+                            <img src="img/intro-img.svg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                  <div class="card-body">
+                        <div class="card card-body">
+                       <h3 id="Pregunta" runat="server"></h3>
+
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                            <asp:HiddenField ID="idPregunta" runat="server" />
+                            <asp:RadioButtonList runat="server" ID="rbPreguntas" AutoPostBack="true">
+                            </asp:RadioButtonList>
+                                    
+                            <asp:Chart ID="chReportes" runat="server" CssClass="chart" Visible="false" BackColor="LightGray" Width="280px">
+                                <Series>
+                                    <asp:Series Name="Series1"></asp:Series>
+                                </Series>
+                                <ChartAreas>
+                                    <asp:ChartArea Name="ChartArea1" AlignmentOrientation="Horizontal" Area3DStyle-Enable3D="true"
+                                        Area3DStyle-WallWidth="2" Area3DStyle-Rotation="20"
+                                        Area3DStyle-LightStyle="Simplistic" Area3DStyle-Inclination="40"
+                                        BorderColor="White" ShadowColor="#CCCCCC">
+                                    </asp:ChartArea>
+                                </ChartAreas>
+                            </asp:Chart>
+                                    </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <br />
+                            <asp:Button ID="btnVotar" Text="Votar" CssClass="btn btn-primary" runat="server" />
+                        </div>
+
+                  </div>
+                </div>
+            </div>
+
         </div>
-      </div>
-
-
-    </div>
 
   </section><!-- #intro -->
 
@@ -251,10 +285,57 @@
 
         </div>
 
+
+<div class="container">
+          <br />
+          <h4 class="text-center">Ranking de productos mas votados</h4>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 text-center">
+                                                <div class="rating">
+                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                            </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                            </span><span class="glyphicon glyphicon-star-empty"></span>
+                        </div>
+                        <div>
+                            <span class="glyphicon glyphicon-user"></span>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="col-xs-12 col-md-6" style="align-items :center"">
+                        <div class="row rating-desc">
+
+                            <asp:Repeater ID="Repeater1" runat="server">
+                                <ItemTemplate>
+                                    <div class="col-xs-3 col-md-9 text-right">
+                                <span class="glyphicon glyphicon-star"><p> <%# Eval("nombre") %> </p></span>
+                            </div>
+                            <div class="col-xs-8 col-md-9">
+                                <div class="progress progress-striped">
+                                    <div runat="server" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:80%" >
+                                        <span class="sr-only"><%# Eval("precio") %></span> 
+                                    </div>
+                                </div>
+                            </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+
+                            <!-- end 1 -->
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
       </div>
     </section><!-- #services -->
 
-    
+     
 
    
       

@@ -49,8 +49,10 @@ Public Class MaterialEstudio
             oObjBE.fechaCreacion = txtFecha.Text
             oObjBE.ruta = fileArchivo.PostedFile.FileName
             oObjBE.activo = 1
+            fileArchivo.PostedFile.SaveAs(Server.MapPath("materialEstudio") & "/" & fileArchivo.PostedFile.FileName)
 
             oObjBLL.Alta(oObjBE)
+
             Limpiar()
             CargarGrilla()
         Catch ex As Exception

@@ -41,6 +41,7 @@ Public Class NewsletterMPP
         hdatos.Add("@titulo", DBNull.Value)
         hdatos.Add("@descripcion", DBNull.Value)
         hdatos.Add("@autor", DBNull.Value)
+        hdatos.Add("@fechaCreacion", DBNull.Value)
         hdatos.Add("@imagen", System.Data.SqlTypes.SqlBinary.Null)
         hdatos.Add("@idCategoria", DBNull.Value)
         hdatos.Add("@activo", "0")

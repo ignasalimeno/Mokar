@@ -69,6 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup_RestoreBLL.vb" />
     <Compile Include="BuscadorBLL.vb" />
     <Compile Include="CategoriaBLL.vb" />
     <Compile Include="ChatBLL.vb" />
@@ -121,6 +122,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\GUI\Web.config">
+      <Link>Web.config</Link>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

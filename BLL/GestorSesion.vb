@@ -53,6 +53,7 @@ Public Class GestorSesion
 
     Public Sub CerrarSesion()
         UsuarioActivo = Nothing
+
     End Sub
 
 

@@ -549,11 +549,11 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
-@media (min-width: 576px) {
+/*@media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -575,14 +575,14 @@ pre code {
   .container {
     max-width: 1140px;
   }
-}
+}*/
 
 .container-fluid {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .row {
@@ -3931,7 +3931,7 @@ input[type="button"].btn-block {
   background-color: #b3d7ff;
 }
 
-.custom-range::-webkit-slider-runnable-track {
+.custom-range::-webkit-slider-runnable-track {@media 
   width: 100%;
   height: 0.5rem;
   color: transparent;
@@ -4254,7 +4254,7 @@ input[type="button"].btn-block {
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
     -ms-flex-pack: start;
-    justify-content: flex-start;
+    /*justify-content: flex-start;*/
   }
   .navbar-expand-sm .navbar-nav {
     -ms-flex-direction: row;
@@ -4296,7 +4296,7 @@ input[type="button"].btn-block {
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
     -ms-flex-pack: start;
-    justify-content: flex-start;
+    /*justify-content: flex-start;*/
   }
   .navbar-expand-md .navbar-nav {
     -ms-flex-direction: row;
@@ -4338,7 +4338,7 @@ input[type="button"].btn-block {
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
     -ms-flex-pack: start;
-    justify-content: flex-start;
+    /*justify-content: flex-start;*/
   }
   .navbar-expand-lg .navbar-nav {
     -ms-flex-direction: row;
@@ -4380,7 +4380,7 @@ input[type="button"].btn-block {
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
     -ms-flex-pack: start;
-    justify-content: flex-start;
+    /*justify-content: flex-start;*/
   }
   .navbar-expand-xl .navbar-nav {
     -ms-flex-direction: row;
@@ -4413,7 +4413,7 @@ input[type="button"].btn-block {
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   -ms-flex-pack: start;
-  justify-content: flex-start;
+  /*justify-content: flex-start;*/
 }
 
 .navbar-expand > .container,
@@ -10035,4 +10035,3 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */

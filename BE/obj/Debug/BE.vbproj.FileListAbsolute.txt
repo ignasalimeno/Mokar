@@ -32,7 +32,6 @@ C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\BE.xml
 C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\System.Net.Http.dll
 C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\System.Net.Http.xml
 C:\Users\ignas\Desktop\Mokar\BE\bin\Debug\es\System.Net.Http.resources.dll
-C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
 C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.Resources.resources
 C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
 C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.dll

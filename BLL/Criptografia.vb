@@ -5,6 +5,7 @@ Imports System.Text
 Imports BE
 Imports System.ComponentModel
 Imports System.Web
+Imports System.Configuration
 
 Public Class Criptografia
 
@@ -135,27 +136,27 @@ Public Class Criptografia
         End If
     End Function
 
-    'Public Function Listar_BackUps_Fisicos() As List(Of Backup_Restore_BE)
-    '    Dim lista As New List(Of Backup_Restore_BE)
+    Public Function Listar_BackUps_Fisicos(path1 As String) As List(Of Backup_RestoreBE)
+        Dim lista As New List(Of Backup_RestoreBE)
 
-    '    Dim path As String
-    '    path = ConfigurationManager.AppSettings("BACKUP_PATH")
-    '    Dim dir As New DirectoryInfo(path)
-    '    Dim fileList As FileInfo()
-    '    fileList = dir.GetFiles("*.bak", SearchOption.AllDirectories)
+        Dim path As String
+        path = path1
+        Dim dir As New DirectoryInfo(path)
+        Dim fileList As FileInfo()
+        fileList = dir.GetFiles("*.bak", SearchOption.AllDirectories)
 
-    '    For Each backUpFile As FileInfo In fileList
-    '        Dim oBackup As New Backup_Restore_BE With {
-    '        .Nombre = backUpFile.Name,
-    '        .Fecha = backUpFile.CreationTime,
-    '        .path = backUpFile.DirectoryName,
-    '        .Tamaño = Math.Round(((backUpFile.Length / 1024) / 1024), 2).ToString() & " Mb",
-    '        .Usuario = "Fichero Local"
-    '        }
-    '        lista.Add(oBackup)
-    '    Next
-    '    Return lista
-    'End Function
+        For Each backUpFile As FileInfo In fileList
+            Dim oBackup As New Backup_RestoreBE With {
+            .Nombre = backUpFile.Name,
+            .Fecha = backUpFile.CreationTime,
+            .Path = backUpFile.DirectoryName,
+            .Tamaño = Math.Round(((backUpFile.Length / 1024) / 1024), 2).ToString() & " Mb",
+            .Usuario = "Fichero Local"
+            }
+            lista.Add(oBackup)
+        Next
+        Return lista
+    End Function
 
     Public Function EncriptarTarjeta(ByVal paramTexto As String) As String
         Dim CyphMode As CipherMode = CipherMode.ECB

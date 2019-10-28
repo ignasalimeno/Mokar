@@ -50,15 +50,12 @@
 
 
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
+        <div class="container" style="max-width: max-content">
             <div class="row">
-                <div class="col-6">
-                    <h3>Servicios</h3>
+                <div class="col-9">
+                    <h1>Servicios</h1>
                 </div>
-                <div class="col-6">
+                <div class="col-3" style="text-align: right">
                                <asp:AdRotator AdvertisementFile="AdRotator.xml"  runat="server"></asp:AdRotator>
                 </div>
             </div>
@@ -67,49 +64,47 @@
                     <div class="card-body">
                         <div class="card card-body">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-3">
                                     <asp:Label ID="Label10" runat="server" Text="Buscar general: "></asp:Label>
                                     <asp:TextBox ID="txtGeneral" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="col-3">
-                                    <asp:Button ID="btnBuscar" CssClass="btn btn-primary" runat="server" Text="Buscar" />
-                                </div>
                                  <div class="col-3">
-                                    <asp:Button ID="btnVerTodos" CssClass="btn btn-primary" runat="server" Text="Ver Todos" />
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-4">
                                     <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
                                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <asp:Label ID="Label5" runat="server" Text="Descripcion: "></asp:Label>
                                     <asp:TextBox ID="txtDescr" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <asp:Label ID="Label3" runat="server" Text="Precio: $ "></asp:Label>
                                     <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
                                 </div>
+                               
                             </div>
                             <br />
-                            <div class="row">
-                                <div class="col-3">
+                           <div class="row">
+                                <div class="col-2">
                                     <asp:Label ID="Label6" runat="server" Text="Plataforma: "></asp:Label>
                                     <asp:DropDownList ID="ddl_Pltaforma" runat="server"></asp:DropDownList>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <asp:Label ID="Label7" runat="server" Text="Material: "></asp:Label>
                                     <asp:DropDownList ID="ddl_Material" runat="server"></asp:DropDownList>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <asp:Label ID="Label8" runat="server" Text="Reportes: "></asp:Label>
                                     <asp:DropDownList ID="ddl_Reportes" runat="server"></asp:DropDownList>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <asp:Label ID="Label9" runat="server" Text="Capacitaciones: "></asp:Label>
                                     <asp:DropDownList ID="ddl_Capacitaciones" runat="server"></asp:DropDownList>
+                                </div>
+                                 <div class="col-2">
+                                    <asp:Button ID="btnBuscar" CssClass="btn btn-primary" runat="server" Text="Buscar" />
+                                </div>
+                                 <div class="col-2">
+                                    <asp:Button ID="btnVerTodos" CssClass="btn btn-primary" runat="server" Text="Ver Todos" />
                                 </div>
                             </div>
 
@@ -143,20 +138,24 @@
                     <div class="row ">
                         <asp:Repeater ID="RP_Ofertas" runat="server">
                             <ItemTemplate>
-                                <div class="col-4 ml-0 mt-2 mb-2">
+                                <div class="col-3 ml-0 mt-2 mb-2">
                                     <div class="card hvr-bounce-in" data-wow-duration="1.4s">
                                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                             <ContentTemplate>
+                                               <div style="text-align: center">
                                                 <asp:Image ImageUrl='<%#"data:Image/png;base64," + Convert.ToBase64String(Eval("ImagenData")) %>' runat="server" />
-                                                <div class="card-body">
+                                                </div>
+                                                   <div class="card-body">
+                                                       <div style="text-align: center">
                                                     <h2>
                                                         <asp:Label ID="lbl_Nombre" CssClass="card-title" Text='<%# Eval("nombre") %>' runat="server"></asp:Label></h2>
-
+                                                     
                                                     <%--<asp:Label ID="lbl_Region" CssClass="card-subtitle text-muted mb-2" Text='<%# Eval("Region")%>' runat="server"></asp:Label>--%>
                                                     <h3>
                                                         <p class="card-text"><%# Eval("descripcion") %></p>
                                                     </h3>
-
+                                                       </div>
+                                                       <hr />
                                                     <p class="card-text">Precio: $ <%# Eval("precio") %></p>
                                                     <p class="card-text">Acceso a la Plataforma: <%# Eval("accesoPlataforma") %></p>
                                                     <p class="card-text">Material de Estudio: <%# Eval("materialEstudio") %></p>

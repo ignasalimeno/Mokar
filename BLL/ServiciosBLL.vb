@@ -136,4 +136,12 @@ Public Class ServiciosBLL
         End Try
     End Function
 
+    Public Function ListarRanking() As IEnumerable(Of ServiciosBE)
+        Try
+            Return ServiciosMPP.ObtenerInstancia.ListarRanking()
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class

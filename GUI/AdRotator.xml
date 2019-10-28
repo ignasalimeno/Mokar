@@ -1,34 +1,30 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Advertisements>
   <Ad>
+    <NavigateUrl>https://www.atiim.com/</NavigateUrl>
     <ImageUrl>https://i.ibb.co/Zc0jJLH/atiim.png</ImageUrl>
     <height>391</height>
     <width>73</width>
-    <NavigateUrl>https://www.atiim.com/</NavigateUrl>
-    <AlternateText>No se encontro la imagen 1</AlternateText>
     <Keyword>Computers</Keyword>
     <Impressions>2</Impressions>
+    <AlternateText>https://i.ibb.co/Zc0jJLH/atiim.png</AlternateText>
   </Ad>
-
   <Ad>
+    <NavigateUrl>https://www.perdoo.com/</NavigateUrl>
     <ImageUrl>https://i.ibb.co/sPg9v7K/perdoo.png</ImageUrl>
     <height>391</height>
     <width>73</width>
-    <NavigateUrl>https://www.perdoo.com/</NavigateUrl>
-    <AlternateText>No se encontro la imagen 1</AlternateText>
     <Keyword>Computers</Keyword>
     <Impressions>2</Impressions>
+    <AlternateText>https://i.ibb.co/sPg9v7K/perdoo.png</AlternateText>
   </Ad>
-
   <Ad>
+    <NavigateUrl>https://www.workpath.co/</NavigateUrl>
     <ImageUrl>https://i.ibb.co/ZS0B34S/workpath.png</ImageUrl>
     <height>391</height>
     <width>73</width>
-    <NavigateUrl>https://www.workpath.co/</NavigateUrl>
-    <AlternateText>No se encontro la imagen 1</AlternateText>
     <Keyword>Computers</Keyword>
     <Impressions>2</Impressions>
+    <AlternateText>https://i.ibb.co/ZS0B34S/workpath.png</AlternateText>
   </Ad>
-</Advertisements>
-
-
+ </Advertisements>

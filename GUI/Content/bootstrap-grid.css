@@ -16,14 +16,14 @@ html {
 }
 
 .container {
-  width: 100%;
+  /*width: 100%;*/
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
-@media (min-width: 576px) {
+/*@media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -47,12 +47,20 @@ html {
   }
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}*/
+
+/*nuevaVisual*/
+
 .container-fluid {
-  width: 100%;
+  /*width: 100%;*/
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .row {

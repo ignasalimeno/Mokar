@@ -32,24 +32,6 @@ Partial Public Class Servicios
     Protected WithEvents txtGeneral As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btnBuscar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btnVerTodos control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnVerTodos As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -174,6 +156,24 @@ Partial Public Class Servicios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_Capacitaciones As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''btnBuscar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnVerTodos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnVerTodos As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''btn_Comparar control.
