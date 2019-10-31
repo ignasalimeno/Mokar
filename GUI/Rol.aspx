@@ -2,11 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section id="portfolio" class="section-bg">
-      <div class="container">
-          <br />
-          <br />
-          <br />
-                <h3>Roles</h3>
+      <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Roles</h1>
+                </div>
+
+            </div>
 
            <asp:GridView ID="GvObjetos" runat="server" CellPadding="4" ForeColor="#333333"
                     GridLines="None" Height="106px" Width="100%" AutoGenerateColumns="False">

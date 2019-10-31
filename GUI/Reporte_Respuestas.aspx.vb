@@ -25,17 +25,23 @@ Public Class Reporte_Respuestas
             Respuestas = ReportesBLL.ObtenerInstancia.ListarCantPreguntas
             TiempoPromedio = ReportesBLL.ObtenerInstancia.ListarTiempoPromedio
 
-
             lbl_Respuestas.InnerText = Respuestas
-
-
             lbl_Preguntas.InnerText = Preguntas
-
 
             Resultado = Math.Truncate((Respuestas / Preguntas) * 100)
             lbl_Porcentaje.InnerText = Resultado & "%"
 
             lbl_TiempoPromedio.InnerText = TiempoPromedio & " segundos"
+
+            Dim Serie1 = chReportes.Series("Series1")
+            Serie1.Points.Clear()
+
+            Serie1.Points.AddXY("Preguntas", Preguntas)
+            Serie1.Points.AddXY("Respuestas", Respuestas)
+
+            chReportes.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.StackedColumn
+            Dim ChartArea = chReportes.ChartAreas("ChartArea1")
+            ChartArea.AxisY.Title = "Cantidad"
 
         Catch ex As Exception
 

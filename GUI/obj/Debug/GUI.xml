@@ -107,9 +107,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Categorias._btnAgregar">
+<summary>
+btnAgregar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Categorias._GvObjetos">
 <summary>
 GvObjetos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Categorias._Panel1">
+<summary>
+Panel1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -137,24 +155,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Categorias._BtnModificar">
 <summary>
 BtnModificar control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Categorias._BtnBaja">
-<summary>
-BtnBaja control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Categorias._BtnLimpiar">
-<summary>
-BtnLimpiar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -530,6 +530,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.GestionarEncuestas._btnConfirmar">
+<summary>
+btnConfirmar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarEncuestas._btnCancelar">
+<summary>
+btnCancelar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarEncuestas._preguntas">
 <summary>
 preguntas control.
@@ -560,24 +578,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.GestionarEncuestas._Respuestas">
 <summary>
 Respuestas control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.GestionarEncuestas._btnConfirmar">
-<summary>
-btnConfirmar control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.GestionarEncuestas._btnCancelar">
-<summary>
-btnCancelar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -674,9 +674,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.GestionarServicios._btnAgregar">
+<summary>
+btnAgregar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarServicios._GvObjetos">
 <summary>
 GvObjetos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.GestionarServicios._Panel1">
+<summary>
+Panel1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -767,24 +785,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.GestionarServicios._BtnModificar">
 <summary>
 BtnModificar control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.GestionarServicios._BtnBaja">
-<summary>
-BtnBaja control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.GestionarServicios._BtnLimpiar">
-<summary>
-BtnLimpiar control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -944,15 +944,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Index._Repeater1">
-<summary>
-Repeater1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:GUI.Log._UpdatePanel2">
 <summary>
 UpdatePanel2 control.
@@ -1052,112 +1043,112 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.MaterialEstudio._GvObjetos">
+<member name="F:GUI.MaterialEstudio._btnAgregar">
 <summary>
-Control GvObjetos.
+btnAgregar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MaterialEstudio._GvObjetos">
+<summary>
+GvObjetos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MaterialEstudio._Panel1">
+<summary>
+Panel1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._txtTitulo">
 <summary>
-Control txtTitulo.
+txtTitulo control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._txtDescr">
 <summary>
-Control txtDescr.
+txtDescr control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._txtAutor">
 <summary>
-Control txtAutor.
+txtAutor control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._txtFecha">
 <summary>
-Control txtFecha.
+txtFecha control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._cal_FechaCreacion">
 <summary>
-Control cal_FechaCreacion.
+cal_FechaCreacion control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._fileArchivo">
 <summary>
-Control fileArchivo.
+fileArchivo control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._BtnAlta">
 <summary>
-Control BtnAlta.
+BtnAlta control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio._BtnModificar">
 <summary>
-Control BtnModificar.
+BtnModificar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.MaterialEstudio._BtnBaja">
-<summary>
-Control BtnBaja.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.MaterialEstudio._BtnLimpiar">
-<summary>
-Control BtnLimpiar.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.MaterialEstudio_Descargar._RP_Material">
 <summary>
-Control RP_Material.
+RP_Material control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Mensajes_Modal_._L_Mensaje">
@@ -2132,6 +2123,42 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Reportes_Encuestas._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._btnActivas">
+<summary>
+btnActivas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._btnVencidas">
+<summary>
+btnVencidas control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reportes_Encuestas._Repeater2">
+<summary>
+Repeater2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Reporte_Respuestas._Div_ReporteTiempo">
 <summary>
 Div_ReporteTiempo control.
@@ -2177,9 +2204,54 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Reporte_Respuestas._chReportes">
+<summary>
+chReportes control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Reporte_Servicios._DDL_Servicios">
 <summary>
 DDL_Servicios control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._TextBox1">
+<summary>
+TextBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._CalendarExtender2">
+<summary>
+CalendarExtender2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._TextBox2">
+<summary>
+TextBox2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._CalendarExtender1">
+<summary>
+CalendarExtender1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2216,6 +2288,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Reporte_Servicios._DG_Servicios">
 <summary>
 DG_Servicios control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._chReportes">
+<summary>
+chReportes control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -3320,184 +3401,184 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Usuarios._GvUsuario">
+<member name="F:GUI.Usuarios._btnAgregar">
 <summary>
-Control GvUsuario.
+btnAgregar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Usuarios._GvUsuario">
+<summary>
+GvUsuario control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Usuarios._Panel1">
+<summary>
+Panel1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios._TxtNombre">
 <summary>
-Control TxtNombre.
+TxtNombre control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios._DDL_TipoUsuario">
 <summary>
-Control DDL_TipoUsuario.
+DDL_TipoUsuario control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios._TxtMail">
 <summary>
-Control TxtMail.
+TxtMail control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios._BtnAlta">
 <summary>
-Control BtnAlta.
+BtnAlta control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios._BtnModificar">
 <summary>
-Control BtnModificar.
+BtnModificar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.Usuarios._BtnBaja">
-<summary>
-Control BtnBaja.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:GUI.Usuarios._BtnLimpiar">
-<summary>
-Control BtnLimpiar.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._Label1">
 <summary>
-Control Label1.
+Label1 control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._DDL_Usuarios">
 <summary>
-Control DDL_Usuarios.
+DDL_Usuarios control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._UpdatePanelRolesActuales">
 <summary>
-Control UpdatePanelRolesActuales.
+UpdatePanelRolesActuales control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._LB_RolesActuales">
 <summary>
-Control LB_RolesActuales.
+LB_RolesActuales control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._UpdatePanelBotones">
 <summary>
-Control UpdatePanelBotones.
+UpdatePanelBotones control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._btn_Agregar">
 <summary>
-Control btn_Agregar.
+btn_Agregar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._btn_Quitar">
 <summary>
-Control btn_Quitar.
+btn_Quitar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._UpdatePanelRolesDisponibles">
 <summary>
-Control UpdatePanelRolesDisponibles.
+UpdatePanelRolesDisponibles control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._LB_RolesDisponibles">
 <summary>
-Control LB_RolesDisponibles.
+LB_RolesDisponibles control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._UpdatePanelAceptarCancelar">
 <summary>
-Control UpdatePanelAceptarCancelar.
+UpdatePanelAceptarCancelar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._btn_Guardar">
 <summary>
-Control btn_Guardar.
+btn_Guardar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Usuarios_AsignarRoles._btn_Cancelar">
 <summary>
-Control btn_Cancelar.
+btn_Cancelar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.WebForm1._Lbl_Titulo2">

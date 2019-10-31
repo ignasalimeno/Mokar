@@ -2,11 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <div class="jumbotron2 col-12">
+        <div class="container" style="max-width: inherit">
+                      <div class="jumbotron2 col-12">
                 <h3>Muchas gracias por tu compra</h3>
                 <h4 class="display-6">
                     <asp:Label ID="lblEncuestaDelDia" Text="Ayudanos a mejorar realizando esta breve Ficha de Opinion: " runat="server" />

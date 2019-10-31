@@ -60,7 +60,7 @@ Public Class MaterialEstudioMPP
         hdatos.Add("@descripcion", Objeto.descripcion)
         hdatos.Add("@autor", Objeto.autor)
         hdatos.Add("@fechaCreacion", Objeto.fechaCreacion)
-        hdatos.Add("@ruta", Objeto.ruta)
+        hdatos.Add("@ruta", IIf(Objeto.ruta = "", DBNull.Value, Objeto.ruta))
         hdatos.Add("@activo", Objeto.activo)
 
 

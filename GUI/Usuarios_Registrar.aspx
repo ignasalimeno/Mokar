@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Usuarios_Registrar.aspx.vb" Inherits="GUI.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <section id="portfolio" class="section-bg">
-      <div class="container">
-          <br />
-          <br />
-          <br />
+       <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Active su usuario</h1>
+                </div>
 
-                    
-                <h3>Active su usuario!</h3>
+            </div>
                <br />
             <div>
                 <asp:Label ID="Lbl_Titulo2" runat="server" Text="Ingresar la Contraseña registrada"></asp:Label>

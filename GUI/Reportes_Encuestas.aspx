@@ -6,11 +6,14 @@
 
 
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <h3>Estadísticas - Encuestas / Ficha Opinion</h3>
+       <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Estadísticas - Encuestas / Ficha de Opinión</h1>
+                </div>
+
+            </div>
+         
 
             <div class="card-body">
                 <div class="card card-body">
@@ -65,7 +68,7 @@
                 <br />
 
                 <!-- Detalle de encuestas -->
-                 <asp:Repeater ID="Repeater1" runat="server">
+                 <asp:Repeater ID="Repeater1" runat="server" Visible="false">
                 <ItemTemplate>
 
                     <asp:HiddenField ID="idPregunta" runat="server" Value='<%# Eval("idPregunta") %>' />
@@ -87,6 +90,49 @@
                 </ItemTemplate>
             </asp:Repeater>
 
+            </div>
+
+            <!-- Activas / Vencidas -->
+            <div class="card-body">
+                <div class="card card-body">
+
+                    <div class="row">
+                        <div class="col-2">
+                            <asp:Label ID="Label1" runat="server" Text="Encuestas"></asp:Label>
+                        </div>
+                        <div class="col-2">
+                            <asp:Button ID="btnActivas" CssClass="btn btn-primary" runat="server" Text="Activas" />
+                        </div>
+                        <div class="col-2">
+                            <asp:Button ID="btnVencidas" CssClass="btn btn-primary" runat="server" Text="Vencidas" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <asp:Repeater ID="Repeater2" runat="server">
+                            <ItemTemplate>
+                                <div class="col-4">
+                                    <asp:HiddenField ID="idPregunta" runat="server" Value='<%# Eval("idPregunta") %>' />
+                                     <h5 id="Pregunta"><%# Eval("Pregunta") %></h5>
+                                    <br />
+                                    <asp:Chart ID="chActivas" runat="server" CssClass="chart" Visible="false" BackColor="LightGray">
+                                        <Series>
+                                            <asp:Series Name="Series1"></asp:Series>
+                                        </Series>
+                                        <ChartAreas>
+                                            <asp:ChartArea Name="ChartArea1" AlignmentOrientation="Horizontal" Area3DStyle-Enable3D="true"
+                                                Area3DStyle-WallWidth="2" Area3DStyle-Rotation="20"
+                                                Area3DStyle-LightStyle="Simplistic" Area3DStyle-Inclination="40"
+                                                BorderColor="White" ShadowColor="#CCCCCC">
+                                            </asp:ChartArea>
+                                        </ChartAreas>
+                                    </asp:Chart>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+
+                </div>
             </div>
 
 

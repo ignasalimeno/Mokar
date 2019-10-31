@@ -32,6 +32,7 @@ Public Class CategoriaMPP
 
         hdatos.Add("@tipoConsulta", 2)
         hdatos.Add("@idCategoria", Objeto.idCategoria)
+        hdatos.Add("@descripcion", DBNull.Value)
 
         resultado = oDatos.Escribir("n_Categoria_ABMC", hdatos)
 

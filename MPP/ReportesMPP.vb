@@ -131,7 +131,7 @@ Public Class ReportesMPP
         End Try
     End Function
 
-    Public Function ObtenerReporteServicios(idServicio As Integer) As IEnumerable(Of ReporteServiciosBE)
+    Public Function ObtenerReporteServicios(idServicio As Integer, fechaDesde As Date, fechaHasta As Date) As IEnumerable(Of ReporteServiciosBE)
         Dim oDatos As New DAL.Datos
         Dim DS As New DataSet
         Dim list As New List(Of BE.ReporteServiciosBE)
@@ -139,7 +139,9 @@ Public Class ReportesMPP
         Dim newObj As BE.ReporteServiciosBE
 
         Dim hdatos As New Hashtable
-        hdatos.Add("@idServicio", idServicio)
+        hdatos.Add("@cancelada", idServicio)
+        hdatos.Add("@fechaDesde", fechaDesde)
+        hdatos.Add("@fechaHasta", fechaHasta)
 
         DS = oDatos.Leer("n_Reporte_Servicios", hdatos)
 
@@ -160,6 +162,39 @@ Public Class ReportesMPP
             Return Nothing
         End If
     End Function
+
+    Public Function ObtenerReporteServicios(fechaDesde As Date, fechaHasta As Date) As IEnumerable(Of ReporteServiciosBE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.ReporteServiciosBE)
+        Dim dt As New DataTable
+        Dim newObj As BE.ReporteServiciosBE
+
+        Dim hdatos As New Hashtable
+        hdatos.Add("@cancelada", DBNull.Value)
+        hdatos.Add("@fechaDesde", fechaDesde)
+        hdatos.Add("@fechaHasta", fechaHasta)
+
+        DS = oDatos.Leer("n_Reporte_Servicios", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.ReporteServiciosBE
+                newObj.idServicio = Item("idServicio")
+                newObj.Nombre = Item("Nombre")
+                newObj.Total = Item("Total")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
+
     Public Function ObtenerReporteServicios() As IEnumerable(Of ReporteServiciosBE)
         Dim oDatos As New DAL.Datos
         Dim DS As New DataSet
@@ -168,7 +203,9 @@ Public Class ReportesMPP
         Dim newObj As BE.ReporteServiciosBE
 
         Dim hdatos As New Hashtable
-        hdatos.Add("@idServicio", DBNull.Value)
+        hdatos.Add("@cancelada", DBNull.Value)
+        hdatos.Add("@fechaDesde", "1-1-2000")
+        hdatos.Add("@fechaHasta", "31-12-2020")
 
         DS = oDatos.Leer("n_Reporte_Servicios", hdatos)
 

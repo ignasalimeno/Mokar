@@ -77,6 +77,24 @@ Partial Public Class GestionarEncuestas
     Protected WithEvents CalendarExtender2 As Global.AjaxControlToolkit.CalendarExtender
     
     '''<summary>
+    '''btnConfirmar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConfirmar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnCancelar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''preguntas control.
     '''</summary>
     '''<remarks>
@@ -111,24 +129,6 @@ Partial Public Class GestionarEncuestas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Respuestas As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''btnConfirmar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnConfirmar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btnCancelar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Panel1 control.

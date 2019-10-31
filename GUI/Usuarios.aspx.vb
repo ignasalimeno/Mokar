@@ -42,43 +42,50 @@ Public Class Usuarios
         Next
     End Sub
 
-    Protected Sub BtnLimpiar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnLimpiar.Click
-        Limpiar()
-    End Sub
-
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
+        Try
+            If BtnAlta.CommandName = "Alta" Then
+                oUsuBE.nombreRazonSocial = Me.TxtNombre.Text
+                oUsuBE.tipoUsuario = Me.DDL_TipoUsuario.SelectedValue
+                oUsuBE.mail = Me.TxtMail.Text
 
-        oUsuBE.nombreRazonSocial = Me.TxtNombre.Text
-        oUsuBE.tipoUsuario = Me.DDL_TipoUsuario.DataValueField
-        oUsuBE.mail = Me.TxtMail.Text
+                oUsuBLL.Alta(oUsuBE)
+                Limpiar()
+                CargarGrillaUsuario()
+            ElseIf BtnAlta.CommandName = "Modificar" Then
+                oUsuBE.idUsuario = Session("idUser")
 
-        oUsuBLL.Alta(oUsuBE)
-        Limpiar()
-        CargarGrillaUsuario()
+                If Me.TxtNombre.Text <> "" Then
+                    oUsuBE.nombreRazonSocial = Me.TxtNombre.Text
+                    oUsuBE.tipoUsuario = Me.DDL_TipoUsuario.SelectedValue
+                    oUsuBE.mail = Me.TxtMail.Text
+
+                    oUsuBLL.Modificacion(oUsuBE)
+                    Limpiar()
+                    CargarGrillaUsuario()
+
+                End If
+            End If
+            Panel1.Visible = False
+            Limpiar()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Protected Sub BtnModificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
-
-        oUsuBE.idUsuario = Me.GvUsuario.SelectedRow.Cells(1).Text
-
-        If Me.TxtNombre.Text <> "" Then
-            oUsuBE.nombreRazonSocial = Me.TxtNombre.Text
-            oUsuBE.tipoUsuario = Me.DDL_TipoUsuario.DataValueField
-            oUsuBE.mail = Me.TxtMail.Text
-
-            oUsuBLL.Modificacion(oUsuBE)
-            Limpiar()
-            CargarGrillaUsuario()
-
-        End If
-    End Sub
-
-    Protected Sub BtnBaja_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBaja.Click
-        oUsuBE.idUsuario = Me.GvUsuario.SelectedRow.Cells(1).Text
-        oUsuBLL.Baja(oUsuBE)
         Limpiar()
-        CargarGrillaUsuario()
+        Panel1.Visible = False
+
     End Sub
+
+    'Protected Sub BtnBaja_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBaja.Click
+    '    'oUsuBE.idUsuario = Me.GvUsuario.SelectedRow.Cells(1).Text
+    '    'oUsuBLL.Baja(oUsuBE)
+    '    'Limpiar()
+    '    'CargarGrillaUsuario()
+    'End Sub
 
     Protected Sub cargarDDL_TipoUsuario()
         Try
@@ -88,6 +95,55 @@ Public Class Usuarios
             DDL_TipoUsuario.DataTextField = "descr"
             DDL_TipoUsuario.DataBind()
 
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            Limpiar()
+            BtnAlta.CommandName = "Alta"
+            Panel1.Visible = True
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub GvUsuario_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GvUsuario.RowCommand
+        Try
+            Try
+                If e.CommandName = "idme" Then
+                    Panel1.Visible = True
+                    BtnAlta.CommandName = "Modificar"
+                    cargarDatosObjeto(e.CommandArgument)
+                    Session("idUser") = e.CommandArgument
+                End If
+            Catch ex As Exception
+
+            End Try
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Sub cargarDatosObjeto(idUsuario As Integer)
+        Try
+            Dim miUser As UsuarioBE = UsuarioBLL.ObtenerInstancia.ListarObjeto(New UsuarioBE With {.idUsuario = idUsuario})
+            Me.TxtNombre.Text = miUser.nombreRazonSocial
+            Me.DDL_TipoUsuario.DataValueField = miUser.tipoUsuario
+            Me.TxtMail.Text = miUser.mail
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub GvUsuario_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GvUsuario.RowDeleting
+        Try
+            oUsuBE.idUsuario = GvUsuario.DataKeys(e.RowIndex).Value
+            oUsuBLL.Baja(oUsuBE)
+            Limpiar()
+            CargarGrillaUsuario()
         Catch ex As Exception
 
         End Try

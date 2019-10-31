@@ -35,22 +35,32 @@ Public Class GestionarEncuestas
 
     End Sub
     Sub cargarPreguntas()
-        Dim miEnc As EncuestaBE = EncuestaBLL.ObtenerInstancia.Cargar(New EncuestaBE With {.idEncuesta = Session("idEncuesta")})
-        GV_Preguntas.DataSource = Nothing
-        GV_Preguntas.DataSource = miEnc.Preguntas
-        GV_Preguntas.DataBind()
-        Panel1.Visible = True
+        Try
+            Dim miEnc As EncuestaBE = EncuestaBLL.ObtenerInstancia.Cargar(New EncuestaBE With {.idEncuesta = Session("idEncuesta")})
+            GV_Preguntas.DataSource = Nothing
+            GV_Preguntas.DataSource = miEnc.Preguntas
+            GV_Preguntas.DataBind()
+            Panel1.Visible = True
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Sub cargarRespuestas()
-        Dim miListRtas As List(Of EncuestaRespuestasBE) = EncuestaBLL.ObtenerInstancia.CargarRespuestas(New EncuestaPreguntaBE With {.idPregunta = Session("idPre")})
+        Try
+            Dim miListRtas As List(Of EncuestaRespuestasBE) = EncuestaBLL.ObtenerInstancia.CargarRespuestas(New EncuestaPreguntaBE With {.idPregunta = Session("idPre")})
 
-        Respuestas.DataSource = Nothing
-        Respuestas.DataSource = miListRtas
-        Respuestas.DataBind()
+            Respuestas.DataSource = Nothing
+            Respuestas.DataSource = miListRtas
+            Respuestas.DataBind()
 
 
-        Panel2.Visible = True
+            Panel2.Visible = True
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub DG_Encuestas2_SelectedIndexChanging(sender As Object, e As GridViewSelectEventArgs) Handles DG_Encuestas2.SelectedIndexChanging
@@ -65,6 +75,7 @@ Public Class GestionarEncuestas
 
             btnConfirmar.CommandName = "Modificar"
             cargarPreguntas()
+            preguntas.Visible=True
 
         Catch ex As Exception
 
@@ -76,6 +87,7 @@ Public Class GestionarEncuestas
             Session("idPre") = GV_Preguntas.Rows(e.NewSelectedIndex).Cells(1).Text
             txtPregunta.Text = GV_Preguntas.Rows(e.NewSelectedIndex).Cells(2).Text
             cargarRespuestas()
+            PanelRespuestas.Visible = True
         Catch ex As Exception
 
         End Try
@@ -117,8 +129,14 @@ Public Class GestionarEncuestas
 
     Protected Sub btnBorrarPre_Click(sender As Object, e As ImageClickEventArgs) Handles btnBorrarPre.Click
         Try
-            EncuestaBLL.ObtenerInstancia.EliminarPregunta(Session("idEncuesta"), New EncuestaPreguntaBE With {.idPregunta = Session("idPre"), .Pregunta = txtPregunta.Text})
-            cargarPreguntas()
+            If GV_Preguntas.Rows.Count <= 1 Then
+                Dim mensaje As String = "No puede eliminar la única pregunta. Primero agregue otra"
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+            Else
+                EncuestaBLL.ObtenerInstancia.EliminarPregunta(Session("idEncuesta"), New EncuestaPreguntaBE With {.idPregunta = Session("idPre"), .Pregunta = txtPregunta.Text})
+                cargarPreguntas()
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -148,10 +166,13 @@ Public Class GestionarEncuestas
 
     Protected Sub btnBorrarRta_Click(sender As Object, e As ImageClickEventArgs) Handles btnBorrarRta.Click
         Try
-
-            EncuestaBLL.ObtenerInstancia.EliminarRta(Session("idPre"), New EncuestaRespuestasBE With {.idRespuesta = Session("idRta"), .Respuesta = txtRta.Text})
-            cargarRespuestas()
-
+            If Respuestas.Rows.Count <= 1 Then
+                Dim mensaje As String = "No puede eliminar la única respuesta. Primero agregue otra"
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+            Else
+                EncuestaBLL.ObtenerInstancia.EliminarRta(Session("idPre"), New EncuestaRespuestasBE With {.idRespuesta = Session("idRta"), .Respuesta = txtRta.Text})
+                cargarRespuestas()
+            End If
         Catch ex As Exception
 
         End Try
@@ -187,6 +208,9 @@ Public Class GestionarEncuestas
                 preguntas.Visible = True
                 Panel1.Visible = True
                 Panel2.Visible = True
+
+                DG_Encuestas2.Rows(DG_Encuestas2.Rows.Count - 1).RowState = DataControlRowState.Selected
+
             End If
         Catch ex As Exception
 
@@ -215,6 +239,8 @@ Public Class GestionarEncuestas
     Private Sub btnEditarEncuesta_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Try
             contenido.Visible = False
+            DG_Encuestas2.SelectedIndex = -1
+
         Catch ex As Exception
 
         End Try
@@ -241,8 +267,31 @@ Public Class GestionarEncuestas
     Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             btnConfirmar.CommandName = "Alta"
-
+            limpiar()
             contenido.Visible = True
+            DG_Encuestas2.SelectedIndex = -1
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Sub limpiar()
+        Try
+            cargarTipos()
+            TB_Fecha.Text = Now.Date
+            TB_Titulo.Text = ""
+            GV_Preguntas.DataSource = Nothing
+            'GV_Preguntas.DataBind()
+            Respuestas.DataSource = Nothing
+            'Respuestas.DataBind()
+            preguntas.Visible = False
+            PanelRespuestas.Visible = False
+            contenido.Visible = False
+            Panel1.Visible = False
+            Panel2.Visible = False
+            txtPregunta.Text = ""
+            txtRta.Text = ""
+
         Catch ex As Exception
 
         End Try

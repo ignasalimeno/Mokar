@@ -1,41 +1,61 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Categorias.aspx.vb" Inherits="GUI.Categorias" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <section id="portfolio" class="section-bg">
-      <div class="container">
-          <br />
-          <br />
-          <br />
-                <h3>Categorias</h3>
+    <section id="portfolio" class="section-bg">
+        <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Categorías</h1>
+                </div>
 
-           <asp:GridView ID="GvObjetos" runat="server" CellPadding="4" ForeColor="#333333"
-                    GridLines="None" Height="106px" Width="100%" AutoGenerateColumns="False">
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                    <Columns>
-                        <asp:CommandField SelectText="--&gt;" ShowSelectButton="True" />
-                        <asp:BoundField DataField="idCategoria" HeaderText="Cod" />
-                        <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                    </Columns>
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <EditRowStyle BackColor="#999999" />
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                </asp:GridView>
-                <br />
-                    Descripcion
-                    <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="416px"></asp:TextBox>
+            </div>
+
+            <div class="card-body">
+                <div class="card card-body">
+
+                    <div class="row">
+                        <asp:Button ID="btnAgregar" CssClass="btn btn-primary" runat="server" Text="Agregar" />
+                    </div>
                     <br />
-                           <asp:Button CssClass="myBtn" ID="BtnAlta" runat="server" Text="Alta" Width="206px" />
-              <br /> <br />
-                    <asp:Button CssClass="myBtn" ID="BtnModificar" runat="server" Text="Modificar" Width="206px"/>
-                    <br />
-              <br />
-                    <asp:Button CssClass="myBtn" ID="BtnBaja" runat="server" Text="Baja" Width="206px"  />
-                    <br />
-              <br />
-                    <asp:Button CssClass="myBtn" ID="BtnLimpiar" runat="server" Text="Limpiar"  Width="206px" />
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:GridView ID="GvObjetos" CssClass="table table-bordered" runat="server"
+                                AutoGenerateColumns="False" AllowPaging="True" PageSize="20" DataKeyNames="idCategoria">
+                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                <Columns>
+                                     <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ImgEditar" ImageUrl="~/img/edit.png" Text="Editar" runat="server" CommandName="idme" CommandArgument='<%# Eval("idCategoria") %>' />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                    <asp:BoundField DataField="idCategoria" HeaderText="Cod" />
+                                    <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
+                                    <asp:TemplateField ShowHeader="False">
+                                        <ItemTemplate>
+                                            <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/img/delete.png" Text="Delete" OnClientClick="return confirm('Está seguro de realizar la acción?');" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                                <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="Black" />
+                            </asp:GridView>
                         </div>
-        </section>
+
+                        <div class="col-3">
+                            <asp:Panel ID="Panel1" runat="server">
+                                Descripcion
+                    <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="416px"></asp:TextBox>
+                                <br />
+                                <asp:Button CssClass="myBtn" ID="BtnAlta" runat="server" Text="Confirmar" Width="206px" />
+                                <br />
+                                <br />
+                                <asp:Button CssClass="myBtn" ID="BtnModificar" runat="server" Text="Cancelar" Width="206px" />
+                            </asp:Panel>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </asp:Content>

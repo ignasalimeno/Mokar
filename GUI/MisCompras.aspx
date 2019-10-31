@@ -41,11 +41,13 @@
     </script>
 
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <h3>Mis Ofertas</h3>
+      <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Mis ofertas</h1>
+                </div>
+
+            </div>
 
             <div class="row">
                 <div class="card-body">

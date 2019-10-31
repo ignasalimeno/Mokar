@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Terminos_y_Condiciones.aspx.vb" Inherits="GUI.Terminos_y_Condiciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <section id="portfolio" class="section-bg">
-      <div class="container">
-          <br />
-          <br />
-          <br />
-          <h1>Términos y condiciones del uso del sitio</h1>
+       <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Terminos y Condiciones</h1>
+                </div>
+
+            </div>
                    <h2>Actualizado el 01/08/2019</h2>
     <p>
         Los términos y condiciones aquí establecidos son aplicables al uso del sitio web y/o las propiedades móviles de Mokar, que incluyen las aplicaciones relacionadas 

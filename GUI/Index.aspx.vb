@@ -12,8 +12,7 @@ Public Class Index
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not (Page.IsPostBack) Then
-            Repeater1.DataSource = BLL.ServiciosBLL.ObtenerInstancia.ListarRanking
-            Repeater1.DataBind()
+
             CargarEncuesta()
 
         End If

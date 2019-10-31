@@ -285,55 +285,81 @@
 
         </div>
 
+          </div>
 
 <div class="container">
           <br />
           <h4 class="text-center">Ranking de productos mas votados</h4>
-    <div class="row">
-        <div class="col-xs-12 col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-xs-12 col-md-6 text-center">
-                                                <div class="rating">
-                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                            </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                            </span><span class="glyphicon glyphicon-star-empty"></span>
-                        </div>
-                        <div>
-                            <span class="glyphicon glyphicon-user"></span>
-                        </div>
-                        <br />
-                    </div>
-                    <div class="col-xs-12 col-md-6" style="align-items :center"">
+    
+                    <div class="col-12" style="align-items :center"">
                         <div class="row rating-desc">
-
-                            <asp:Repeater ID="Repeater1" runat="server">
-                                <ItemTemplate>
-                                    <div class="col-xs-3 col-md-9 text-right">
-                                <span class="glyphicon glyphicon-star"><p> <%# Eval("nombre") %> </p></span>
+                              <div class="col-xs-3 col-md-9 text-right">
+                                <span class="glyphicon glyphicon-star"><p>Blue</p></span>
                             </div>
                             <div class="col-xs-8 col-md-9">
                                 <div class="progress progress-striped">
                                     <div runat="server" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width:80%" >
-                                        <span class="sr-only"><%# Eval("precio") %></span> 
+                                        aria-valuemin="0" aria-valuemax="100" style="width:76%" >
+                                        <span class="sr-only"></span> 
                                     </div>
                                 </div>
                             </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
 
+                              <div class="col-xs-3 col-md-9 text-right">
+                                <span class="glyphicon glyphicon-star"><p>Black</p></span>
+                            </div>
+                            <div class="col-xs-8 col-md-9">
+                                <div class="progress progress-striped">
+                                    <div runat="server" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:58%" >
+                                        <span class="sr-only"></span> 
+                                    </div>
+                                </div>
+                            </div>
+
+                              <div class="col-xs-3 col-md-9 text-right">
+                                <span class="glyphicon glyphicon-star"><p> Bronce</p></span>
+                            </div>
+                            <div class="col-xs-8 col-md-9">
+                                <div class="progress progress-striped">
+                                    <div runat="server" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:25%" >
+                                        <span class="sr-only"></span> 
+                                    </div>
+                                </div>
+                            </div>
+
+                              <div class="col-xs-3 col-md-9 text-right">
+                                <span class="glyphicon glyphicon-star"><p> Platinum </p></span>
+                            </div>
+                            <div class="col-xs-8 col-md-9">
+                                <div class="progress progress-striped">
+                                    <div runat="server" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:17%" >
+                                        <span class="sr-only"></span> 
+                                    </div>
+                                </div>
+                            </div>
+
+                              <div class="col-xs-3 col-md-9 text-right">
+                                <span class="glyphicon glyphicon-star"><p>Gold</p></span>
+                            </div>
+                            <div class="col-xs-8 col-md-9">
+                                <div class="progress progress-striped">
+                                    <div runat="server" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:12%" >
+                                        <span class="sr-only"></span> 
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- end 1 -->
                         </div>
                         <!-- end row -->
                     </div>
-                </div>
-            </div>
-        </div>
-
-      </div>
-    </section><!-- #services -->
+                
+ </div>
+       </section><!-- #services -->
 
      
 

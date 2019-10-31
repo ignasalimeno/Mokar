@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class GestionarServicios
     
     '''<summary>
+    '''btnAgregar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''GvObjetos control.
     '''</summary>
     '''<remarks>
@@ -21,6 +30,15 @@ Partial Public Class GestionarServicios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GvObjetos As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
     '''txtNombre control.
@@ -111,22 +129,4 @@ Partial Public Class GestionarServicios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnModificar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''BtnBaja control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnBaja As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''BtnLimpiar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnLimpiar As Global.System.Web.UI.WebControls.Button
 End Class

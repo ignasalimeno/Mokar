@@ -28,7 +28,7 @@ Public Class Reportes_Encuestas
         For Each item In listReporte
             Serie1.Points.AddXY(item.idEncuesta, item.CantRespuestas)
         Next
-        Reporte_Encuesta.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.Bar
+        Reporte_Encuesta.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.StackedColumn
         Dim ChartArea = Reporte_Encuesta.ChartAreas("ChartArea1")
         ChartArea.AxisX.Title = "Encuesta"
         ChartArea.AxisY.Title = "Cantidad de Respuestas"
@@ -46,9 +46,9 @@ Public Class Reportes_Encuestas
         For Each item In listReporte
             Serie1.Points.AddXY(item.idEncuesta, item.CantRespuestas)
         Next
-        Reporte_Encuesta.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.Bar
+        Reporte_Encuesta.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.StackedColumn
         Dim ChartArea = Reporte_Encuesta.ChartAreas("ChartArea1")
-        ChartArea.AxisX.Title = "Encuesta"
+        ChartArea.AxisX.Title = "Ficha de Opinion"
         ChartArea.AxisY.Title = "Cantidad de Respuestas"
     End Sub
 
@@ -63,11 +63,18 @@ Public Class Reportes_Encuestas
     End Sub
 
     Protected Sub btnVerEncuestas_Click(sender As Object, e As EventArgs) Handles btnVerEncuestas.Click
+        Reporte_Encuesta.Visible = True
         GenerarReporteEncuesta()
+        Repeater1.Visible = False
+        Repeater2.Visible = False
     End Sub
 
     Protected Sub btnVerFichaOpinion_Click(sender As Object, e As EventArgs) Handles btnVerFichaOpinion.Click
+        Reporte_Encuesta.Visible = True
         GenerarReporteFichaOpinion()
+        Repeater1.Visible = False
+        Repeater2.Visible = False
+        cargarEncuestas()
     End Sub
 
     Private Sub CargarEncuesta()
@@ -87,22 +94,7 @@ Public Class Reportes_Encuestas
             Repeater1.DataSource = oEncuesta.Preguntas
             Repeater1.DataBind()
 
-            '''Cargo las respuestas
-            'For a As Integer = 0 To Repeater1.Items.Count - 1
-            '    Dim rb As RadioButtonList = Repeater1.Items(a).FindControl("rbPreguntas")
-            '    Dim idPreg As HiddenField = Repeater1.Items(a).FindControl("idPregunta")
-            '    rb.DataSource = Nothing
-            '    rb.DataSource = EncuestaBLL.ObtenerInstancia.CargarRespuestas(New EncuestaPreguntaBE With {.idPregunta = idPreg.Value})
-            '    rb.DataTextField = "Respuesta"
-            '    rb.DataValueField = "idRespuesta"
-            '    rb.DataBind()
 
-            '    Dim Reportes As Chart = Repeater1.Items(a).FindControl("chReportes")
-            '    Reportes.ChartAreas("ChartArea1").AxisX.MajorGrid.Enabled = False
-            '    Reportes.ChartAreas("ChartArea1").AxisY.MajorGrid.Enabled = False
-            'Next
-
-            'btnVotar.CommandArgument = oEncuesta.idEncuesta
 
         Catch ex As Exception
 
@@ -111,7 +103,6 @@ Public Class Reportes_Encuestas
 
     Private Sub VerRestultadoEncuesta()
         Try
-
 
             For a As Integer = 0 To Repeater1.Items.Count - 1
 
@@ -145,9 +136,117 @@ Public Class Reportes_Encuestas
             Session("idEncuesta") = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(1).Text
             CargarEncuesta()
             VerRestultadoEncuesta()
+            Repeater1.Visible = True
+            Reporte_Encuesta.Visible = False
         Catch ex As Exception
 
         End Try
 
+    End Sub
+
+    Sub cargarEncuestasActivas()
+        Try
+            Repeater2.Visible = True
+
+            Dim listaEncuestas As New List(Of EncuestaBE)
+
+            listaEncuestas = EncuestaBLL.ObtenerInstancia.ListarTodas()
+            'filtro las encuestas por fecha y tipo
+
+            listaEncuestas = listaEncuestas.FindAll(Function(x) x.FechaVencimiento >= Now.ToShortDateString AndAlso x.idTipoEncuesta = "1").ToList
+
+            oEncuesta = New EncuestaBE
+
+            For Each item As EncuestaBE In listaEncuestas
+                oEncuesta.Preguntas.Add(item.Preguntas(0))
+            Next
+
+            'lblPreguntaEncuesta.Text = oEncuesta.Titulo
+            Repeater2.DataSource = Nothing
+            Repeater2.DataSource = oEncuesta.Preguntas
+            Repeater2.DataBind()
+
+            For a As Integer = 0 To Repeater2.Items.Count - 1
+
+                Dim idPreg As HiddenField = Repeater2.Items(a).FindControl("idPregunta")
+
+                Dim listRespuestas As List(Of EncuestaRespuestasBE) = EncuestaBLL.ObtenerInstancia.CargarRespuestas(New EncuestaPreguntaBE With {.idPregunta = idPreg.Value})
+
+                Dim Reportes As Chart = Repeater2.Items(a).FindControl("chActivas")
+
+                Dim Serie1 = Reportes.Series("Series1")
+                Serie1.Points.Clear()
+                For Each item In listRespuestas
+                    Serie1.Points.AddXY(item.Respuesta, item.Cantidad)
+                Next
+                Reportes.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.Pie
+                Dim ChartArea = Reportes.ChartAreas("ChartArea1")
+                ChartArea.AxisX.Title = idPreg.Value
+                ChartArea.AxisY.Title = "Cantidad de respuestas"
+
+                Repeater2.Items(a).FindControl("chActivas").Visible = True
+            Next
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Sub cargarEncuestasVencidass()
+        Try
+            Repeater2.Visible = True
+
+            Dim listaEncuestas As New List(Of EncuestaBE)
+
+            listaEncuestas = EncuestaBLL.ObtenerInstancia.ListarTodas()
+            'filtro las encuestas por fecha y tipo
+
+            listaEncuestas = listaEncuestas.FindAll(Function(x) x.FechaVencimiento < Now.ToShortDateString AndAlso x.idTipoEncuesta = "1").ToList
+
+            oEncuesta = New EncuestaBE
+
+            For Each item As EncuestaBE In listaEncuestas
+                oEncuesta.Preguntas.Add(item.Preguntas(0))
+            Next
+
+            'lblPreguntaEncuesta.Text = oEncuesta.Titulo
+            Repeater2.DataSource = Nothing
+            Repeater2.DataSource = oEncuesta.Preguntas
+            Repeater2.DataBind()
+
+            For a As Integer = 0 To Repeater2.Items.Count - 1
+
+                Dim idPreg As HiddenField = Repeater2.Items(a).FindControl("idPregunta")
+
+                Dim listRespuestas As List(Of EncuestaRespuestasBE) = EncuestaBLL.ObtenerInstancia.CargarRespuestas(New EncuestaPreguntaBE With {.idPregunta = idPreg.Value})
+
+                Dim Reportes As Chart = Repeater2.Items(a).FindControl("chActivas")
+
+                Dim Serie1 = Reportes.Series("Series1")
+                Serie1.Points.Clear()
+                For Each item In listRespuestas
+                    Serie1.Points.AddXY(item.Respuesta, item.Cantidad)
+                Next
+                Reportes.Series("Series1").ChartType = DataVisualization.Charting.SeriesChartType.Pie
+                Dim ChartArea = Reportes.ChartAreas("ChartArea1")
+                ChartArea.AxisX.Title = idPreg.Value
+                ChartArea.AxisY.Title = "Cantidad de respuestas"
+
+                Repeater2.Items(a).FindControl("chActivas").Visible = True
+            Next
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Sub btnActivas_Click(sender As Object, e As EventArgs) Handles btnActivas.Click
+        cargarEncuestasActivas()
+        Reporte_Encuesta.Visible = False
+    End Sub
+
+    Protected Sub btnVencidas_Click(sender As Object, e As EventArgs) Handles btnVencidas.Click
+        cargarEncuestasVencidass()
+        Reporte_Encuesta.Visible = False
     End Sub
 End Class

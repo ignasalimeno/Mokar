@@ -23,6 +23,42 @@ Partial Public Class Reporte_Servicios
     Protected WithEvents DDL_Servicios As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''TextBox1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''CalendarExtender2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CalendarExtender2 As Global.AjaxControlToolkit.CalendarExtender
+    
+    '''<summary>
+    '''TextBox2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''CalendarExtender1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CalendarExtender1 As Global.AjaxControlToolkit.CalendarExtender
+    
+    '''<summary>
     '''btnFiltrar control.
     '''</summary>
     '''<remarks>
@@ -57,4 +93,13 @@ Partial Public Class Reporte_Servicios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DG_Servicios As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''chReportes control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents chReportes As Global.System.Web.UI.DataVisualization.Charting.Chart
 End Class

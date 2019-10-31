@@ -57,4 +57,13 @@ Partial Public Class Reporte_Respuestas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_TiempoPromedio As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''chReportes control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents chReportes As Global.System.Web.UI.DataVisualization.Charting.Chart
 End Class

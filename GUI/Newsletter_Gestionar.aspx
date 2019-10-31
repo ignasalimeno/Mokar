@@ -2,11 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <h3 class="section-title">Gestionar Material de Estudio</h3>
+      <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Gestionar Material de Estudio</h1>
+                </div>
+
+            </div>
 
                     <!-- Comienzo Grilla -->
                     <div class="card-body">

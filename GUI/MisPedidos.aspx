@@ -2,13 +2,15 @@
 <%@ Register src="ModalEstrellas.ascx" tagname="ModalEstrellas" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <uc1:ModalEstrellas ID="ModalEstrellas1" runat="server" />
-            <br />
-            <h3 class="section-title">Mis suscripciones activas</h3>
+    <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Mis suscripciones activas</h1>
+                </div>
 
+            </div>
+
+            <uc1:ModalEstrellas ID="ModalEstrellas1" runat="server" />
             <div class="card-body">
             <div class="card card-body">
                 <div class="mr-0">

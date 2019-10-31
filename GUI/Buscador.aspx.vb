@@ -35,7 +35,7 @@ Public Class Buscador
         UsuarioRol = UsuarioBLL.ObtenerInstancia.ListarObjeto(User)
 
 
-        If UsuarioRol.roles.Contains(New RolBE() With {.descr = "Administrador"}) Then
+        If UsuarioRol.tipoUsuario = 1 Then
             lista = BuscadorBLL.ObtenerInstancia.Buscar(texto, 1)
             'Busca en la categoria Backend con el numero 1
             rp_busqueda.DataSource = Nothing

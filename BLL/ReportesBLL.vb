@@ -57,9 +57,16 @@ Public Class ReportesBLL
         End Try
     End Function
 
-    Function ObtenerReporteServicios(idServicio As Integer) As IEnumerable(Of ReporteServiciosBE)
+    Function ObtenerReporteServicios(idServicio As Integer, fechaDesde As Date, fechaHasta As Date) As IEnumerable(Of ReporteServiciosBE)
         Try
-            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServicios(idServicio)
+            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServicios(idServicio, fechaDesde, fechaHasta)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+    Function ObtenerReporteServicios(fechaDesde As Date, fechaHasta As Date) As IEnumerable(Of ReporteServiciosBE)
+        Try
+            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServicios(fechaDesde, fechaHasta)
         Catch ex As Exception
             Return Nothing
         End Try

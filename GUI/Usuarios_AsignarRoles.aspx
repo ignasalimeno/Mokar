@@ -3,11 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <h3>Usuarios: Asignar Roles</h3>
+         <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Usuarios - Asignar roles</h1>
+                </div>
+
+            </div>
 
             <div class="row">
                 <div class="col-sm-3">

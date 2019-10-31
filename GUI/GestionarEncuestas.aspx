@@ -2,11 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="portfolio" class="section-bg">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <h3>Gestionar Ecuestas y Fichas de opinión</h3>
+         <div class="container" style="max-width: inherit">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Gestionar encuestas y fichas de opinión</h1>
+                </div>
+
+            </div>
 
             <!-- Comienzo Grilla -->
             <div class="card-body">
@@ -16,7 +18,8 @@
                     </div>
                     <br />
                     <div class="row">
-                        <div class="mr-0">
+
+                        <div class="col-12">
                             <asp:GridView ID="DG_Encuestas2" CssClass="table table-bordered" DataKeyNames="idEncuesta" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                 <Columns>
                                     <%--                            <asp:CommandField ShowEditButton="True" ButtonType="button" HeaderText="Editar" ControlStyle-CssClass="btn alert-info" EditText="Editar" />--%>
@@ -36,7 +39,9 @@
                                 <SelectedRowStyle BackColor="Gray" Font-Bold="True" ForeColor="Black" />
                             </asp:GridView>
                         </div>
-                    </div>
+                                              
+                  
+                  </div>
                 </div>
             </div>
             <!-- Fin Grilla -->
@@ -52,21 +57,28 @@
 
                             <%--Primera fila--%>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="col-3">
                                     <label>Tipo de Encuesta</label>
                                     <asp:DropDownList CssClass="form-control" ID="DDL_Tipo" runat="server" required="required"></asp:DropDownList>
                                 </div>
 
-                                <div class="form-group col-md-4">
+                                <div class="col-3">
                                     <label>Ingresar el Titulo:</label>
                                     <asp:TextBox CssClass="form-control" ID="TB_Titulo" runat="server" required="required"></asp:TextBox>
                                 </div>
 
-                                <div class="form-group col-md-4">
+                                <div class="col-3">
                                     <label>Ingresar Fecha de vencimiento:</label>
                                     <asp:TextBox CssClass="form-control" ID="TB_Fecha" runat="server" required="required"></asp:TextBox>
                                     <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TB_Fecha" Format="dd/MM/yyyy" />
 
+                                </div>
+
+                                <div class="col-1">
+                                    <asp:Button ID="btnConfirmar" OnClientClick="return confirm('Está seguro de realizar la acción?');" CssClass="btn btn-primary" runat="server" Text="Confirmar" />
+                                    </div>
+                                    <div class="col-1">
+                                    <asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" />
                                 </div>
 
                             </div>
@@ -100,11 +112,7 @@
 
                                 </div>
 
-                                <div class="form-group col-md-4">
-                                    <asp:Button ID="btnConfirmar" CssClass="btn btn-primary" runat="server" Text="Confirmar" />
-                                    <br />
-                                    <asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" />
-                                </div>
+                                
                             </div>
 
 
@@ -116,7 +124,7 @@
                                         <asp:TextBox ID="txtPregunta" runat="server"></asp:TextBox>
                                         <asp:ImageButton ID="btnAddPregunta" runat="server" ImageUrl="~/img/select.png" />
                                         <asp:ImageButton ID="btnGuardarPre" runat="server" ImageUrl="~/img/edit.png" />
-                                        <asp:ImageButton ID="btnBorrarPre" runat="server" ImageUrl="~/img/delete.png" />
+                                        <asp:ImageButton ID="btnBorrarPre" runat="server" ImageUrl="~/img/delete.png" OnClientClick="return confirm('Está seguro de realizar la acción?');"/>
 
 
                                     </asp:Panel>
@@ -129,7 +137,7 @@
                                         <asp:TextBox ID="txtRta" runat="server"></asp:TextBox>
                                         <asp:ImageButton ID="btnAddRta" runat="server" ImageUrl="~/img/select.png" />
                                         <asp:ImageButton ID="btnEditRta" runat="server" ImageUrl="~/img/edit.png" />
-                                        <asp:ImageButton ID="btnBorrarRta" runat="server" ImageUrl="~/img/delete.png" />
+                                        <asp:ImageButton ID="btnBorrarRta" runat="server" ImageUrl="~/img/delete.png" OnClientClick="return confirm('Está seguro de realizar la acción?');" />
 
 
                                     </asp:Panel>
