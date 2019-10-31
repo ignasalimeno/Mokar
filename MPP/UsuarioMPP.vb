@@ -53,7 +53,7 @@ Public Class UsuarioMPP
         hdatos.Add("@tipo", Objeto.tipoUsuario)
         hdatos.Add("@mail", Objeto.mail)
         hdatos.Add("@contraseña", DBNull.Value)
-        hdatos.Add("@activo", Objeto.activo)
+        hdatos.Add("@activo", DBNull.Value)
 
         resultado = oDatos.Escribir("s_Usuarios_ABMC", hdatos)
 
@@ -146,7 +146,13 @@ Public Class UsuarioMPP
                 newObj.tipoUsuarioDescr = Item("tipoUsuarioDescr")
             Next
 
-            newObj = ObtenerRolesYPermisosUsuario(newObj)
+            'newObj = ObtenerRolesYPermisosUsuario(newObj)
+            Dim newObjRol As UsuarioBE = ObtenerRolesYPermisosUsuario(newObj)
+            If newObjRol Is Nothing Then
+                newObj.roles.Add(New RolBE With {.idRol = 99, .descr = "Default", .rolUsuario = False, .activo = True})
+            Else
+                newObj = newObjRol
+            End If
             Return newObj
         Else
             Return Nothing

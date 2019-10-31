@@ -133,8 +133,15 @@ Public Class UsuarioBLL
 
     Public Function ObtenerRolesYPermisosUsuario(_user As UsuarioBE) As UsuarioBE
         Try
+
             Dim newUser As UsuarioBE = oMapper.ObtenerRolesYPermisosUsuario(_user)
-            Return newUser
+
+            If newUser Is Nothing Then
+                _user.roles.Add(New RolBE With {.idRol = 99, .descr = "Default", .rolUsuario = False, .activo = True})
+                Return _user
+            Else
+                Return newUser
+            End If
 
         Catch ex As Exception
             Return _user

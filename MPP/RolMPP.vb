@@ -202,4 +202,34 @@ Public Class RolMPP
         End Try
     End Function
 
+    Public Function obtenerRolesActivos() As List(Of RolBE)
+        Try
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim list As New List(Of BE.RolBE)
+            Dim dt As New DataTable
+            Dim newObj As BE.RolBE
+
+            Dim hdatos As New Hashtable
+
+            DS = oDatos.Leer("s_Rol_GetRolesActivos", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    newObj = New BE.RolBE
+                    newObj.idRol = Item("idRol")
+                    list.Add(newObj)
+                Next
+
+                Return list
+
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class

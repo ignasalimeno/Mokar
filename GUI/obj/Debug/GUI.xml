@@ -2303,9 +2303,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Rol._btnAgregar">
+<summary>
+btnAgregar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Rol._GvObjetos">
 <summary>
 GvObjetos control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Rol._Panel1">
+<summary>
+Panel1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2342,24 +2360,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Rol._BtnModificar">
 <summary>
 BtnModificar control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Rol._BtnBaja">
-<summary>
-BtnBaja control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Rol._BtnLimpiar">
-<summary>
-BtnLimpiar control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -48,8 +48,17 @@ Public Class Usuarios
                 oUsuBE.nombreRazonSocial = Me.TxtNombre.Text
                 oUsuBE.tipoUsuario = Me.DDL_TipoUsuario.SelectedValue
                 oUsuBE.mail = Me.TxtMail.Text
+                oUsuBE.contraseña = "admin"
 
                 oUsuBLL.Alta(oUsuBE)
+
+                Dim activarUsu As UsuarioBE = UsuarioBLL.ObtenerInstancia.ListarObjetoPorMail(oUsuBE)
+                UsuarioBLL.ObtenerInstancia.AltaValidada(activarUsu)
+
+                'Envio el mail
+                Dim ActiveURL = "http://" & Request.Url.Host & ":" & Request.Url.Port & "/" & "NewPass.aspx?ID_Usuario=" + Server.UrlEncode(Criptografia.Encriptar(activarUsu.idUsuario))
+                EnviarCorreo.ObtenerInstancia.EnviarNotificacion(activarUsu.mail, "Bienvenido a Mokar.", "Hola " + activarUsu.nombreRazonSocial + ", ya sos usuario. <br /><br />" + vbCrLf + "Ingresá al siguiente link para ingresar tu nueva contraseña: " + "<a href=" + ActiveURL + ">link</a>" + "<br /><br /> Si no te funciona el link, copia y pega esta dirección: " + ActiveURL, Server.MapPath("Template_Mokar.html"))
+
                 Limpiar()
                 CargarGrillaUsuario()
             ElseIf BtnAlta.CommandName = "Modificar" Then
@@ -79,13 +88,6 @@ Public Class Usuarios
         Panel1.Visible = False
 
     End Sub
-
-    'Protected Sub BtnBaja_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBaja.Click
-    '    'oUsuBE.idUsuario = Me.GvUsuario.SelectedRow.Cells(1).Text
-    '    'oUsuBLL.Baja(oUsuBE)
-    '    'Limpiar()
-    '    'CargarGrillaUsuario()
-    'End Sub
 
     Protected Sub cargarDDL_TipoUsuario()
         Try

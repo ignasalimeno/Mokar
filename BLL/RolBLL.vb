@@ -89,4 +89,12 @@ Public Class RolBLL
         End Try
     End Function
 
+    Function obtenerRolesActivos() As IEnumerable(Of RolBE)
+        Try
+            Return oMapper.obtenerRolesActivos()
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class
