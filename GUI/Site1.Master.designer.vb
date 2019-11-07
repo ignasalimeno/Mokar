@@ -563,22 +563,22 @@ Partial Public Class Site1
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''ckTodas control.
+    '''HiddenField1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ckTodas As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
-    '''checkCategorias control.
+    '''Repeater1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents checkCategorias As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents Repeater1 As Global.System.Web.UI.WebControls.Repeater
     
     '''<summary>
     '''btnSuscribirse control.

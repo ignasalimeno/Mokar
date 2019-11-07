@@ -362,12 +362,8 @@ Public Class Site1
 
     Private Sub RefrescarCategorias()
         Try
-            checkCategorias.DataSource = Nothing
-            checkCategorias.DataSource = BLL.CategoriaBLL.ObtenerInstancia.ListarObjetos
-            checkCategorias.DataTextField = "descripcion"
-            checkCategorias.DataValueField = "idCategoria"
-
-            checkCategorias.DataBind()
+            Repeater1.DataSource = BLL.CategoriaBLL.ObtenerInstancia.ListarObjetos
+            Repeater1.DataBind()
 
         Catch ex As Exception
 
@@ -377,24 +373,14 @@ Public Class Site1
     Private Sub btnSuscribirse_Click(sender As Object, e As EventArgs) Handles btnSuscribirse.Click
         Try
             If txtMailNL.Text = txtMailNLValidar.Text Then
+                Dim str() As String = HiddenField1.Value.Split(",")
 
                 Dim miUser As New UsuarioBE With {.mail = txtMailNL.Text}
                 Dim listCat As New List(Of CategoriaBE)
 
-                If ckTodas.Checked Then
-                    For Each a As ListItem In checkCategorias.Items
-
-                        listCat.Add(New CategoriaBE With {.idCategoria = a.Value})
-
-                    Next
-                Else
-                    For Each a As ListItem In checkCategorias.Items
-                        If a.Selected Then
-                            listCat.Add(New CategoriaBE With {.idCategoria = a.Value})
-                        End If
-                    Next
-                End If
-
+                For Each a As String In str
+                    listCat.Add(New CategoriaBE With {.idCategoria = a.Split("_")(1)})
+                Next
 
                 If listCat.Count > 0 Then
                     If NewsletterBLL.ObtenerInstancia.Suscribirse(miUser, listCat) Then

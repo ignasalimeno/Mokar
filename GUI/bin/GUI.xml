@@ -3365,18 +3365,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Site1._ckTodas">
+<member name="F:GUI.Site1._HiddenField1">
 <summary>
-ckTodas control.
+HiddenField1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Site1._checkCategorias">
+<member name="F:GUI.Site1._Repeater1">
 <summary>
-checkCategorias control.
+Repeater1 control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -88,6 +88,58 @@
             }
             document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
         }
+
+    </script>
+
+    <script type="text/javascript">
+        var itemList = [];
+
+        function checkAll(itemId) {
+                      //document.getElementById(itemId).checked = true;
+            var ck = document.getElementById("ckTodas");
+            
+            if (ck.checked == true) {
+                var cks = document.getElementsByName("ck");
+                for (i = 0; i < cks.length; i++) {
+                    cks[i].checked = true;
+                                    }
+            } else {
+                var cks = document.getElementsByName("ck");
+                for (i = 0; i < cks.length; i++) {
+                    cks[i].checked = false;
+                }
+            }
+
+            cargarChequeados();
+        }
+
+        function DesCheck(itemId) {
+            var itemList = [];
+            var ck = document.getElementById(itemId);
+            if (ck.type == "checkbox") {
+                if (ck.checked == false) {
+                    var ckT = document.getElementById("ckTodas");
+                    ckT.checked = false;
+                } 
+            }
+
+          cargarChequeados();
+        }
+
+        function cargarChequeados() {
+            var itemList = [];
+
+            var cks = document.getElementsByName("ck");
+
+                for (i = 0; i < cks.length; i++) {
+                    if (cks[i].checked == true) {
+                        itemList.push(cks[i].id);
+                    }
+                }
+
+            document.getElementById('<%= HiddenField1.ClientID %>').value = itemList;
+        }
+
     </script>
 
 </head>
@@ -495,8 +547,21 @@
                                             </div>
                                             <br />
                                             <label>Seleccione las categorias</label>
-                                            <asp:CheckBox ID="ckTodas" runat="server" />
-                                            <asp:CheckBoxList ID="checkCategorias" runat="server"></asp:CheckBoxList>
+                                                                                       
+                                            <br />
+                                                
+                                            <input id="ckTodas" type="checkbox" onclick="checkAll(this.value)" /><label>Seleccionar Todas</label>
+                                            <asp:HiddenField ID="HiddenField1" runat="server" />
+                                            <br />
+                                            <asp:Repeater ID="Repeater1" runat="server">
+                                                <ItemTemplate>
+                                                    <input id="ck_<%# Eval("idCategoria") %>" name="ck" type="checkbox" value="<%# Eval("descripcion") %>" onclick="DesCheck(this.id)"/>
+                                                    <label><%# Eval("descripcion") %></label>
+                                                    <br />
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                                                                
+                                            
                                             <br />
                                             <br />
                                         </ContentTemplate>
