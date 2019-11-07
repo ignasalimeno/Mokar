@@ -78,4 +78,36 @@ Public Class ReportesBLL
             Return Nothing
         End Try
     End Function
+
+    Function ObtenerReporteServiciosAño(año As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Try
+            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServiciosAño(año)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Function ObtenerReporteServiciosMes(mes As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Try
+            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServiciosMes(mes)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Function ObtenerReporteServiciosAños(añoDesde As Integer, añoHasta As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Try
+            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServiciosAños(añoDesde, añoHasta)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Function ObtenerReporteServiciosSemanal(año As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Try
+            Return ReportesMPP.ObtenerInstancia.ObtenerReporteServiciosSemanal(año)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 End Class

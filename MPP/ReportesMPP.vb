@@ -226,4 +226,121 @@ Public Class ReportesMPP
             Return Nothing
         End If
     End Function
+
+    Public Function ObtenerReporteServiciosAños(añoDesde As Integer, añoHasta As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.ReporteServicios1BE)
+        Dim dt As New DataTable
+        Dim newObj As BE.ReporteServicios1BE
+
+        Dim hdatos As New Hashtable
+        hdatos.Add("@añoDesde", añoDesde)
+        hdatos.Add("@añoHasta", añoHasta)
+
+        DS = oDatos.Leer("n_Reporte_Servicios_Años", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.ReporteServicios1BE
+                newObj.rango = Item("rango")
+                newObj.total = Item("total")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
+
+    Public Function ObtenerReporteServiciosAño(año As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.ReporteServicios1BE)
+        Dim dt As New DataTable
+        Dim newObj As BE.ReporteServicios1BE
+
+        Dim hdatos As New Hashtable
+        hdatos.Add("@año", año)
+
+        DS = oDatos.Leer("n_Reporte_Servicios_Año", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.ReporteServicios1BE
+                newObj.rango = Item("rango")
+                newObj.total = Item("total")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
+
+    Public Function ObtenerReporteServiciosMes(mes As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.ReporteServicios1BE)
+        Dim dt As New DataTable
+        Dim newObj As BE.ReporteServicios1BE
+
+        Dim hdatos As New Hashtable
+        hdatos.Add("@mes", mes)
+
+        DS = oDatos.Leer("n_Reporte_Servicios_Mes", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.ReporteServicios1BE
+                newObj.rango = Item("rango")
+                newObj.total = Item("total")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
+
+    Public Function ObtenerReporteServiciosSemanal(año As Integer) As IEnumerable(Of ReporteServicios1BE)
+        Dim oDatos As New DAL.Datos
+        Dim DS As New DataSet
+        Dim list As New List(Of BE.ReporteServicios1BE)
+        Dim dt As New DataTable
+        Dim newObj As BE.ReporteServicios1BE
+
+        Dim hdatos As New Hashtable
+        hdatos.Add("@año", año)
+
+        DS = oDatos.Leer("n_Reporte_Servicios_Semanal", hdatos)
+
+        If DS.Tables(0).Rows.Count > 0 Then
+
+            For Each Item As DataRow In DS.Tables(0).Rows
+                newObj = New BE.ReporteServicios1BE
+                newObj.rango = Item("rango")
+                newObj.total = Item("total")
+
+                list.Add(newObj)
+            Next
+
+            Return list
+
+        Else
+            Return Nothing
+        End If
+    End Function
 End Class

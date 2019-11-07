@@ -100,9 +100,6 @@ C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\obj\Debug\GUI.xml
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\obj\Debug\GUI.pdb
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\bin\AjaxControlToolkit.dll
 C:\Users\ignas\Google Drive\UAI\5to\TFI\Tecnologia\Mokar\GUI\bin\materialEstudio\26-Bootstrap.pdf
-C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbprojResolveAssemblyReference.cache
-C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.Resources.resources
-C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbproj.GenerateResource.Cache
 C:\Users\ignas\Desktop\Mokar\GUI\bin\materialEstudio\26-Bootstrap.pdf
 C:\Users\ignas\Desktop\Mokar\GUI\bin\GUI.dll.config
 C:\Users\ignas\Desktop\Mokar\GUI\bin\GUI.dll
@@ -131,6 +128,9 @@ C:\Users\ignas\Desktop\Mokar\GUI\bin\DAL.pdb
 C:\Users\ignas\Desktop\Mokar\GUI\bin\DAL.xml
 C:\Users\ignas\Desktop\Mokar\GUI\bin\Select.Html.dep
 C:\Users\ignas\Desktop\Mokar\GUI\bin\Select.Tools.dep
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbprojResolveAssemblyReference.cache
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.Resources.resources
+C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.vbproj.GenerateResource.Cache
 C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.dll
 C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.xml
 C:\Users\ignas\Desktop\Mokar\GUI\obj\Debug\GUI.pdb

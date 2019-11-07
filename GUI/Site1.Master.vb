@@ -122,7 +122,7 @@ Public Class Site1
                 Me.Limpiar()
                 Dim UsuarioActivo = GestorSesion.ObtenerSesionActual.UsuarioActivo
                 Session.Add("UsuarioLog", UsuarioActivo)
-                Response.Redirect(Request.RawUrl)
+                Response.Redirect(Request.RawUrl, False)
             Else
                 Dim oClie As New UsuarioBE With {.mail = TB_LOGIN_Ingresar_Mail.Text, .contraseña = TB_LOGIN_Pass.Text}
                 'Prueba para meter un cliente
@@ -131,7 +131,7 @@ Public Class Site1
                     Me.Limpiar()
                     Dim ClienteActivo = GestorSesion.ObtenerSesionActual.UsuarioActivo
                     Session.Add("ClienteLog", ClienteActivo)
-                    Response.Redirect(Request.RawUrl)
+                    Response.Redirect(Request.RawUrl, False)
 
                 End If
             End If

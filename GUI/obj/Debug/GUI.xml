@@ -2213,90 +2213,99 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._DDL_Servicios">
+<member name="F:GUI.Reporte_Servicios._ddl_añoDesde">
 <summary>
-DDL_Servicios control.
+ddl_añoDesde control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._TextBox1">
+<member name="F:GUI.Reporte_Servicios._ddl_añoHasta">
 <summary>
-TextBox1 control.
+ddl_añoHasta control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._CalendarExtender2">
+<member name="F:GUI.Reporte_Servicios._btnAños">
 <summary>
-CalendarExtender2 control.
+btnAños control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._TextBox2">
+<member name="F:GUI.Reporte_Servicios._ddl_años">
 <summary>
-TextBox2 control.
+ddl_años control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._CalendarExtender1">
+<member name="F:GUI.Reporte_Servicios._ddl_mes">
 <summary>
-CalendarExtender1 control.
+ddl_mes control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._btnFiltrar">
+<member name="F:GUI.Reporte_Servicios._btnAño">
 <summary>
-btnFiltrar control.
+btnAño control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._btnVerTodos">
+<member name="F:GUI.Reporte_Servicios._btnSemanal">
 <summary>
-btnVerTodos control.
+btnSemanal control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._grilla">
+<member name="F:GUI.Reporte_Servicios._btnMes">
 <summary>
-grilla control.
+btnMes control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._DG_Servicios">
+<member name="F:GUI.Reporte_Servicios._Div1">
 <summary>
-DG_Servicios control.
+Div1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Reporte_Servicios._chReportes">
+<member name="F:GUI.Reporte_Servicios._GridView1">
 <summary>
-chReportes control.
+GridView1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Reporte_Servicios._Chart2">
+<summary>
+Chart2 control.
 </summary>
 <remarks>
 Auto-generated field.

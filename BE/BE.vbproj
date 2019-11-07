@@ -93,6 +93,7 @@
     <Compile Include="PedidosActivosBE.vb" />
     <Compile Include="PermisosBE.vb" />
     <Compile Include="ReporteEncuestaBE.vb" />
+    <Compile Include="ReporteServicios1BE.vb" />
     <Compile Include="ReporteServiciosBE.vb" />
     <Compile Include="RolBE.vb" />
     <Compile Include="ServiciosBE.vb" />

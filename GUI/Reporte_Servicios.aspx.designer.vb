@@ -14,92 +14,101 @@ Option Explicit On
 Partial Public Class Reporte_Servicios
     
     '''<summary>
-    '''DDL_Servicios control.
+    '''ddl_añoDesde control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DDL_Servicios As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddl_añoDesde As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''TextBox1 control.
+    '''ddl_añoHasta control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddl_añoHasta As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''CalendarExtender2 control.
+    '''btnAños control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CalendarExtender2 As Global.AjaxControlToolkit.CalendarExtender
+    Protected WithEvents btnAños As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''TextBox2 control.
+    '''ddl_años control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddl_años As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''CalendarExtender1 control.
+    '''ddl_mes control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CalendarExtender1 As Global.AjaxControlToolkit.CalendarExtender
+    Protected WithEvents ddl_mes As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''btnFiltrar control.
+    '''btnAño control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnFiltrar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnAño As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''btnVerTodos control.
+    '''btnSemanal control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnVerTodos As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnSemanal As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''grilla control.
+    '''btnMes control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents grilla As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents btnMes As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''DG_Servicios control.
+    '''Div1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DG_Servicios As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents Div1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''chReportes control.
+    '''GridView1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chReportes As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Chart2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Chart2 As Global.System.Web.UI.DataVisualization.Charting.Chart
 End Class
