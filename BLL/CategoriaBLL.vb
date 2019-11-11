@@ -22,6 +22,17 @@ Public Class CategoriaBLL
 
     Public Function Baja(Objeto As CategoriaBE) As Boolean Implements IABMC(Of CategoriaBE).Baja
         Try
+
+            Dim listaNew As List(Of NewsletterBE) = NewsletterBLL.ObtenerInstancia.ListarObjetos()
+
+            If Not listaNew Is Nothing Then
+                For Each a As NewsletterBE In listaNew
+                    If a.idCategoria = Objeto.idCategoria Then
+                        Return False
+                    End If
+                Next
+            End If
+
             Return CategoriaMPP.ObtenerInstancia.Baja(Objeto)
         Catch ex As Exception
             Return Nothing

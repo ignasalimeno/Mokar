@@ -80,24 +80,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.Backup_Restore._UP_BackUp">
-<summary>
-UP_BackUp control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:GUI.Backup_Restore._DG_BackUp">
-<summary>
-DG_BackUp control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:GUI.Buscador._rp_busqueda">
 <summary>
 rp_busqueda control.
@@ -530,6 +512,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.GestionarEncuestas._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarEncuestas._btnConfirmar">
 <summary>
 btnConfirmar control.
@@ -728,6 +719,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.GestionarServicios._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.GestionarServicios._dd_accesoPlataforma">
 <summary>
 dd_accesoPlataforma control.
@@ -890,6 +890,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Index._panelEncuesta">
+<summary>
+panelEncuesta control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Index._Pregunta">
 <summary>
 Pregunta control.
@@ -998,6 +1007,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Log._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Log._TextBox1">
 <summary>
 TextBox1 control.
@@ -1010,6 +1028,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Log._CalendarExtender2">
 <summary>
 CalendarExtender2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Log._RegularExpressionValidator2">
+<summary>
+RegularExpressionValidator2 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1037,6 +1064,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Log._Button1">
 <summary>
 Button1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Log._Button2">
+<summary>
+Button2 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1109,6 +1145,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.MaterialEstudio._cal_FechaCreacion">
 <summary>
 cal_FechaCreacion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.MaterialEstudio._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1619,9 +1664,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.MisFacturas._RFV_Cancelacion">
+<member name="F:GUI.MisFacturas._errorCancelacion">
 <summary>
-RFV_Cancelacion control.
+errorCancelacion control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1700,9 +1745,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:GUI.MisFacturas1._RFV_Cancelacion">
+<member name="F:GUI.MisFacturas1._errorCancelacion">
 <summary>
-RFV_Cancelacion control.
+errorCancelacion control.
 </summary>
 <remarks>
 Auto-generated field.

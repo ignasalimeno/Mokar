@@ -59,13 +59,13 @@ Partial Public Class MisFacturas1
     Protected WithEvents TB_Ingresar_Motivo As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''RFV_Cancelacion control.
+    '''errorCancelacion control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RFV_Cancelacion As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents errorCancelacion As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''btnConfirmar control.

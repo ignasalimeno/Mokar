@@ -16,96 +16,123 @@ Public Class MisFacturas
     End Sub
 
     Public Sub Cargar_Grilla()
-        DG_Facturas.DataSource = Nothing
-        DG_Facturas.DataSource = FacturaBLL.ObtenerInstancia.ListarFacturas
-        DG_Facturas.DataBind()
+        Try
+            DG_Facturas.DataSource = Nothing
+            DG_Facturas.DataSource = FacturaBLL.ObtenerInstancia.ListarFacturas
+            DG_Facturas.DataBind()
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & "Error al cargar las facturas" & "')", True)
+
+        End Try
+
     End Sub
 
     Public Sub Cargar_Grilla2()
-        DG_Pedido.DataSource = Nothing
-        DG_Pedido.DataSource = PedidoCanceladoBLL.ObtenerInstancia.Listar
-        DG_Pedido.DataBind()
+        Try
+            DG_Pedido.DataSource = Nothing
+            DG_Pedido.DataSource = PedidoCanceladoBLL.ObtenerInstancia.Listar
+            DG_Pedido.DataBind()
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & "Error al cargar los pedidos cancelados" & "')", True)
+
+        End Try
+
     End Sub
 
     Private Sub DG_Facturas_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles DG_Facturas.PageIndexChanging
-        DG_Facturas.PageIndex = e.NewPageIndex
-        Cargar_Grilla()
+        Try
+            DG_Facturas.PageIndex = e.NewPageIndex
+            Cargar_Grilla()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub DG_Facturas_SelectedIndexChanging(sender As Object, e As GridViewSelectEventArgs) Handles DG_Facturas.SelectedIndexChanging
-        Dim FacturaID As Integer
-        FacturaID = DG_Facturas.Rows(e.NewSelectedIndex).Cells(2).Text
-        Session("FacturaID") = FacturaID
-        Response.Redirect("Factura_Descargar.aspx")
+        Try
+            Dim FacturaID As Integer
+            FacturaID = DG_Facturas.Rows(e.NewSelectedIndex).Cells(2).Text
+            Session("FacturaID") = FacturaID
+            Response.Redirect("Factura_Descargar.aspx")
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
+        End Try
     End Sub
 
     Private Sub DG_Facturas_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles DG_Facturas.RowDeleting
-
-        contenido.Visible = True
-        Session("RowSelected") = DG_Facturas.Rows(e.RowIndex)
-
-
+        Try
+            contenido.Visible = True
+            Session("RowSelected") = DG_Facturas.Rows(e.RowIndex)
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('Error al eliminar la factura')", True)
+        End Try
     End Sub
 
     Private Sub DG_Pedido_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles DG_Pedido.RowDeleting
-        Dim FacturaBaja As New PedidoCanceladoBE
-        FacturaBaja.ID_Factura = DG_Pedido.Rows(e.RowIndex).Cells(5).Text
+        Try
+            Dim FacturaBaja As New PedidoCanceladoBE
+            FacturaBaja.ID_Factura = DG_Pedido.Rows(e.RowIndex).Cells(5).Text
 
-        mensaje = "Se atendió reclamo"
-        ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
-
-        PedidoCanceladoBLL.ObtenerInstancia.Eliminar(FacturaBaja)
-
-
-        ''Generar NC
-        Dim Factura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(FacturaBaja.ID_Factura)
-        If Factura.Cancelada = "True" Then
-            mensaje = "La Factura ya estaba cancelada, por favor eliga otra"
+            mensaje = "Se atendió reclamo"
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
 
-        Else
-
-            FacturaBLL.ObtenerInstancia.EliminarFactura(New FacturaBE With {.ID = FacturaBaja.ID_Factura})
-            Dim ID_Factura As Integer = DG_Pedido.Rows(e.RowIndex).Cells(5).Text
-            Dim NewFactura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(ID_Factura)
+            PedidoCanceladoBLL.ObtenerInstancia.Eliminar(FacturaBaja)
 
 
-            mensaje = "La Factura fue cancelada con exito"
-            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+            ''Generar NC
+            Dim Factura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(FacturaBaja.ID_Factura)
+            If Factura.Cancelada = "True" Then
+                mensaje = "La Factura ya estaba cancelada, por favor eliga otra"
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
 
-            Dim NC As New NotaCreditoBE
-            NC.ID_Cliente = NewFactura.ID_Usuario
-            NC.Fecha = DateTime.Now
-            NC.Saldo = NewFactura.Total
-            NC.Motivo = TB_Ingresar_Motivo.Text
-            NC.Estado = "0"
-            'Como es nueva el estado es 0, si la cancelo pasa el estado a 1
+            Else
 
-            NotaCreditoBLL.ObtenerInstancia.CrearNotaCredito(NC)
+                FacturaBLL.ObtenerInstancia.EliminarFactura(New FacturaBE With {.ID = FacturaBaja.ID_Factura})
+                Dim ID_Factura As Integer = DG_Pedido.Rows(e.RowIndex).Cells(5).Text
+                Dim NewFactura As FacturaCompletaBE = FacturaBLL.ObtenerInstancia.ObtenerFacturaCompPorID(ID_Factura)
 
-            RechazoCompraOK.ID_Cliente = NewFactura.ID_Usuario
-            RechazoCompraOK.ID_Factura = DG_Pedido.Rows(e.RowIndex).Cells(5).Text
-            'Se genera una NC
-            RechazoCompraOK.Motivo = "Usuario rechaza una compra"
-            RechazoCompraOK.Debito = "0"
-            'No hay debito en la compra
-            RechazoCompraOK.Credito = NewFactura.Total
-            RechazoCompraOK.Fecha = DateTime.Now
-            Dim ID_NC As Integer = NotaCreditoBLL.ObtenerInstancia.ObtenerIDNC().ID
-            RechazoCompraOK.ID_NotaCredito = ID_NC
-            RechazoCompraOK.Saldo = NewFactura.Total
 
-            CuentaCorrienteBLL.ObtenerInstancia.CrearCCxNC(RechazoCompraOK)
+                mensaje = "La Factura fue cancelada con exito"
+                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
 
-            Dim NewNC As NotaCreditoCompletaBE = NotaCreditoBLL.ObtenerInstancia.ObtenerNCPorID(ID_NC)
-            GestorPDF.ObtenerInstancia.ArmarPDF2(Response, Server.MapPath("Template_Mokar_NC.html"), NewNC, True)
+                Dim NC As New NotaCreditoBE
+                NC.ID_Cliente = NewFactura.ID_Usuario
+                NC.Fecha = DateTime.Now
+                NC.Saldo = NewFactura.Total
+                NC.Motivo = TB_Ingresar_Motivo.Text
+                NC.Estado = "0"
+                'Como es nueva el estado es 0, si la cancelo pasa el estado a 1
 
-            TB_Ingresar_Motivo.Text = ""
-        End If
+                NotaCreditoBLL.ObtenerInstancia.CrearNotaCredito(NC)
 
-        Cargar_Grilla()
-        Cargar_Grilla2()
+                RechazoCompraOK.ID_Cliente = NewFactura.ID_Usuario
+                RechazoCompraOK.ID_Factura = DG_Pedido.Rows(e.RowIndex).Cells(5).Text
+                'Se genera una NC
+                RechazoCompraOK.Motivo = "Usuario rechaza una compra"
+                RechazoCompraOK.Debito = "0"
+                'No hay debito en la compra
+                RechazoCompraOK.Credito = NewFactura.Total
+                RechazoCompraOK.Fecha = DateTime.Now
+                Dim ID_NC As Integer = NotaCreditoBLL.ObtenerInstancia.ObtenerIDNC().ID
+                RechazoCompraOK.ID_NotaCredito = ID_NC
+                RechazoCompraOK.Saldo = NewFactura.Total
+
+                CuentaCorrienteBLL.ObtenerInstancia.CrearCCxNC(RechazoCompraOK)
+
+                Dim NewNC As NotaCreditoCompletaBE = NotaCreditoBLL.ObtenerInstancia.ObtenerNCPorID(ID_NC)
+                GestorPDF.ObtenerInstancia.ArmarPDF2(Response, Server.MapPath("Template_Mokar_NC.html"), NewNC, True)
+
+                TB_Ingresar_Motivo.Text = ""
+            End If
+
+            Cargar_Grilla()
+            Cargar_Grilla2()
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
+        End Try
+
 
     End Sub
 
@@ -116,8 +143,9 @@ Public Class MisFacturas
 
             If TB_Ingresar_Motivo.Text = "" Then
 
-                mensaje = "Debe ingresar un motivo de cancelación"
-                ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+                errorCancelacion.Visible = True
+                'mensaje = "Debe ingresar un motivo de cancelación"
+                'ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
                 Cargar_Grilla()
 
             Else
@@ -169,14 +197,20 @@ Public Class MisFacturas
                     Cargar_Grilla()
 
                     TB_Ingresar_Motivo.Text = ""
+
                 End If
+
+                contenido.Visible = False
             End If
         Catch ex As Exception
-
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
         End Try
     End Sub
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        contenido.Visible = False
+        Try
+            contenido.Visible = False
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

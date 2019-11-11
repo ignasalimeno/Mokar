@@ -17,18 +17,27 @@ Public Class Newsletter_Gestionar
     End Sub
 
     Private Sub CargarGrilla()
-        Dim lista As List(Of NewsletterBE) = oObjBLL.ListarObjetos()
-        Session("ListaNewsletter") = lista
+        Try
 
 
-        For Each a As NewsletterBE In lista
-            If a.descripcion.Length > 30 Then
-                a.descripcion = a.descripcion.Substring(0, 30) & "..."
+            Dim lista As List(Of NewsletterBE) = oObjBLL.ListarObjetos()
+            If Not lista Is Nothing Then
+                Session("ListaNewsletter") = lista
+
+
+                For Each a As NewsletterBE In lista
+                    If a.descripcion.Length > 30 Then
+                        a.descripcion = a.descripcion.Substring(0, 30) & "..."
+                    End If
+                Next
+
+                Me.GvObjetos.DataSource = lista
+                Me.GvObjetos.DataBind()
             End If
-        Next
 
-        Me.GvObjetos.DataSource = lista
-        Me.GvObjetos.DataBind()
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & "No se puede cargar las noticias, primero genere categorías" & "')", True)
+        End Try
     End Sub
 
     Private Sub Limpiar()
@@ -185,7 +194,8 @@ Public Class Newsletter_Gestionar
             DDL_Categoria.DataBind()
 
         Catch ex As Exception
-
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & "No se puede cargar las categorias" & "')", True)
+            Response.Redirect("Categorias.aspx")
         End Try
     End Sub
 

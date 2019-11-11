@@ -20,7 +20,7 @@ Public Class Backup_RestoreBLL
     End Function
 #End Region
 
-    Public Function Realizar_BackUp(oUsuario As UsuarioBE, pathBackup As String, pathDateBase As String) As String
+    Public Function Realizar_BackUp(oUsuario As UsuarioBE, pathBackup As String, pathDateBase As String) As Boolean
         Dim oBackUp As New Backup_RestoreBE
         Try
             oBackUp.Fecha = DateTime.Now
@@ -31,22 +31,17 @@ Public Class Backup_RestoreBLL
             fullpath = oBackUp.Path '' & "/" & "Mokar" & DateTime.Now.ToString("_MMddyyyy_HHmmss") & ".bak"
 
             If Backup_RestoreMPP.ObtenerInstancia.Realizar_BackUp(fullpath, pathDateBase) Then
-                mensaje = "BackUp realizado con éxito"
-
-                'llamar a la bitacora
 
                 oBackUp.Tamaño = Criptografia.ObtenerInstancia.getTamFile(fullpath)
+
+                Return True
             Else
-                mensaje = "BackUp no se pudo realizar"
-
-                'llamar a la bitacora
-
+                Return False
             End If
 
         Catch ex As Exception
-            mensaje = ex.Message
+            Return False
         End Try
-        Return mensaje
 
     End Function
 
@@ -63,34 +58,26 @@ Public Class Backup_RestoreBLL
     End Function
 
 
-    Public Function Realizar_Restore(nombre As String, usuario As String, pathDateBase As String, pathBackup As String) As String
+    Public Function Realizar_Restore(nombre As String, usuario As String, pathDateBase As String, pathBackup As String) As Boolean
+        Try
+            Return Backup_RestoreMPP.ObtenerInstancia.Realizar_Restore(nombre, pathDateBase, pathBackup)
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
-        If Backup_RestoreMPP.ObtenerInstancia.Realizar_Restore(nombre, pathDateBase, pathBackup) Then
-            mensaje = "Restore del BackUp " & nombre & " realizado con éxito"
-
-            'llamar a la bitacora
-        Else
-            mensaje = "Restore del BackUp " & nombre & " no se pudo realizar"
-
-            'llamar a la bitacora
-
-        End If
-        Return mensaje
     End Function
 
-    Public Function Realizar_Restore(pathDateBase As String, pathBackup As String) As String
+    Public Function Realizar_Restore(pathDateBase As String, pathBackup As String) As Boolean
+        Try
+            If Backup_RestoreMPP.ObtenerInstancia.Realizar_Restore(pathDateBase, pathBackup) Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
 
-        If Backup_RestoreMPP.ObtenerInstancia.Realizar_Restore(pathDateBase, pathBackup) Then
-            mensaje = "Restore del BackUp realizado con éxito"
-
-            'llamar a la bitacora
-        Else
-            mensaje = "Restore del BackUp  no se pudo realizar"
-
-            'llamar a la bitacora
-
-        End If
-        Return mensaje
     End Function
 
 End Class

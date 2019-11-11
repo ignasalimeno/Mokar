@@ -94,7 +94,7 @@
   
 </head>
 
-<body>
+<body onkeydown="javascript:EnterKeyFilter();">
 
     <form id="Form2" runat="server">
         <!--==========================
@@ -538,7 +538,7 @@
 
             </div>
         </div>
-
+       <%-- <asp:Button ID="btnDisableEnter" runat="server" Text="" OnClientClick="return false;" style="display:none;"/>--%>
     </form>
 
 
@@ -656,6 +656,15 @@
             document.getElementById('<%= HiddenField1.ClientID %>').value = itemList;
         }
 
+    </script>
+
+    <script type="text/javascript">
+        function EnterKeyFilter() {
+            if (window.event.keyCode == 13) {
+                event.returnValue = false;
+                event.cancel = true;
+            }
+        }
     </script>
 
 </body>

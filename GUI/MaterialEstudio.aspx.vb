@@ -9,40 +9,63 @@ Public Class MaterialEstudio
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not (Page.IsPostBack) Then
+            fileArchivo.Attributes.Add("onchange", "return checkFileExtension(this);")
+
             CargarGrilla()
         End If
     End Sub
 
     Private Sub CargarGrilla()
-        Session("ListaME") = oObjBLL.ListarObjetos()
-        Me.GvObjetos.DataSource = Session("ListaME")
-        Me.GvObjetos.DataBind()
+        Try
+            Session("ListaME") = oObjBLL.ListarObjetos()
+            Me.GvObjetos.DataSource = Session("ListaME")
+            Me.GvObjetos.DataBind()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Limpiar()
-        Me.txtDescr.Text = ""
-        txtAutor.Text = ""
-        txtFecha.Text = ""
-        txtTitulo.Text = ""
+        Try
+            Me.txtDescr.Text = ""
+            txtAutor.Text = ""
+            txtFecha.Text = ""
+            txtTitulo.Text = ""
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Protected Sub GvObjetos_SelectedIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSelectEventArgs) Handles GvObjetos.SelectedIndexChanging
-        Dim miLista As List(Of MaterialEstudioBE) = Session("ListaME")
+        Try
+            Dim miLista As List(Of MaterialEstudioBE) = Session("ListaME")
 
-        For Each a As MaterialEstudioBE In miLista
-            If a.idME = GvObjetos.Rows(e.NewSelectedIndex).Cells(1).Text Then
-                txtAutor.Text = a.autor
-                txtDescr.Text = a.descripcion
-                txtTitulo.Text = a.titulo
-                txtFecha.Text = a.fechaCreacion
-            End If
-        Next
+            For Each a As MaterialEstudioBE In miLista
+                If a.idME = GvObjetos.Rows(e.NewSelectedIndex).Cells(1).Text Then
+                    txtAutor.Text = a.autor
+                    txtDescr.Text = a.descripcion
+                    txtTitulo.Text = a.titulo
+                    txtFecha.Text = a.fechaCreacion
+                End If
+            Next
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
         Try
+            If txtAutor.Text = "" Or txtDescr.Text = "" Or txtFecha.Text = "" Or txtTitulo.Text = "" Then
+                Throw New Exception("Debe completar todos los campos")
+            End If
 
             If BtnAlta.CommandName = "Alta" Then
+                If fileArchivo.PostedFile.FileName = "" Then
+                    Throw New Exception("Debe cargar un archivo")
+                End If
                 oObjBE.idME = 1
                 oObjBE.titulo = txtTitulo.Text
                 oObjBE.descripcion = txtDescr.Text
@@ -50,7 +73,7 @@ Public Class MaterialEstudio
                 oObjBE.fechaCreacion = txtFecha.Text
                 oObjBE.ruta = fileArchivo.PostedFile.FileName
                 oObjBE.activo = 1
-                fileArchivo.PostedFile.SaveAs(Server.MapPath("materialEstudio") & "/" & fileArchivo.PostedFile.FileName)
+                fileArchivo.PostedFile.SaveAs(ConfigurationManager.AppSettings("ME_PATH") & "/" & fileArchivo.PostedFile.FileName)
 
                 oObjBLL.Alta(oObjBE)
 
@@ -64,7 +87,13 @@ Public Class MaterialEstudio
                     oObjBE.descripcion = txtDescr.Text
                     oObjBE.autor = txtAutor.Text
                     oObjBE.fechaCreacion = txtFecha.Text
-                    oObjBE.ruta = IIf(fileArchivo.PostedFile.FileName = "", "", fileArchivo.PostedFile.FileName)
+                    If fileArchivo.PostedFile.FileName = "" Then
+                        oObjBE.ruta = ""
+                    Else
+                        oObjBE.ruta = fileArchivo.PostedFile.FileName
+                        fileArchivo.PostedFile.SaveAs(ConfigurationManager.AppSettings("ME_PATH") & "/" & fileArchivo.PostedFile.FileName)
+                    End If
+
                     oObjBE.activo = 1
 
                     oObjBLL.Modificacion(oObjBE)
@@ -97,9 +126,8 @@ Public Class MaterialEstudio
 
     Sub descargarArchivo(ruta As String)
         Try
-            Dim FilePath As String = Server.MapPath("materialEstudio/" & ruta)
+            Dim FilePath As String = ConfigurationManager.AppSettings("ME_PATH") & "/" & ruta
             Dim TargetFile As New System.IO.FileInfo(FilePath)
-
 
             Response.Clear()
 
@@ -109,10 +137,11 @@ Public Class MaterialEstudio
             Response.WriteFile(TargetFile.FullName)
             Response.End()
         Catch ex As Exception
-            'Throw New Exception
-            HttpContext.Current.Response.Flush()
-            HttpContext.Current.Response.SuppressContent = True
-            HttpContext.Current.ApplicationInstance.CompleteRequest()
+            ''Throw New Exception
+            'HttpContext.Current.Response.Flush()
+            'HttpContext.Current.Response.SuppressContent = True
+            'HttpContext.Current.ApplicationInstance.CompleteRequest()
+            'Response.Redirect("Index.aspx")
         End Try
     End Sub
 
@@ -127,6 +156,7 @@ Public Class MaterialEstudio
                 BtnAlta.CommandArgument = e.CommandArgument
             End If
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & "Hubo un error al descargar el archivo" & "')", True)
 
         End Try
     End Sub

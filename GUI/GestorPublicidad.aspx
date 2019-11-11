@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12">
                             <asp:GridView ID="GvObjeto" CssClass="table table-bordered" runat="server"
                                 AutoGenerateColumns="False" AllowPaging="True" PageSize="20">
                                 <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
@@ -36,14 +36,16 @@
 
                             </asp:GridView>
                         </div>
-                        <div class="col-4">
+                        </div>
+                        <div class="row">
+                        <div class="col-6">
                             <asp:Panel ID="panelNuevo" runat="server" Visible="false">
                                 <div class="row">
                                     <div class="col-3">
                                         <asp:Label ID="Label1" runat="server" Text="URL"></asp:Label>
                                     </div>
                                     <div class="col-9">
-                                        <asp:TextBox ID="txtURL" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtURL" runat="server" MaxLength="150"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -59,7 +61,7 @@
                                         <asp:Label ID="Label3" runat="server" Text="Texto"></asp:Label>
                                     </div>
                                     <div class="col-9">
-                                        <asp:TextBox ID="txtTexto" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtTexto" runat="server" MaxLength="100"></asp:TextBox>
                                     </div>
                                 </div>
                                 <br />  

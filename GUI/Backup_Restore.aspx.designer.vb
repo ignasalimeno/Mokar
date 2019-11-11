@@ -39,22 +39,4 @@ Partial Public Class Backup_Restore
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''UP_BackUp control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UP_BackUp As Global.System.Web.UI.UpdatePanel
-    
-    '''<summary>
-    '''DG_BackUp control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DG_BackUp As Global.System.Web.UI.WebControls.GridView
 End Class

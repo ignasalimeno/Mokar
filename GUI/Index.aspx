@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4" id="panelEncuesta" runat="server">
                   <div class="card-body">
                         <div class="card card-body">
                        <h3 id="Pregunta" runat="server"></h3>

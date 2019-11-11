@@ -54,15 +54,25 @@ Public Class Chat
     End Sub
 
     Sub BindData()
-        CargarLista()
+        Try
+            CargarLista()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub CargarLista()
-        If Session("UsuarioFinal") IsNot Nothing Then
-            Session("Chat") = ChatBLL.ObtenerInstancia.ObtenerMensajexUser(Session("IDUser"))
-        Else
-            Session("Chat") = ChatBLL.ObtenerInstancia.ObtenerMensajexUser(Session("IDUsuarioSeleccionado"))
-        End If
+        Try
+            If Session("UsuarioFinal") IsNot Nothing Then
+                Session("Chat") = ChatBLL.ObtenerInstancia.ObtenerMensajexUser(Session("IDUser"))
+            Else
+                Session("Chat") = ChatBLL.ObtenerInstancia.ObtenerMensajexUser(Session("IDUsuarioSeleccionado"))
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub CargarChat()
@@ -130,6 +140,13 @@ Public Class Chat
     Private Sub btnChatEnviar_ServerClick(sender As Object, e As EventArgs) Handles btnChatEnviar.Click
 
         Try
+            If txtChatMensaje.Value.Trim = "" Then
+                Throw New Exception("No puede enviar un mensaje vacío")
+            End If
+            If txtChatMensaje.Value.Length >= 200 Then
+                Throw New Exception("No puede enviar un mensaje de más de 200 carac")
+            End If
+
             If Session("UsuarioFinal") Is Nothing Then
                 ChatBE.ID_Usuario = Session("IDUsuarioSeleccionado")
                 ChatBE.Mensaje = txtChatMensaje.Value

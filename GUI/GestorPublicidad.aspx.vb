@@ -62,7 +62,7 @@
                                       New XElement("width", "73"),
                                       New XElement("Keyword", "Computers"),
                                                              New XElement("Impressions", "2"),
-                                     New XElement("AlternateText", a(2))))
+                                     New XElement("AlternateText", a(3))))
 
             Next
 
@@ -79,6 +79,9 @@
 
     Protected Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
+            If txtImagen.Text.Trim() = "" Or txtTexto.Text.Trim = "" Or txtURL.Text.Trim = "" Then
+                Throw New Exception("Complete todos los campos")
+            End If
             Dim dt As DataTable = Session("dtXML")
             Dim drow As DataRow = dt.NewRow
 
@@ -93,7 +96,7 @@
 
 
         Catch ex As Exception
-
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
         End Try
     End Sub
 

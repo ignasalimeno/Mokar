@@ -21,7 +21,7 @@
                                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" Visible="false" />
                                     <asp:BoundField DataField="Usuario" HeaderText="Usuario" />
-                                    <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                                    <asp:BoundField DataField="Descripcion" HeaderText="Servicio" />
                                     <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C}" />
                                     <asp:BoundField DataField="Cancelada" HeaderText="Cancelada" />
                                     <asp:BoundField DataField="ID_Usuario" HeaderText="ID" Visible="false" />
@@ -41,12 +41,11 @@
                             </div>
                             <br />
                             <label>Ingresar el motivo de cancelacion</label>
-                            <asp:TextBox CssClass="form-control" ID="TB_Ingresar_Motivo" runat="server" Width="412px"></asp:TextBox>
-
-                            <asp:RequiredFieldValidator ID="RFV_Cancelacion" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Ingresar_Motivo"
-                                ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
-                        </div>
-                        <div class="col-6">
+                            <asp:TextBox CssClass="form-control" ID="TB_Ingresar_Motivo" runat="server" Width="100%" MaxLength="50"></asp:TextBox>
+                            <asp:Label runat="server" ID="errorCancelacion" Visible="false" ForeColor="Red">Ingrese un motivo</asp:Label>
+                                                    </div>
+                        <br />
+                                                <div class="col-6">
                         <asp:Button ID="btnConfirmar" CssClass="btn btn-primary" runat="server" OnClientClick="return confirm('Está seguro de realizar la acción?');" Text="Confirmar" Width="128px" />
 <br /><br />
                         <asp:Button ID="btnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" Width="128px" />

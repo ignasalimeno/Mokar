@@ -16,6 +16,8 @@ Public Class Site1
         'Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None
 
         If Not IsPostBack Then
+            'validarPermiso()
+
             L_Logueado.Visible = False
             btn_Logout.Visible = False
             Panel1.Visible = False
@@ -45,6 +47,28 @@ Public Class Site1
 
         End If
     End Sub
+
+    Private Sub validarPermiso()
+        Try
+            Dim tieneAcceso As Boolean
+            If Session("UsuarioLog") IsNot Nothing Then
+                UsuarioLoguedo = Session("UsuarioLog")
+                tieneAcceso = UsuarioBLL.ObtenerInstancia.ValidarAcceso(UsuarioLoguedo, Request.Url.AbsolutePath.Split("/")(1))
+            Else
+                tieneAcceso = UsuarioBLL.ObtenerInstancia.ValidarAcceso(Nothing, Request.Url.AbsolutePath.Split("/")(1))
+
+            End If
+
+            If tieneAcceso = False Then
+                Response.Redirect("Index.aspx", False)
+            End If
+        Catch ex As Exception
+            Response.Redirect("Index.aspx", False)
+        End Try
+
+    End Sub
+
+
 
     Sub cargarChat()
         Try
@@ -159,7 +183,7 @@ Public Class Site1
                             UsuarioCreado = UsuarioBLL.ObtenerInstancia.ListarObjetoPorMail(UsuarioNuevo)
 
                             ''Creo el cliente
-                            Dim ClienteNuevo As New ClienteBE With {.idUsuario = UsuarioCreado.idUsuario, .nombre = TB_Nombre.Text, .tipoCliente = DDL_Roles.SelectedIndex + 1, .direccion = txtDireccion.Text, .dni = tb_Dni.Text, .telefono = txtTel.Text}
+                            Dim ClienteNuevo As New ClienteBE With {.idUsuario = UsuarioCreado.idUsuario, .nombre = TB_Nombre.Text, .tipoCliente = DDL_Roles.SelectedIndex, .direccion = txtDireccion.Text, .dni = tb_Dni.Text, .telefono = txtTel.Text}
                             If ClienteBLL.ObtenerInstancia.Alta(ClienteNuevo) = False Then
                                 Throw New Exception
                             End If
@@ -412,6 +436,12 @@ Public Class Site1
     Private Sub btnChatEnviar_ServerClick(sender As Object, e As EventArgs) Handles btnChatEnviar.Click
 
         Try
+            If txtChatMensaje.Value.Trim() = "" Then
+                Throw New Exception("No puede enviar mensaje vacio!")
+            End If
+            If txtChatMensaje.Value.Length >= 200 Then
+                Throw New Exception("No puede enviar un mensaje de más de 200 carac")
+            End If
             If Session("UsuarioFinal") Is Nothing Then
                 ChatBE.ID_Usuario = Session("IDUsuarioSeleccionado")
                 ChatBE.Mensaje = txtChatMensaje.Value
@@ -459,7 +489,7 @@ Public Class Site1
 
             txtChatMensaje.Value = ""
         Catch ex As Exception
-
+            MensajesModal.Mostrar(ex.Message)
         End Try
     End Sub
 

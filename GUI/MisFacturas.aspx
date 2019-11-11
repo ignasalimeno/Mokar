@@ -55,10 +55,8 @@
                         <div class="row">
                             <div class="col-6">
                                 <label>Ingresar el motivo de cancelacion</label>
-                                <asp:TextBox CssClass="form-control" ID="TB_Ingresar_Motivo" runat="server" Width="100%"></asp:TextBox>
-
-                                <asp:RequiredFieldValidator ID="RFV_Cancelacion" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Ingresar_Motivo"
-                                    ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
+                                <asp:TextBox CssClass="form-control" ID="TB_Ingresar_Motivo" runat="server" Width="100%" MaxLength="50"></asp:TextBox>
+                                <asp:Label runat="server" ID="errorCancelacion" Visible="false" ForeColor="Red">Ingrese un motivo</asp:Label>
                             </div>
                     <div class="col-6">
                         <asp:Button ID="btnConfirmar" CssClass="btn btn-primary" runat="server" OnClientClick="return confirm('Está seguro de realizar la acción?');" Text="Confirmar" Width="128px" />

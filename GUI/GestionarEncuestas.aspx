@@ -59,18 +59,19 @@
                             <div class="form-row">
                                 <div class="col-3">
                                     <label>Tipo de Encuesta</label>
-                                    <asp:DropDownList CssClass="form-control" ID="DDL_Tipo" runat="server" required="required"></asp:DropDownList>
+                                    <asp:DropDownList CssClass="form-control" ID="DDL_Tipo" runat="server"></asp:DropDownList>
                                 </div>
 
                                 <div class="col-3">
                                     <label>Ingresar el Titulo:</label>
-                                    <asp:TextBox CssClass="form-control" ID="TB_Titulo" runat="server" required="required"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TB_Titulo" runat="server" MaxLength="30" ></asp:TextBox>
                                 </div>
 
                                 <div class="col-3">
                                     <label>Ingresar Fecha de vencimiento:</label>
-                                    <asp:TextBox CssClass="form-control" ID="TB_Fecha" runat="server" required="required"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TB_Fecha" runat="server" MaxLength="10"></asp:TextBox>
                                     <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TB_Fecha" Format="dd/MM/yyyy" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TB_Fecha" ErrorMessage="Ingrese una fecha valida" ForeColor="Red" ValidationExpression="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" />
 
                                 </div>
 
@@ -121,7 +122,7 @@
                                 <div class="form-group col-md-4">
 
                                     <asp:Panel ID="Panel1" runat="server" Visible="false">
-                                        <asp:TextBox ID="txtPregunta" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtPregunta" runat="server" MaxLength="25"></asp:TextBox>
                                         <asp:ImageButton ID="btnAddPregunta" runat="server" ImageUrl="~/img/select.png" />
                                         <asp:ImageButton ID="btnGuardarPre" runat="server" ImageUrl="~/img/edit.png" />
                                         <asp:ImageButton ID="btnBorrarPre" runat="server" ImageUrl="~/img/delete.png" OnClientClick="return confirm('Está seguro de realizar la acción?');"/>
@@ -134,7 +135,7 @@
                                 <div class="form-group col-md-4">
 
                                     <asp:Panel ID="Panel2" runat="server" Visible="false">
-                                        <asp:TextBox ID="txtRta" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtRta" runat="server" MaxLength="25"></asp:TextBox>
                                         <asp:ImageButton ID="btnAddRta" runat="server" ImageUrl="~/img/select.png" />
                                         <asp:ImageButton ID="btnEditRta" runat="server" ImageUrl="~/img/edit.png" />
                                         <asp:ImageButton ID="btnBorrarRta" runat="server" ImageUrl="~/img/delete.png" OnClientClick="return confirm('Está seguro de realizar la acción?');" />

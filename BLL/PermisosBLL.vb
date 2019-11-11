@@ -38,4 +38,14 @@ Public Class PermisosBLL
 
     End Function
 
+    Function ListarTodosLosPermisos() As List(Of PermisosBE)
+        Try
+            Dim lista_Permisos As New List(Of PermisosBE)
+            lista_Permisos = PermisoMPP.ObtenerInstancia.ListarObjetos
+            Return lista_Permisos
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 End Class

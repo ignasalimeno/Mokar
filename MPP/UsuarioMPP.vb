@@ -210,7 +210,7 @@ Public Class UsuarioMPP
         Dim hdatos As New Hashtable
         Dim resultado As Boolean
 
-        hdatos.Add("@tipoConsulta", 3)
+        hdatos.Add("@tipoConsulta", 7)
         hdatos.Add("@IdUsuario", Usuario.idUsuario)
         hdatos.Add("@nombre", Usuario.nombreRazonSocial)
         hdatos.Add("@tipo", Usuario.tipoUsuario)

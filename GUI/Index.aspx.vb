@@ -51,7 +51,7 @@ Public Class Index
             'btnVotar.CommandArgument = oEncuesta.idEncuesta
 
         Catch ex As Exception
-
+            panelEncuesta.Visible = False
         End Try
     End Sub
 
@@ -59,10 +59,10 @@ Public Class Index
         Try
 
             If EncuestaBLL.ObtenerInstancia.Votar(rbPreguntas.SelectedValue) Then
+                VerRestultadoEncuesta()
 
             End If
 
-            VerRestultadoEncuesta()
 
         Catch ex As Exception
 

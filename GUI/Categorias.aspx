@@ -42,9 +42,9 @@
                         </div>
 
                         <div class="col-3">
-                            <asp:Panel ID="Panel1" runat="server">
+                            <asp:Panel ID="Panel1" runat="server" Visible="false">
                                 Descripcion
-                    <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="416px"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" MaxLength="200"></asp:TextBox>
                                 <br />
                                 <asp:Button CssClass="myBtn" ID="BtnAlta" runat="server" Text="Confirmar" Width="206px" />
                                 <br />

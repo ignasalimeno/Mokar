@@ -20,9 +20,8 @@
 
     Sub descargarArchivo(ruta As String)
         Try
-            Dim FilePath As String = Server.MapPath("materialEstudio/" & ruta)
+            Dim FilePath As String = ConfigurationManager.AppSettings("ME_PATH") & "/" & ruta
             Dim TargetFile As New System.IO.FileInfo(FilePath)
-
 
             Response.Clear()
 

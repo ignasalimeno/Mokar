@@ -168,5 +168,43 @@ Public Class UsuarioBLL
         Return mensaje
     End Function
 
+    Function ValidarAcceso(user As UsuarioBE, ruta As String) As Boolean
+        Try
+            Dim tieneAcceso As Boolean = False
+            Dim listPermisos As List(Of PermisosBE) = PermisosBLL.ObtenerInstancia.ListarTodosLosPermisos
+
+            Dim rutaConPermiso As Boolean = False
+            For Each a As PermisosBE In listPermisos
+                If a.formulario.ToLower = ruta.ToLower Then
+                    rutaConPermiso = True
+                End If
+            Next
+
+            If user Is Nothing Then
+                If rutaConPermiso = False Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+
+            user = ObtenerRolesYPermisosUsuario(user)
+            If rutaConPermiso Then
+                For Each a As RolBE In user.roles
+                    For Each k As PermisosBE In a.listPermisos
+                        If k.formulario = ruta Then
+                            tieneAcceso = True
+                        End If
+                    Next
+                Next
+            Else
+                tieneAcceso = True
+            End If
+
+            Return tieneAcceso
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
 End Class

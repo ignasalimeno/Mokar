@@ -72,6 +72,7 @@ Public Class GestionarEncuestas
             Dim idEnc As Integer = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(1).Text
             TB_Titulo.Text = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(3).Text
             TB_Fecha.Text = Date.Parse(DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(4).Text).ToString("dd-MM-yyyy")
+            DDL_Tipo.SelectedValue = DG_Encuestas2.Rows(e.NewSelectedIndex).Cells(2).Text
 
             btnConfirmar.CommandName = "Modificar"
             cargarPreguntas()
@@ -107,12 +108,18 @@ Public Class GestionarEncuestas
 
     Protected Sub btnAddPregunta_Click(sender As Object, e As ImageClickEventArgs) Handles btnAddPregunta.Click
         Try
-            If txtPregunta.Text <> "" Then
-                EncuestaBLL.ObtenerInstancia.AltaPregunta(Session("idEncuesta"), New EncuestaPreguntaBE With {.Pregunta = txtPregunta.Text})
-                cargarPreguntas()
-            End If
-        Catch ex As Exception
+            If GV_Preguntas.Rows.Count > 0 And DDL_Tipo.SelectedValue = 1 Then
+                Throw New Exception("No puede agregar más de una pregunta a la encuesta")
+            Else
 
+                If txtPregunta.Text <> "" Then
+                    EncuestaBLL.ObtenerInstancia.AltaPregunta(Session("idEncuesta"), New EncuestaPreguntaBE With {.Pregunta = txtPregunta.Text})
+                    cargarPreguntas()
+                End If
+            End If
+
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
         End Try
     End Sub
 
@@ -180,40 +187,50 @@ Public Class GestionarEncuestas
 
     Private Sub btnNuevaEncuesta_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Try
-
+            If Not RegularExpressionValidator1.IsValid Then
+                Throw New Exception("Ingrese una fecha valida")
+            End If
+            If TB_Titulo.Text.Trim() = "" Or TB_Fecha.Text.Trim() = "" Then
+                Throw New Exception("Debe ingresar todos los campos")
+            End If
             If btnConfirmar.CommandName = "Alta" Then
                 confirmarNuevaEncuesta()
             ElseIf btnConfirmar.CommandName = "Modificar" Then
                 confirmarModificarEncuesta()
             End If
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub
 
     Sub confirmarNuevaEncuesta()
         Try
-            If Date.Parse(TB_Fecha.Text) > Now Then
-                Dim miEnc As New EncuestaBE
-                miEnc.idEncuesta = 1
-                miEnc.idTipoEncuesta = DDL_Tipo.SelectedValue
-                miEnc.Titulo = TB_Titulo.Text
-                miEnc.FechaVencimiento = TB_Fecha.Text
+            If RegularExpressionValidator1.IsValid Then
+                If Date.Parse(TB_Fecha.Text) > Now Then
+                    Dim miEnc As New EncuestaBE
+                    miEnc.idEncuesta = 1
+                    miEnc.idTipoEncuesta = DDL_Tipo.SelectedValue
+                    miEnc.Titulo = TB_Titulo.Text
+                    miEnc.FechaVencimiento = TB_Fecha.Text
 
-                Session("idEncuesta") = EncuestaBLL.ObtenerInstancia.Crear(miEnc)
+                    Session("idEncuesta") = EncuestaBLL.ObtenerInstancia.Crear(miEnc)
 
-                cargarEncuestas()
+                    cargarEncuestas()
 
-                PanelRespuestas.Visible = True
-                preguntas.Visible = True
-                Panel1.Visible = True
-                Panel2.Visible = True
+                    PanelRespuestas.Visible = True
+                    preguntas.Visible = True
+                    Panel1.Visible = True
+                    Panel2.Visible = True
 
-                DG_Encuestas2.Rows(DG_Encuestas2.Rows.Count - 1).RowState = DataControlRowState.Selected
-
+                    DG_Encuestas2.Rows(DG_Encuestas2.Rows.Count - 1).RowState = DataControlRowState.Selected
+                Else
+                    Throw New Exception("La fecha seleccionada debe ser posterior al día de hoy")
+                End If
             End If
-        Catch ex As Exception
 
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
         End Try
     End Sub
 
@@ -240,7 +257,7 @@ Public Class GestionarEncuestas
         Try
             contenido.Visible = False
             DG_Encuestas2.SelectedIndex = -1
-
+            limpiar()
         Catch ex As Exception
 
         End Try

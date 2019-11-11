@@ -199,7 +199,7 @@ Public Class Reporte_Servicios
             Next
             Chart2.Series("Series2").ChartType = DataVisualization.Charting.SeriesChartType.StackedColumn
             Dim ChartArea = Chart2.ChartAreas("ChartArea2")
-            ChartArea.AxisX.Title = "Dia"
+            ChartArea.AxisX.Title = "Num Semana"
             ChartArea.AxisY.Title = "Facturacion"
 
             Chart2.Visible = True

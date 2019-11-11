@@ -37,7 +37,7 @@
                                         <h3>Buscar</h3>
                                     </div>
                                     <div class="row">
-                                        <asp:TextBox class="form-control" ID="txtBusquedaSimple" runat="server"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtBusquedaSimple" runat="server" MaxLength="50"></asp:TextBox>
                                     </div>
                                     <hr />
                                     <div class="row">
@@ -45,7 +45,7 @@
                                             Usuario
                                         </div>
                                         <div class="col-9">
-                                            <asp:TextBox class="form-control" ID="txtUsuario" runat="server" Width="315px"></asp:TextBox>
+                                            <asp:TextBox class="form-control" ID="txtUsuario" runat="server" Width="100%" MaxLength="50"></asp:TextBox>
                                         </div>
                                     </div>
                                     <br />
@@ -54,9 +54,11 @@
                                             Fecha Desde
                                         </div>
                                         <div class="col-9">
-                                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox2" runat="server" MaxLength="12" Width="100%"></asp:TextBox>
 
                                             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox2" Format="dd/MM/yyyy" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="Ingrese una fecha valida" ForeColor="Red" ValidationExpression="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" />
+
                                         </div>
                                     </div>
                                     <br />
@@ -65,8 +67,10 @@
                                             Fecha Hasta
                                         </div>
                                         <div class="col-9">
-                                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox1" runat="server" MaxLength="12" Width="100%"></asp:TextBox>
                                             <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox1" Format="dd/MM/yyyy" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox1" ErrorMessage="Ingrese una fecha valida" ForeColor="Red" ValidationExpression="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" />
+
                                         </div>
                                     </div>
                                     <br />
@@ -90,6 +94,10 @@
                                     <br />
                                     <div class="row">
                                         <asp:Button CssClass="myBtn" ID="Button1" runat="server" Text="Buscar" Width="312px" />
+                                    </div>
+                                    <br />
+                                     <div class="row">
+                                        <asp:Button CssClass="myBtn" ID="Button2" runat="server" Text="Ver todos" Width="312px" />
                                     </div>
                                 </div>
                             </div>

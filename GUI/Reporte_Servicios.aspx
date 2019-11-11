@@ -83,10 +83,10 @@
                     <div class=" row">
                         <div class="col-6">
                             <h2>Reporte Anual</h2>
-                            Seleccione el año desde: 
+                            Seleccione desde el año: 
                                     <asp:DropDownList ID="ddl_añoDesde" runat="server"></asp:DropDownList>
-                            <br />
-                            Seleccione el año desde: 
+                           
+                            hasta el año: 
                                     <asp:DropDownList ID="ddl_añoHasta" runat="server"></asp:DropDownList>
                             <br />
                             <asp:Button ID="btnAños" CssClass="btn btn-primary" runat="server" Text="Listar" />

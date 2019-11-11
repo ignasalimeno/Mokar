@@ -29,6 +29,10 @@ Public Class Categorias
 
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
         Try
+            If txtDescr.Text.Trim() = "" Then
+                Throw New Exception("Debe completar los campos")
+            End If
+
             If BtnAlta.CommandName = "Alta" Then
                 oObjBE.idCategoria = 1
                 oObjBE.descripcion = Me.txtDescr.Text
@@ -49,7 +53,8 @@ Public Class Categorias
                 End If
             End If
         Catch ex As Exception
-
+            Dim mensaje As String = "Hubo un error. " & ex.Message
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
         End Try
 
     End Sub
@@ -62,9 +67,13 @@ Public Class Categorias
     Private Sub GvObjetos_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GvObjetos.RowDeleting
         Try
             oObjBE.idCategoria = GvObjetos.DataKeys(e.RowIndex).Value
-            oObjBLL.Baja(oObjBE)
-            Limpiar()
-            CargarGrilla()
+            If oObjBLL.Baja(oObjBE) Then
+                Limpiar()
+                CargarGrilla()
+            Else
+                Throw New Exception("La categoría tiene noticias relacionadas")
+            End If
+
         Catch ex As Exception
             Dim mensaje As String = "Hubo un error. " & ex.Message
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)

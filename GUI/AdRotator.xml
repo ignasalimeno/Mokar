@@ -27,4 +27,13 @@
     <Impressions>2</Impressions>
     <AlternateText>https://i.ibb.co/ZS0B34S/workpath.png</AlternateText>
   </Ad>
- </Advertisements>
+  <Ad>
+    <NavigateUrl>www.google.com.ar</NavigateUrl>
+    <ImageUrl>https://www.infobae.com/new-resizer/B5FzNcavCK9kgOwbYmNvqdA7koE=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/01/09144741/portada-google-maps-caso-australia.png</ImageUrl>
+    <height>391</height>
+    <width>73</width>
+    <Keyword>Computers</Keyword>
+    <Impressions>2</Impressions>
+    <AlternateText>Maps</AlternateText>
+  </Ad>
+</Advertisements>

@@ -11,50 +11,72 @@ Public Class GestionarServicios
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not (Page.IsPostBack) Then
+            file_Imagen.Attributes.Add("onchange", "return checkFileExtension(this);")
             CargarGrilla()
         End If
     End Sub
 
     Private Sub CargarGrilla()
-        Session("ListaServicios") = oObjBLL.ListarObjetos()
-        Me.GvObjetos.DataSource = Session("ListaServicios")
-        Me.GvObjetos.DataBind()
+        Try
+            Session("ListaServicios") = oObjBLL.ListarObjetos()
+            Me.GvObjetos.DataSource = Session("ListaServicios")
+            Me.GvObjetos.DataBind()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Limpiar()
-        Me.txtDescr.Text = ""
-        Me.txtNombre.Text = ""
-        txtPrecio.Text = ""
-        dd_accesoPlataforma.SelectedIndex = 0
-        dd_capacitaciones.SelectedIndex = 0
-        dd_materiaEstudio.SelectedIndex = 0
-        dd_reportes.SelectedIndex = 0
-        Panel1.Visible = False
+        Try
+            Me.txtDescr.Text = ""
+            Me.txtNombre.Text = ""
+            txtPrecio.Text = ""
+            dd_accesoPlataforma.SelectedIndex = 0
+            dd_capacitaciones.SelectedIndex = 0
+            dd_materiaEstudio.SelectedIndex = 0
+            dd_reportes.SelectedIndex = 0
+            Panel1.Visible = False
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
     Protected Sub GvObjetos_SelectedIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSelectEventArgs) Handles GvObjetos.SelectedIndexChanging
-        Dim miLista As List(Of ServiciosBE) = Session("ListaServicios")
+        Try
+            Dim miLista As List(Of ServiciosBE) = Session("ListaServicios")
 
-        For Each a As ServiciosBE In miLista
-            If a.idServicio = GvObjetos.Rows(e.NewSelectedIndex).Cells(1).Text Then
-                txtNombre.Text = a.nombre
-                txtDescr.Text = a.descripcion
-                txtPrecio.Text = a.precio
-                dd_accesoPlataforma.Text = a.accesoPlataforma
-                dd_materiaEstudio.Text = a.materialEstudio
-                dd_reportes.Text = a.reportes
-                dd_capacitaciones.Text = a.capacitaciones
-            End If
-        Next
+            For Each a As ServiciosBE In miLista
+                If a.idServicio = GvObjetos.Rows(e.NewSelectedIndex).Cells(1).Text Then
+                    txtNombre.Text = a.nombre
+                    txtDescr.Text = a.descripcion
+                    txtPrecio.Text = a.precio
+                    dd_accesoPlataforma.Text = a.accesoPlataforma
+                    dd_materiaEstudio.Text = a.materialEstudio
+                    dd_reportes.Text = a.reportes
+                    dd_capacitaciones.Text = a.capacitaciones
+                End If
+            Next
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
 
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
         Try
+            If txtDescr.Text.Trim = "" Or txtNombre.Text.Trim() = "" Or txtPrecio.Text = "" Or RegularExpressionValidator1.IsValid = False Then
+                Throw New Exception("Debe completar todos los campos")
+            End If
 
             If BtnAlta.CommandName = "Alta" Then
+                If file_Imagen.FileName = "" Then
+                    Throw New Exception("Debe cargar una imagen")
+                End If
 
                 oObjBE.idServicio = 1
                 oObjBE.nombre = txtNombre.Text
@@ -68,7 +90,7 @@ Public Class GestionarServicios
                 Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
                 Dim filename As String = Path.GetFileName(postedFile.FileName)
                 Dim fileExtension As String = Path.GetExtension(filename)
-                Dim fileSize As Int16 = postedFile.ContentLength
+                ''Dim fileSize As Int16 = postedFile.ContentLength
 
                 Try
                     Dim stream As Stream = postedFile.InputStream
@@ -99,21 +121,26 @@ Public Class GestionarServicios
                     oObjBE.materialEstudio = dd_materiaEstudio.Text
                     oObjBE.reportes = dd_reportes.Text
                     oObjBE.capacitaciones = dd_capacitaciones.Text
+                    If file_Imagen.FileName <> "" Then
 
-                    Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
-                    Dim filename As String = Path.GetFileName(postedFile.FileName)
-                    Dim fileExtension As String = Path.GetExtension(filename)
-                    Dim fileSize As Integer = postedFile.ContentLength
 
-                    Try
-                        Dim stream As Stream = postedFile.InputStream
-                        Dim BinaryReader As New BinaryReader(stream)
-                        Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
+                        Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
+                        Dim filename As String = Path.GetFileName(postedFile.FileName)
+                        Dim fileExtension As String = Path.GetExtension(filename)
+                        ''Dim fileSize As Integer = postedFile.ContentLength
 
-                        oObjBE.imagenData = bytes
-                    Catch ex As Exception
-                        Throw New Exception("Error al querer cargar la imagen.")
-                    End Try
+                        Try
+                            Dim stream As Stream = postedFile.InputStream
+                            Dim BinaryReader As New BinaryReader(stream)
+                            Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
+
+                            oObjBE.imagenData = bytes
+                        Catch ex As Exception
+                            Throw New Exception("Error al querer cargar la imagen.")
+                        End Try
+                    Else
+                        oObjBE.imagenData = Nothing
+                    End If
 
                     oObjBE.activo = 1
 
@@ -142,6 +169,9 @@ Public Class GestionarServicios
 
     Private Sub GvObjetos_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GvObjetos.RowDeleting
         Try
+            If GvObjetos.Rows.Count = 1 Then
+                Throw New Exception("Antes de eliminar el único servicio, tiene que crear nuevos.")
+            End If
             oObjBE.idServicio = GvObjetos.DataKeys(e.RowIndex).Value
             oObjBLL.Baja(oObjBE)
             Limpiar()

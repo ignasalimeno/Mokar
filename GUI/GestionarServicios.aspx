@@ -1,6 +1,31 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="GestionarServicios.aspx.vb" Inherits="GUI.GestionarServicios" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+    function checkFileExtension(elem) {
+        var filePath = elem.value;
+
+        if (filePath.indexOf('.') == -1)
+            return false;
+
+        var validExtensions = new Array();
+        var ext = filePath.substring(filePath.lastIndexOf('.') + 1).toLowerCase();
+
+        validExtensions[0] = 'jpeg';
+        validExtensions[1] = 'bmp';
+        validExtensions[2] = 'png';
+        
+
+        for (var i = 0; i < validExtensions.length; i++) {
+            if (ext == validExtensions[i])
+                return true;
+        }
+
+        elem.value = "";
+        alert('La extensión ' + ext.toUpperCase() + ' no está permitida!');
+        return false;
+    }
+</script>
 
     <section id="portfolio" class="section-bg">
         <div class="container" style="max-width: inherit">
@@ -57,7 +82,7 @@
                                         Nombre
                                     </div>
                                     <div class="col-6">
-                                        <asp:TextBox class="form-control" ID="txtNombre" runat="server" Height="29px" Width="180px"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtNombre" runat="server" Height="29px" Width="100%" MaxLength="40"></asp:TextBox>
                                     </div>
                                 </div>
                                 <br />
@@ -66,16 +91,17 @@
                                         Descripcion
                                     </div>
                                     <div class="col-6">
-                                        <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="180px"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" Width="100%" MaxLength="150"></asp:TextBox>
                                     </div>
                                 </div>
                                 <br />
                                 <div class="row">
                                     <div class="col-6">
-                                        Precio
+                                        Precio $ 
                                     </div>
                                     <div class="col-6">
-                                        <asp:TextBox class="form-control" ID="txtPrecio" runat="server" Height="29px" Width="180px"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtPrecio" runat="server" Height="29px" Width="100%" MaxLength="15"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Ingrese un precio válido (solo núermos y dos decimales)" ForeColor="Red" ValidationExpression="^[0-9]\d{0,9}(\,\d{1,2})?%?$" />
                                     </div>
                                 </div>
                                 <br />

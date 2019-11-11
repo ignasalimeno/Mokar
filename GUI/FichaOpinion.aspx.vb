@@ -45,7 +45,7 @@ Public Class FichaOpinion
             'btnVotar.CommandArgument = oEncuesta.idEncuesta
 
         Catch ex As Exception
-
+            Response.Redirect("Index.aspx")
         End Try
     End Sub
 

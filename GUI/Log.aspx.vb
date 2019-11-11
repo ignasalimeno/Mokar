@@ -31,9 +31,23 @@ Public Class Log
                     oLog.idTipo = IIf(DDL_Tipo.SelectedValue = 0, Nothing, DDL_Tipo.SelectedValue)
                     oLog.criticidad = IIf(DDL_Criticidad.SelectedValue = "---", Nothing, DDL_Criticidad.SelectedValue)
 
-                    Dim fechaDesde As Date = Date.Parse(TextBox2.Text)
-                    Dim fechaHasta As Date = Date.Parse(TextBox1.Text)
+                    Dim fechaDesde As Date = Now
+                    Dim fechaHasta As Date = Now
+                    Try
+                        fechaDesde = Date.Parse(TextBox2.Text)
 
+                    Catch ex As Exception
+                        fechaDesde = Nothing
+
+                    End Try
+                    Try
+                        fechaHasta = Date.Parse(TextBox1.Text)
+
+                    Catch ex As Exception
+                        fechaHasta = Nothing
+
+                    End Try
+                   
                     Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarBusquedaAvanzada(oLog, fechaDesde, fechaHasta)
                     Me.GvBitacora.DataBind()
             End Select
@@ -85,6 +99,15 @@ Public Class Log
             DDL_Tipo.DataTextField = "descr"
             DDL_Tipo.DataBind()
 
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            Me.GvBitacora.DataSource = LogBLL.ObtenerInstancia.ListarTodos
+            Me.GvBitacora.DataBind()
         Catch ex As Exception
 
         End Try

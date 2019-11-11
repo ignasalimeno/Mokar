@@ -28,7 +28,7 @@
                                                             </div>
                                                             <div class="panel-footer">
                                                                 <div class="input-group">
-                                                                    <input id="txtChatMensaje" type="text" runat="server" class="form-control input-sm" />
+                                                                    <input id="txtChatMensaje" type="text" runat="server" class="form-control input-sm" maxlength="200"/>
                                                                     <span class="input-group-btn">
                                                                         <asp:Button class="btn btn-warning btn-sm" ID="btnChatEnviar" runat="server" Text="Enviar" />
                                                                     </span>

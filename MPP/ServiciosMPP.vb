@@ -61,7 +61,14 @@ Public Class ServiciosMPP
         Dim hdatos As New Hashtable
         Dim resultado As Boolean
 
-        hdatos.Add("@tipoConsulta", 3)
+        If Objeto.imagenData Is Nothing Then
+            hdatos.Add("@tipoConsulta", 7)
+            hdatos.Add("@imagenData", New Byte())
+        Else
+            hdatos.Add("@tipoConsulta", 3)
+            hdatos.Add("@imagenData", Objeto.imagenData)
+        End If
+
         hdatos.Add("@idServicio", Objeto.idServicio)
         hdatos.Add("@nombre", Objeto.nombre)
         hdatos.Add("@descripcion", Objeto.descripcion)
@@ -70,7 +77,6 @@ Public Class ServiciosMPP
         hdatos.Add("@materialEstudio", Objeto.materialEstudio)
         hdatos.Add("@reportes", Objeto.reportes)
         hdatos.Add("@capacitaciones", Objeto.capacitaciones)
-        hdatos.Add("@imagenData", Objeto.imagenData)
         hdatos.Add("@activo", Objeto.activo)
 
         resultado = oDatos.Escribir("n_Servicios_ABMC", hdatos)
