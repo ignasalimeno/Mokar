@@ -2087,6 +2087,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:GUI.Newsletter_Gestionar._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:GUI.Newsletter_Gestionar._file_Imagen">
 <summary>
 file_Imagen control.
@@ -2431,101 +2440,101 @@ To modify move field declaration from designer file to code-behind file.
 </member>
 <member name="F:GUI.Rol_Permisos._DDL_Roles">
 <summary>
-Control DDL_Roles.
+DDL_Roles control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._UpdatePanelPermisosActuales">
 <summary>
-Control UpdatePanelPermisosActuales.
+UpdatePanelPermisosActuales control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._LB_PermisosActuales">
 <summary>
-Control LB_PermisosActuales.
+LB_PermisosActuales control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._UpdatePanelBotones">
 <summary>
-Control UpdatePanelBotones.
+UpdatePanelBotones control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._btn_Agregar">
 <summary>
-Control btn_Agregar.
+btn_Agregar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._btn_Quitar">
 <summary>
-Control btn_Quitar.
+btn_Quitar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._UpdatePanelPermisosDisponibles">
 <summary>
-Control UpdatePanelPermisosDisponibles.
+UpdatePanelPermisosDisponibles control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._LB_PermisosDisponibles">
 <summary>
-Control LB_PermisosDisponibles.
+LB_PermisosDisponibles control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._UpdatePanelAceptarCancelar">
 <summary>
-Control UpdatePanelAceptarCancelar.
+UpdatePanelAceptarCancelar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._btn_Guardar">
 <summary>
-Control btn_Guardar.
+btn_Guardar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Rol_Permisos._btn_Cancelar">
 <summary>
-Control btn_Cancelar.
+btn_Cancelar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Servicios._Label10">
@@ -3170,6 +3179,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Site1._RFV_Telefono">
 <summary>
 RFV_Telefono control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._UpdatePanel4">
+<summary>
+UpdatePanel4 control.
 </summary>
 <remarks>
 Auto-generated field.

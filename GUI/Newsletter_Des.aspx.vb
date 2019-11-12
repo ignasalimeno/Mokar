@@ -11,9 +11,14 @@ Public Class Newsletter_Des
     End Sub
 
     Private Sub btn_Enviar_Click(sender As Object, e As EventArgs) Handles btn_Enviar.Click
-        If validar() Then
-            Response.Redirect("Index.aspx")
-        End If
+        Try
+            If validar() Then
+                Response.Redirect("Index.aspx")
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Function validar() As Boolean

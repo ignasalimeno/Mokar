@@ -335,13 +335,16 @@
                                         <asp:RequiredFieldValidator ID="RFV_Telefono" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="txtTel"
                                             ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
                                     </div>
-
+    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+        <ContentTemplate>
                                     <div class="Form-group2">
                                         <label>Seleccione el tipo de Usuario</label>
                                         <asp:DropDownList CssClass="form-control" ID="DDL_Planes" runat="server"
-                                            AutoPostBack="true">
+                                            AutoPostBack="false">
                                         </asp:DropDownList>
                                     </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
                                     <br />
 
                                     <div class="Form-group2">

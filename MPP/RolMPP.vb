@@ -189,7 +189,9 @@ Public Class RolMPP
                     newObj.descr = Item("descripcion")
                     newObj.activo = Item("activo")
                     newObj.rolUsuario = Item("rolUsuario")
-                    list.Add(newObj)
+                    If newObj.activo = True Then
+                        list.Add(newObj)
+                    End If
                 Next
 
                 Return list

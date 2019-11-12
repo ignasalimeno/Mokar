@@ -95,6 +95,15 @@ Partial Public Class Newsletter_Gestionar
     Protected WithEvents cal_FechaCreacion As Global.AjaxControlToolkit.CalendarExtender
     
     '''<summary>
+    '''RegularExpressionValidator1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''file_Imagen control.
     '''</summary>
     '''<remarks>

@@ -1,6 +1,37 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Newsletter_Gestionar.aspx.vb" Inherits="GUI.Newsletter_Gestionar" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <script type="text/javascript">
+    function checkFileExtension(elem) {
+        var filePath = elem.value;
+
+        if (filePath.indexOf('.') == -1)
+            return false;
+
+        var validExtensions = new Array();
+        var ext = filePath.substring(filePath.lastIndexOf('.') + 1).toLowerCase();
+
+        validExtensions[0] = 'jpeg';
+        validExtensions[1] = 'bmp';
+        validExtensions[2] = 'png';
+        //validExtensions[4] = 'gif';
+        //validExtensions[5] = 'tif';
+        //validExtensions[6] = 'tiff';
+        //validExtensions[7] = 'txt';
+        //validExtensions[8] = 'doc';
+        //validExtensions[9] = 'xls';
+        //validExtensions[10] = 'pdf';
+
+        for (var i = 0; i < validExtensions.length; i++) {
+            if (ext == validExtensions[i])
+                return true;
+        }
+
+        elem.value = "";
+        alert('La extensión ' + ext.toUpperCase() + ' no está permitida! Solo imagenes!');
+        return false;
+    }
+</script>
     <section id="portfolio" class="section-bg">
       <div class="container" style="max-width: inherit">
             <div class="row">
@@ -18,7 +49,7 @@
                             </div>
                             <br />
                             <div class="row">
-                                <div class="mr-0">
+                                <div class="col-12">
                                     <asp:GridView ID="GvObjetos" CssClass="table table-bordered" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" DataKeyNames="idNewsletter">
                                         <Columns>
                                             <asp:TemplateField>
@@ -64,7 +95,7 @@
 
                                     <div class="col-8">
                                         Titulo
-                    <asp:TextBox class="form-control" ID="txtTitulo" runat="server" Height="29px" Width="480px"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtTitulo" runat="server" Height="29px" Width="50%" MaxLength="50" ></asp:TextBox>
                                         <br />
                                         Descripcion
                     
@@ -73,12 +104,13 @@
                                         <br />
 
                                         Autor
-                    <asp:TextBox class="form-control" ID="txtAutor" runat="server" Height="29px" Width="480px"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtAutor" runat="server" Height="29px" Width="480px" MaxLength="40"></asp:TextBox>
                                         <br />
                                         Fecha Creación
             <br />
-                                        <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtFecha" runat="server" MaxLength="12"></asp:TextBox>
                                         <ajaxToolkit:CalendarExtender ID="cal_FechaCreacion" runat="server" TargetControlID="txtFecha" Format="dd/MM/yyyy" />
+                                           <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFecha" ErrorMessage="Ingrese una fecha valida" ForeColor="Red" ValidationExpression="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" />
                                         <br />
                                         <br />
                                         Imagen

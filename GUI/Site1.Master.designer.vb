@@ -311,6 +311,15 @@ Partial Public Class Site1
     Protected WithEvents RFV_Telefono As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''UpdatePanel4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UpdatePanel4 As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
     '''DDL_Planes control.
     '''</summary>
     '''<remarks>

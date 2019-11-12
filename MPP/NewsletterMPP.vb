@@ -56,13 +56,19 @@ Public Class NewsletterMPP
         Dim hdatos As New Hashtable
         Dim resultado As Boolean
 
-        hdatos.Add("@tipoConsulta", 3)
-        hdatos.Add("@idNewsletter", Objeto.idNewsletter)
+        If Objeto.imagen Is Nothing Then
+            hdatos.Add("@tipoConsulta", 6)
+            hdatos.Add("@imagen", New Byte())
+        Else
+            hdatos.Add("@tipoConsulta", 3)
+            hdatos.Add("@imagen", Objeto.imagen)
+        End If
+
+             hdatos.Add("@idNewsletter", Objeto.idNewsletter)
         hdatos.Add("@titulo", Objeto.titulo)
         hdatos.Add("@descripcion", Objeto.descripcion)
         hdatos.Add("@autor", Objeto.autor)
         hdatos.Add("@fechaCreacion", Objeto.fechaCreacion)
-        hdatos.Add("@imagen", Objeto.imagen)
         hdatos.Add("@idCategoria", Objeto.idCategoria)
         hdatos.Add("@activo", Objeto.activo)
 

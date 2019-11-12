@@ -16,6 +16,7 @@
                     </div>
                 </div>
                <br /><br />
+    
                 <div class="row">
                     <div class="col-sm-3">
                         <p class="text-center">Permisos Actuales</p>
@@ -49,9 +50,8 @@
                         <br />
                         <asp:UpdatePanel ID="UpdatePanelAceptarCancelar" runat="server">
                             <ContentTemplate>
-                                <asp:Button ID="btn_Guardar" runat="server" CssClass="form-control" Text="Guardar"></asp:Button>
+                                <asp:Button ID="btn_Guardar" runat="server" CssClass="btn btn-primary" Text="Guardar"></asp:Button>
                                 <br />
-                                <asp:Button ID="btn_Cancelar" runat="server" CssClass="form-control" Text="Cancelar"></asp:Button>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>

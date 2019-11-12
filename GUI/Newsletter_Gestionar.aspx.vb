@@ -11,6 +11,7 @@ Public Class Newsletter_Gestionar
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not (Page.IsPostBack) Then
+            file_Imagen.Attributes.Add("onchange", "return checkFileExtension(this);")
             CargarGrilla()
             cargarCategorias()
         End If
@@ -49,7 +50,13 @@ Public Class Newsletter_Gestionar
 
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
         Try
+            If txtAutor.Text.Trim = "" Or txtDescr.Text.Trim = "" Or txtFecha.Text.Trim = "" Or txtTitulo.Text.Trim = "" Then
+                Throw New Exception("Debe completar todos los campos")
+            End If
             If BtnAlta.CommandName = "Alta" Then
+                If file_Imagen.PostedFile.FileName = "" Then
+                    Throw New Exception("Debe cargar una imagen")
+                End If
                 contenido.Visible = True
 
                 oObjBE.idNewsletter = 1
@@ -80,6 +87,7 @@ Public Class Newsletter_Gestionar
                 Limpiar()
                 CargarGrilla()
 
+                contenido.Visible = False
 
             ElseIf BtnAlta.CommandName = "Modificar" Then
 
@@ -91,20 +99,25 @@ Public Class Newsletter_Gestionar
                     oObjBE.autor = txtAutor.Text
                     oObjBE.fechaCreacion = txtFecha.Text
 
-                    Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
-                    Dim filename As String = Path.GetFileName(postedFile.FileName)
-                    Dim fileExtension As String = Path.GetExtension(filename)
-                    'Dim fileSize As Int16 = postedFile.ContentLength
+                    If Not file_Imagen.PostedFile.FileName = "" Then
+                        Dim postedFile As HttpPostedFile = file_Imagen.PostedFile
+                        Dim filename As String = Path.GetFileName(postedFile.FileName)
+                        Dim fileExtension As String = Path.GetExtension(filename)
+                        'Dim fileSize As Int16 = postedFile.ContentLength
 
-                    Try
-                        Dim stream As Stream = postedFile.InputStream
-                        Dim BinaryReader As New BinaryReader(stream)
-                        Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
+                        Try
+                            Dim stream As Stream = postedFile.InputStream
+                            Dim BinaryReader As New BinaryReader(stream)
+                            Dim bytes As Byte() = BinaryReader.ReadBytes(Integer.Parse(stream.Length))
 
-                        oObjBE.imagen = bytes
-                    Catch ex As Exception
-                        Throw New Exception("Error al querer cargar la imagen.")
-                    End Try
+                            oObjBE.imagen = bytes
+                        Catch ex As Exception
+                            Throw New Exception("Error al querer cargar la imagen.")
+                        End Try
+                    Else
+                        oObjBE.imagen = Nothing
+                    End If
+
 
                     oObjBE.idCategoria = DDL_Categoria.SelectedValue
                     oObjBE.activo = 1
@@ -149,9 +162,11 @@ Public Class Newsletter_Gestionar
             Response.End()
         Catch ex As Exception
             'Throw New Exception
-            HttpContext.Current.Response.Flush()
-            HttpContext.Current.Response.SuppressContent = True
-            HttpContext.Current.ApplicationInstance.CompleteRequest()
+            'HttpContext.Current.Response.Flush()
+            'HttpContext.Current.Response.SuppressContent = True
+            'HttpContext.Current.ApplicationInstance.CompleteRequest()
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
+
         End Try
     End Sub
 
@@ -170,18 +185,24 @@ Public Class Newsletter_Gestionar
                 NewsletterBLL.ObtenerInstancia.enviarNoticia(New NewsletterBE With {.idNewsletter = e.CommandArgument}, link)
             End If
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub
 
     Sub cargarDatosObjeto(idNewsletter As Integer)
+        Try
+            Dim a As NewsletterBE = NewsletterBLL.ObtenerInstancia.ListarObjeto(New NewsletterBE With {.idNewsletter = idNewsletter})
 
-        Dim a As NewsletterBE = NewsletterBLL.ObtenerInstancia.ListarObjeto(New NewsletterBE With {.idNewsletter = idNewsletter})
+            txtAutor.Text = a.autor
+            txtDescr.Text = a.descripcion
+            txtTitulo.Text = a.titulo
+            txtFecha.Text = a.fechaCreacion
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
-        txtAutor.Text = a.autor
-                txtDescr.Text = a.descripcion
-                txtTitulo.Text = a.titulo
-                txtFecha.Text = a.fechaCreacion
+        End Try
+
 
     End Sub
 
@@ -217,6 +238,7 @@ Public Class Newsletter_Gestionar
             contenido.Visible = True
             BtnAlta.CommandName = "Alta"
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub

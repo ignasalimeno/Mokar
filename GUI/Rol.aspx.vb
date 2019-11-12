@@ -14,17 +14,32 @@ Public Class Rol
     End Sub
 
     Private Sub CargarGrilla()
-        Me.GvObjetos.DataSource = oObjBLL.ListarObjetos()
-        Me.GvObjetos.DataBind()
+        Try
+            Me.GvObjetos.DataSource = oObjBLL.ListarObjetos()
+            Me.GvObjetos.DataBind()
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
+
+        End Try
+
     End Sub
 
     Private Sub Limpiar()
-        Me.txtDescr.Text = ""
-        ck_RolUSuario.Checked = False
+        Try
+            Me.txtDescr.Text = ""
+            ck_RolUSuario.Checked = False
+        Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
+
+        End Try
+
     End Sub
 
     Protected Sub BtnAlta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAlta.Click
         Try
+            If txtDescr.Text.Trim = "" Then
+                Throw New Exception("Ingrese un nombre para el rol")
+            End If
             If BtnAlta.CommandName = "Alta" Then
                 oObjBE.idRol = 1
                 oObjBE.descr = Me.txtDescr.Text
@@ -35,6 +50,20 @@ Public Class Rol
                 Limpiar()
                 CargarGrilla()
             ElseIf BtnAlta.CommandName = "Modificar" Then
+                If ck_RolUSuario.Checked = False Then
+
+                    Dim cont As Integer = 0
+                    For a As Integer = 0 To GvObjetos.Rows.Count - 1
+                        If RolBLL.ObtenerInstancia.ListarObjeto(New RolBE With {.idRol = GvObjetos.Rows(a).Cells(1).Text}).rolUsuario Then
+                            cont += 1
+                        End If
+                    Next
+                    If cont <= 1 Then
+                        Throw New Exception("No puede eliminar el único rol de usuario")
+                    End If
+
+                End If
+
                 oObjBE.idRol = BtnAlta.CommandArgument
 
                 If Me.txtDescr.Text <> "" Then
@@ -48,6 +77,7 @@ Public Class Rol
             End If
             Panel1.Visible = False
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
 
@@ -58,6 +88,7 @@ Public Class Rol
             Limpiar()
             Panel1.Visible = False
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub
@@ -68,12 +99,27 @@ Public Class Rol
             Limpiar()
             BtnAlta.CommandName = "Alta"
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub
 
     Private Sub GvObjetos_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GvObjetos.RowDeleting
         Try
+            If GvObjetos.Rows.Count = 1 Then
+                Throw New Exception("No puede eliminar el único rol existente")
+            End If
+
+            Dim cont As Integer = 0
+            For a As Integer = 0 To GvObjetos.Rows.Count - 1
+                If RolBLL.ObtenerInstancia.ListarObjeto(New RolBE With {.idRol = GvObjetos.Rows(a).Cells(1).Text}).rolUsuario Then
+                    cont += 1
+                End If
+            Next
+            If cont <= 1 Then
+                Throw New Exception("No puede eliminar el único rol de usuario")
+            End If
+
             Dim listRolesActivos As List(Of RolBE) = RolBLL.ObtenerInstancia.obtenerRolesActivos
 
             Dim rolActivo As Boolean = False
@@ -95,6 +141,7 @@ Public Class Rol
             End If
 
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub
@@ -112,6 +159,7 @@ Public Class Rol
                 BtnAlta.CommandArgument = e.CommandArgument
             End If
         Catch ex As Exception
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & ex.Message & "')", True)
 
         End Try
     End Sub

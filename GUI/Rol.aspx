@@ -52,7 +52,7 @@
                                         Descripcion
                                     </div>
                                     <div class="col-8">
-                                        <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtDescr" runat="server" Height="29px" MaxLength="50"></asp:TextBox>
                                     </div>
                                 </div>
                                 <br />
