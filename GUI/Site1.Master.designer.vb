@@ -356,6 +356,15 @@ Partial Public Class Site1
     Protected WithEvents RFV_TBPassword As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''RegularExpressionValidator1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''TB_Password2 control.
     '''</summary>
     '''<remarks>

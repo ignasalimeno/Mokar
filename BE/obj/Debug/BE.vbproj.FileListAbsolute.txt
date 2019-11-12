@@ -38,3 +38,12 @@ C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.dll
 C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.xml
 C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.pdb
 C:\Users\ignas\Desktop\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
+C:\Users\Ignacio\Source\Repos\Mokar\BE\bin\Debug\BE.dll
+C:\Users\Ignacio\Source\Repos\Mokar\BE\bin\Debug\BE.pdb
+C:\Users\Ignacio\Source\Repos\Mokar\BE\bin\Debug\BE.xml
+C:\Users\Ignacio\Source\Repos\Mokar\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
+C:\Users\Ignacio\Source\Repos\Mokar\BE\obj\Debug\BE.Resources.resources
+C:\Users\Ignacio\Source\Repos\Mokar\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
+C:\Users\Ignacio\Source\Repos\Mokar\BE\obj\Debug\BE.dll
+C:\Users\Ignacio\Source\Repos\Mokar\BE\obj\Debug\BE.xml
+C:\Users\Ignacio\Source\Repos\Mokar\BE\obj\Debug\BE.pdb

@@ -23,6 +23,10 @@ Public Class NewPass
 
             End If
 
+            If TB_Pass.Text.Trim = "" Or TB_Pass2.Text.Trim = "" Then
+                Throw New Exception("Ingrese los campos de contraseña")
+            End If
+
             If TB_Pass.Text = TB_Pass2.Text Then
                 Dim NewPass As New UsuarioBE With {.idUsuario = ID_Buscada, .contraseña = TB_Pass.Text}
                 Dim UsuarioActual As UsuarioBE = UsuarioBLL.ObtenerInstancia.ListarObjeto(NewPass)
@@ -34,6 +38,8 @@ Public Class NewPass
 
                 mensaje = "Se ha enviado un mail para validar el cambio de contraseña"
                 ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
+
+                cerrarSesion()
             Else
                 mensaje = "Las contraseñas deben ser iguales"
                 ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
@@ -42,35 +48,28 @@ Public Class NewPass
                 TB_Pass2.Text = ""
             End If
 
-            mensaje = "La contraseña fue cambiada con exito"
-            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
-
-
         Catch ex As Exception
-            mensaje = "Mokar" & ex.Message
+            mensaje = "Mokar informa: " & ex.Message
             ScriptManager.RegisterStartupScript(Me.Page, Me.GetType, "alert", "alert('" & mensaje & "')", True)
-
-            TB_Pass.Text = ""
-            TB_Pass2.Text = ""
         End Try
-        cerrarSesion()
     End Sub
 
     Public Sub cerrarSesion()
-        UsuarioLoguedo = Session("UsuarioLog")
+        Try
+            UsuarioLoguedo = Session("UsuarioLog")
 
-        If UsuarioLoguedo IsNot Nothing Then
-            Dim bitacora As New LogBE With {.fecha = DateTime.Now,
-                                                .idTipo = "2",
-                                                .usuarioMail = GestorSesion.ObtenerSesionActual.UsuarioActivo.mail,
-                                                .criticidad = "1"}
-            LogBLL.ObtenerInstancia.Alta(bitacora)
-
+            If UsuarioLoguedo IsNot Nothing Then
+                Dim bitacora As New LogBE With {.fecha = DateTime.Now,
+                                                    .idTipo = "2",
+                                                    .usuarioMail = GestorSesion.ObtenerSesionActual.UsuarioActivo.mail,
+                                                    .criticidad = "1"}
+                LogBLL.ObtenerInstancia.Alta(bitacora)
+            End If
+        Catch ex As Exception
+        Finally
             Session.Clear()
             Response.Redirect("Index.aspx")
-        Else
-            Session.Clear()
-            Response.Redirect("Index.aspx")
-        End If
+        End Try
+
     End Sub
 End Class

@@ -1945,38 +1945,47 @@ To modify move field declaration from designer file to code-behind file.
 </member>
 <member name="F:GUI.NewPass._MensajesModal">
 <summary>
-Control MensajesModal.
+MensajesModal control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.NewPass._TB_Pass">
 <summary>
-Control TB_Pass.
+TB_Pass control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.NewPass._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.NewPass._TB_Pass2">
 <summary>
-Control TB_Pass2.
+TB_Pass2 control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.NewPass._btn_Enviar">
 <summary>
-Control btn_Enviar.
+btn_Enviar control.
 </summary>
 <remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
 <member name="F:GUI.Newslatter._RP_Categorias">
@@ -3206,6 +3215,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:GUI.Site1._RFV_TBPassword">
 <summary>
 RFV_TBPassword control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:GUI.Site1._RegularExpressionValidator1">
+<summary>
+RegularExpressionValidator1 control.
 </summary>
 <remarks>
 Auto-generated field.

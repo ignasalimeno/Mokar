@@ -40,3 +40,12 @@ C:\Users\ignas\Desktop\Mokar\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
 C:\Users\ignas\Desktop\Mokar\DAL\obj\Debug\DAL.dll
 C:\Users\ignas\Desktop\Mokar\DAL\obj\Debug\DAL.xml
 C:\Users\ignas\Desktop\Mokar\DAL\obj\Debug\DAL.pdb
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\bin\Debug\DAL.dll
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\bin\Debug\DAL.pdb
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\bin\Debug\DAL.xml
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\obj\Debug\DAL.Resources.resources
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\obj\Debug\DAL.dll
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\obj\Debug\DAL.xml
+C:\Users\Ignacio\Source\Repos\Mokar\DAL\obj\Debug\DAL.pdb

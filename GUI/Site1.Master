@@ -356,6 +356,8 @@
                                         <asp:TextBox CssClass="form-control" ID="TB_Password" runat="server" TextMode="Password" MaxLength="50" Width="100%"> </asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RFV_TBPassword" runat="server" ErrorMessage="Este campo es requerido" ControlToValidate="TB_Password"
                                             ForeColor="Red" Font-Bold="true" ValidationGroup="Registrarse"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TB_Password" ErrorMessage="La contraseña debe tener minimo 8 caracteres y al menos una mayúscula, una minúscula y un número" ForeColor="Red" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" />
                                     </div>
 
                                     <div class="Form-group2">

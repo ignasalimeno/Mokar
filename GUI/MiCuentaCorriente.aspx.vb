@@ -16,19 +16,29 @@ Public Class MiCuentaCorriente
     End Sub
 
     Public Sub Cargar_CC()
-        usuario = GestorSesion.ObtenerSesionActual.UsuarioActivo
+        Try
+            usuario = GestorSesion.ObtenerSesionActual.UsuarioActivo
 
-        CCObtenidas = CuentaCorrienteBLL.ObtenerInstancia.ObtenerPorIDUser(usuario.idUsuario)
+            CCObtenidas = CuentaCorrienteBLL.ObtenerInstancia.ObtenerPorIDUser(usuario.idUsuario)
 
-        DG_CC.DataSource = Nothing
-        DG_CC.DataSource = CCObtenidas
-        DG_CC.DataBind()
+            DG_CC.DataSource = Nothing
+            DG_CC.DataSource = CCObtenidas
+            DG_CC.DataBind()
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub DG_CC_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles DG_CC.PageIndexChanging
-        DG_CC.PageIndex = e.NewPageIndex
-        Cargar_CC()
+        Try
+            DG_CC.PageIndex = e.NewPageIndex
+            Cargar_CC()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
 
